@@ -205,6 +205,13 @@ https://momorph.ai/files/Z9KFZ0aAoOfkVEIPuwwkZl/frames/662:14387
 https://momorph.ai/files/Z9KFZ0aAoOfkVEIPuwwkZl/frames/662:14387
 ```
 
+**8. Fix bug sau khi implement hết các tasks:**
+
+Khuyến nghị tiếp tục sử dụng command `/momorph.implement` để fix bug:
+```
+/momorph.implement Thêm task fix bug sai font chữ ở footer. Hãy review lại một lượt xem font chữ các các item đã đúng theo design chưa.
+```
+
 ### Bước 10: Chạy development server
 
 ```sh
