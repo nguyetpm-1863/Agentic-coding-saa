@@ -50,7 +50,6 @@ yarn install
 1. [MoMorph Web](https://momorph.ai/) にアクセスし、Figma アカウント（`*@sun-asterisk.com` メール）でサインインします。
 2. 次の Figma ファイルリンクを入力して続行します: https://www.figma.com/design/9ypp4enmFmdK3YAFJLIu6C/SAA-2025---Internal-Live-Coding
 3. **Settings → GitHub → Connect** で GitHub アカウントを MoMorph に連携します。
-4. リポジトリ `sun-asterisk-internal/agentic-coding-hands-on` を選択してリンクします。
 
 > **注意:** このリポジトリはすでにシステム上で MoMorph および Figma プロジェクトと連携されています。個人の GitHub アカウントを MoMorph に連携するだけで使用できます。
 
