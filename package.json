@@ -38,7 +38,7 @@
     "supabase": "^2.71.3",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "wrangler": "^4.57.0"
+    "wrangler": "^4.75.0"
   },
   "packageManager": "yarn@1.22.22"
 }

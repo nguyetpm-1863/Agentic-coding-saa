@@ -11,7 +11,7 @@
   "name": "agentic-coding-live-demo",
   "main": ".open-next/worker.js",
   "compatibility_date": "2025-12-01",
-  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "compatibility_flags": [ "nodejs_compat", "global_fetch_strictly_public" ],
   "assets": {
     "binding": "ASSETS",
     "directory": ".open-next/assets"
@@ -26,7 +26,7 @@
       // Self-reference service binding, the service name must match the worker name
       // see https://opennext.js.org/cloudflare/caching
       "binding": "WORKER_SELF_REFERENCE",
-      "service": "agentic-coding-live-demo"
+      "service": "agentic-coding-live-demo-staging"
     }
   ],
   "observability": {
@@ -51,14 +51,34 @@
    */
   "env": {
     "staging": {
+      "name": "agentic-coding-live-demo-staging",
       "vars": {
         "NEXTJS_ENV": "staging"
-      }
+      },
+      "images": {
+        "binding": "IMAGES"
+      },
+      "services": [
+        {
+          "binding": "WORKER_SELF_REFERENCE",
+          "service": "agentic-coding-live-demo-staging"
+        }
+      ]
     },
     "production": {
+      "name": "agentic-coding-live-demo-production",
       "vars": {
         "NEXTJS_ENV": "production"
-      }
+      },
+      "images": {
+        "binding": "IMAGES"
+      },
+      "services": [
+        {
+          "binding": "WORKER_SELF_REFERENCE",
+          "service": "agentic-coding-live-demo-production"
+        }
+      ]
     }
   }
 }
