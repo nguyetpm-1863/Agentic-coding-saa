@@ -20,6 +20,9 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.event.inputs.environment || (github.ref_name == 'production' && 'production') || 'staging' }}
   cancel-in-progress: false
 
+env:
+  DEPLOY_ENV: ${{ github.event.inputs.environment || (github.ref_name == 'production' && 'production') || 'staging' }}
+
 jobs:
   deploy:
     runs-on: ubuntu-22.04
@@ -45,10 +48,18 @@ jobs:
           SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
           SUPABASE_PROJECT_ID: ${{ vars.SUPABASE_PROJECT_ID }}
         run: |
+          set -e
+
           if [ -z "$SUPABASE_PROJECT_ID" ]; then
-            echo "::error::SUPABASE_PROJECT_ID is not set. Add it as a repository variable in GitHub Settings > Environments."
+            echo "::error::SUPABASE_PROJECT_ID is not set. Add it as a repository/environment variable in GitHub Settings."
             exit 1
           fi
+
+          if [ -z "$SUPABASE_ACCESS_TOKEN" ]; then
+            echo "::error::SUPABASE_ACCESS_TOKEN is not set. Add it as a secret in GitHub Settings."
+            exit 1
+          fi
+
           yarn supabase link --project-ref "$SUPABASE_PROJECT_ID"
           yarn supabase db push --include-all
 
@@ -63,19 +74,19 @@ jobs:
         run: |
           set -e
 
-          yarn opennextjs-cloudflare build --env ${{ github.event.inputs.environment || (github.ref_name == 'production' && 'production') || 'staging' }}
+          yarn opennextjs-cloudflare build --env "$DEPLOY_ENV"
 
-          echo SUPABASE_SECRET_KEY="${{ secrets.SUPABASE_SECRET_KEY }}" >> /tmp/.env.worker
+          echo "SUPABASE_SECRET_KEY=$SUPABASE_SECRET_KEY" > /tmp/.env.worker
+          yarn wrangler versions secret bulk /tmp/.env.worker --env "$DEPLOY_ENV"
+          rm -f /tmp/.env.worker
 
-          yarn wrangler versions secret bulk /tmp/.env.worker --env ${{ github.event.inputs.environment || (github.ref_name == 'production' && 'production') || 'staging' }}
-
-          yarn opennextjs-cloudflare upload --env ${{ github.event.inputs.environment || (github.ref_name == 'production' && 'production') || 'staging' }} \
+          yarn opennextjs-cloudflare upload --env "$DEPLOY_ENV" \
             --var "NEXT_PUBLIC_SUPABASE_URL:'${{ vars.NEXT_PUBLIC_SUPABASE_URL }}'" \
             --var "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY:'${{ vars.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY }}'" | tee /tmp/upload_output
 
-          version_id=$(cat /tmp/upload_output | grep -oP 'Worker Version ID: \K\S+' || echo "")
+          version_id=$(grep -oP 'Worker Version ID: \K\S+' /tmp/upload_output || echo "")
           if [ -z "$version_id" ]; then
-            echo "Warning: Could not find Worker Version ID in the upload output. Deploying latest version instead."
+            echo "::warning::Could not extract Worker Version ID from upload output. Deploying latest version."
           fi
 
-          yarn wrangler versions deploy --env ${{ github.event.inputs.environment || (github.ref_name == 'production' && 'production') || 'staging' }} $version_id@100 -y
+          yarn wrangler versions deploy --env "$DEPLOY_ENV" "${version_id:+$version_id@100}" -y
