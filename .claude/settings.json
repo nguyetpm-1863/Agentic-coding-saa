@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx supabase db query \"SELECT name, hero_badge, \\(SELECT COUNT\\(*\\) FROM kudos WHERE receiver_id = user_profiles.id\\) as kudos_received FROM user_profiles WHERE hero_badge IS NOT NULL ORDER BY kudos_received DESC LIMIT 10;\")",
+      "Bash(PGPASSWORD=postgres psql -h 127.0.0.1 -p 54322 -U postgres -d postgres -c \"SELECT name, hero_badge, \\(SELECT COUNT\\(*\\) FROM kudos WHERE receiver_id = user_profiles.id\\) as kudos_received FROM user_profiles WHERE hero_badge IS NOT NULL ORDER BY kudos_received DESC LIMIT 10;\")"
+    ]
+  }
+}

@@ -1,26 +1,267 @@
 @import "tailwindcss";
 
+html {
+	scroll-behavior: smooth;
+}
+
 :root {
-	--background: #ffffff;
-	--foreground: #171717;
+	/* Login Design Tokens — Colors */
+	--color-bg-primary: #00101A;
+	--color-header-bg: rgba(11, 15, 18, 0.8);
+	--color-btn-login: #FFEA9E;
+	--color-btn-login-hover: #FFE07A;
+	--color-btn-login-active: #FFD54F;
+	--color-btn-login-text: #00101A;
+	--color-text-white: #FFFFFF;
+	--color-footer-border: #2E3940;
+
+	/* Spacing */
+	--spacing-page-x: 144px;
+	--spacing-header-x: 144px;
+	--spacing-header-y: 12px;
+	--spacing-footer-x: 90px;
+	--spacing-footer-y: 40px;
+	--spacing-hero-top: 96px;
+	--spacing-hero-bottom: 96px;
+	--spacing-kv-to-content: 80px;
+	--spacing-content-gap: 24px;
+	--spacing-btn-x: 24px;
+	--spacing-btn-y: 16px;
+	--spacing-btn-icon-gap: 8px;
+	--spacing-cta-pl: 16px;
+
+	/* Border & Radius */
+	--radius-btn-login: 8px;
+	--radius-lang-btn: 4px;
+
+	/* Shared Dropdown Tokens */
+	--dropdown-bg: #00070C;
+	--dropdown-border: #998C5F;
+	--dropdown-radius: 8px;
+	--dropdown-item-height: 56px;
+	--dropdown-item-radius: 4px;
+	--dropdown-item-selected-bg: rgba(255, 234, 158, 0.20);
+	--dropdown-item-active-bg: rgba(255, 234, 158, 0.10);
+	--dropdown-item-hover-bg: rgba(255, 234, 158, 0.10);
+	--dropdown-gold-glow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 0 6px #FAE287;
+	--dropdown-focus-ring: #FFEA9E;
+
+	/* Homepage Design Tokens */
+	--gradient-cover: linear-gradient(12deg, #00101A 23.7%, rgba(0, 18, 29, 0.46) 38.34%, rgba(0, 19, 32, 0.00) 48.92%);
+	--shadow-text-gold: 0 4px 4px rgba(0, 0, 0, 0.25), 0 0 6px #FAE287;
+	--shadow-box-gold: 0 4px 4px 0 rgba(0, 0, 0, 0.25), 0 0 6px 0 #FAE287;
 }
 
 @theme inline {
-	--color-background: var(--background);
-	--color-foreground: var(--foreground);
-	--font-sans: var(--font-geist-sans);
-	--font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-	:root {
-		--background: #0a0a0a;
-		--foreground: #ededed;
-	}
+	--color-background: var(--color-bg-primary);
+	--color-foreground: var(--color-text-white);
+	--font-sans: var(--font-montserrat);
+	--font-montserrat: var(--font-montserrat);
+	--font-montserrat-alt: var(--font-montserrat-alternates);
+	--font-digital-numbers: var(--font-digital-numbers);
+	--font-svn-gotham: var(--font-svn-gotham);
 }
 
 body {
-	background: var(--background);
-	color: var(--foreground);
-	font-family: Arial, Helvetica, sans-serif;
+	background: var(--color-bg-primary);
+	color: var(--color-text-white);
+	font-family: var(--font-montserrat), sans-serif;
+}
+
+/* Fade-in animation for login page */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.animate-fade-in {
+	animation: fadeIn 300ms ease-in forwards;
+}
+
+/* Shared dropdown animations */
+@keyframes dropdownOpen {
+	from {
+		opacity: 0;
+		transform: translateY(-4px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes dropdownClose {
+	from {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	to {
+		opacity: 0;
+		transform: translateY(-4px);
+	}
+}
+
+.animate-dropdown-open {
+	animation: dropdownOpen 150ms ease-out forwards;
+}
+
+.animate-dropdown-close {
+	animation: dropdownClose 100ms ease-in forwards;
+}
+
+/* Kudo Modal animations */
+@keyframes modalOverlayIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+@keyframes modalOverlayOut {
+	from { opacity: 1; }
+	to { opacity: 0; }
+}
+
+@keyframes modalSlideIn {
+	from {
+		opacity: 0;
+		transform: translate(-50%, -50%) translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translate(-50%, -50%) translateY(0);
+	}
+}
+
+@keyframes modalSlideOut {
+	from {
+		opacity: 1;
+		transform: translate(-50%, -50%) translateY(0);
+	}
+	to {
+		opacity: 0;
+		transform: translate(-50%, -50%) translateY(20px);
+	}
+}
+
+.animate-modal-overlay-in {
+	animation: modalOverlayIn 200ms ease-out forwards;
+}
+
+.animate-modal-overlay-out {
+	animation: modalOverlayOut 200ms ease-in forwards;
+}
+
+.animate-modal-slide-in {
+	animation: modalSlideIn 200ms ease-out forwards;
+}
+
+.animate-modal-slide-out {
+	animation: modalSlideOut 200ms ease-in forwards;
+}
+
+/* Secret Box animations */
+@keyframes boxShake {
+	0%, 100% { transform: translateX(0); }
+	10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+	20%, 40%, 60%, 80% { transform: translateX(4px); }
+}
+
+@keyframes boxGlow {
+	0% { filter: brightness(1); }
+	50% { filter: brightness(1.5); }
+	100% { filter: brightness(2); }
+}
+
+@keyframes badgeReveal {
+	0% { opacity: 0; transform: scale(0); }
+	70% { opacity: 1; transform: scale(1.1); }
+	100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes glowPulse {
+	0%, 100% { opacity: 0.6; }
+	50% { opacity: 1; }
+}
+
+.animate-box-shake {
+	animation: boxShake 500ms ease-in-out;
+}
+
+.animate-box-glow {
+	animation: boxGlow 500ms ease-in forwards;
+}
+
+.animate-badge-reveal {
+	animation: badgeReveal 500ms ease-out forwards;
+}
+
+.animate-glow-pulse {
+	animation: glowPulse 1.5s ease-in-out infinite;
+}
+
+/* Tiptap editor styles */
+.tiptap p.is-editor-empty:first-child::before {
+	content: attr(data-placeholder);
+	float: left;
+	color: #999;
+	pointer-events: none;
+	height: 0;
+	font-family: var(--font-montserrat), sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	letter-spacing: 0.15px;
+}
+
+.tiptap:focus {
+	outline: none;
+}
+
+.tiptap ol {
+	list-style-type: decimal;
+	padding-left: 1.5rem;
+}
+
+.tiptap blockquote {
+	border-left: 4px solid #998C5F;
+	padding-left: 1rem;
+	font-style: italic;
+}
+
+.tiptap a {
+	color: #2563eb;
+	text-decoration: underline;
+}
+
+/* Custom scrollbar for dropdown lists */
+.dropdown-scrollbar {
+	scrollbar-width: thin;
+	scrollbar-color: #998C5F #00070C;
+}
+
+.dropdown-scrollbar::-webkit-scrollbar {
+	width: 6px;
+}
+
+.dropdown-scrollbar::-webkit-scrollbar-track {
+	background: #00070C;
+	border-radius: 3px;
+}
+
+.dropdown-scrollbar::-webkit-scrollbar-thumb {
+	background: #998C5F;
+	border-radius: 3px;
+}
+
+/* Tiptap @ mention highlight */
+.mention-highlight {
+	background-color: #FFEA9E;
+	border-radius: 4px;
+	padding: 2px 4px;
+	font-weight: 700;
+	color: #00101A;
+	text-decoration: none;
+	box-decoration-break: clone;
 }

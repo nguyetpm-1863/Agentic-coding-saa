@@ -1,0 +1,355 @@
+No,itemId,itemName,nameJP,nameTrans,itemType,itemSubtype,buttonType,dataType,required,format,minLength,maxLength,defaultValue,validationNote,description,userAction,transitionNote,databaseTable,databaseColumn,databaseNote,qa
+"3","313:8437","Keyvisual","キービジュアル","Keyvisual Banner","others","hero_banner","","","false","","","","","","Banner chính hiển thị artwork và tiêu đề chiến dịch cho trang Hệ thống giải thưởng.
+
+Purpose and Context
+Banner đầu trang Hệ thống giải thưởng SAA 2025; hiển thị artwork và tiêu đề chiến dịch.
+
+Display Elements:
+  - Ảnh nền: public/images/awards/keyvisual-award-bg.png (cover; crop trung tâm)
+  - Gradient overlay: linear-gradient(0deg; #00101A -4.23%; rgba(0; 19; 32; 0) 52.79%) phủ phía dưới ảnh nền
+  - Ảnh ROOT: public/images/homepage/root-text.png (bên trái phía trên)
+  - Ảnh FURTHER: public/images/homepage/further-text.png (bên trái dưới ảnh ROOT)
+  - Text phụ: 'Sun* Annual Awards 2025' (căn giữa phía dưới)
+
+Function & Logic:
+  - Tĩnh; không có hành vi click
+  - Responsive: ảnh nền scale cover và crop trung tâm
+  - Áp dụng đa ngôn ngữ cho text 'Sun* Annual Awards 2025'
+  - Accessibility: alt text cho các ảnh","","","","","","- Banner có hiển thị đúng full width và crop center trên các breakpoint không?
+- Gradient overlay có che phủ đúng phần dưới banner không?
+- Trên mobile; banner responsive như thế nào (chiều cao; crop)?"
+"A","313:8453","Title hệ thống giải thưởng","受賞システムタイトル","Awards System Title","label","heading","","","false","","","","","","Tiêu đề phần giới thiệu hệ thống giải thưởng SAA 2025; nằm phía dưới banner.
+
+Purpose and Context
+Khối tiêu đề chính của trang; gồm text phụ và tiêu đề lớn; ngăn cách bằng đường line.
+
+Display Elements:
+  - Text phụ: 'Sun* annual awards 2025' (Montserrat 24px/32px Bold; trắng)
+  - Đường line ngang: background #2E3940; cách trên dưới 16px
+  - Tiêu đề chính: 'Hệ thống giải thưởng SAA 2025' (Montserrat 57px/64px Bold; vàng #FFEA9E; letter-spacing -0.25px)
+
+Function & Logic:
+  - Tĩnh; không interactive
+  - Áp dụng đa ngôn ngữ cho cả hai dòng text
+  - Responsive: Mobile text-3xl → Tablet text-4xl → Desktop text-[57px]","","","","","","- Hai dòng text hiển thị đúng nội dung và đa ngôn ngữ khi chuyển ngôn ngữ không?
+- Đường line giữa text phụ và tiêu đề có hiển thị đúng; cách trên dưới 16px không?
+- Trên mobile; tiêu đề có wrap đúng cách không?"
+"B","313:8458","Hệ thống giải thưởng","受賞システム","Awards System Container","others","section_container","","","false","","","","","","Container chứa toàn bộ phần nội dung hệ thống giải thưởng; bố cục 2 cột.
+
+Purpose and Context
+Section chính chứa sidebar điều hướng bên trái và danh sách giải thưởng bên phải.
+
+Display Elements:
+  - Sidebar trái: Danh sách anchor link (rộng 178px); sticky khi cuộn
+  - Content phải: Các khối thông tin giải thưởng xếp dọc; ngăn cách bằng khoảng cách + đường line
+  - Children: Menu list (C); các khối giải D.1–D.6; Sun* Kudos (D1)
+
+Function & Logic:
+  - Click mục sidebar trái: cuộn smooth đến section giải tương ứng bên phải
+  - Sidebar sticky theo scroll; tự động highlight mục đang trong viewport
+  - Responsive: Mobile → sidebar ẩn hoặc chuyển horizontal; Desktop → 2 cột","on_click","Cuộn smooth đến section giải tương ứng","","","","- Bố cục 2 cột (sidebar 178px + content) có đúng tỷ lệ không?
+- Sidebar có sticky đúng khi cuộn trang không?
+- Trên mobile; sidebar chuyển thành dạng gì (horizontal scroll; ẩn; dropdown)?
+- Các khối giải thưởng có ngăn cách đúng bằng khoảng cách + đường line không?"
+"C","313:8459","Menu list","メニューリスト","Award Navigation Menu","others","navigation","","","false","","","","","","Sidebar điều hướng dọc chứa danh sách 6 hạng mục giải thưởng.
+
+Purpose and Context
+Danh mục anchor link bên trái; cho phép người dùng nhảy nhanh đến từng giải thưởng.
+
+Display Elements:
+  - 6 mục: 'Top Talent'; 'Top Project'; 'Top Project Leader'; 'Best Manager'; 'Signature 2025 Creator'; 'MVP'
+  - Mỗi mục có icon target phía trước + text tên giải
+  - Trạng thái active: text vàng + gạch dưới text (KHÔNG có background)
+  - Trạng thái mặc định: text trắng; không gạch dưới
+  - Khối rộng 178px; content mỗi mục 121px
+
+Function & Logic:
+  - Click mục: cuộn smooth đến section giải tương ứng
+  - Khi user cuộn trang; mục tương ứng section đang hiển thị tự động active
+  - Hover: highlight mục
+  - Chỉ 1 mục active tại một thời điểm
+  - Áp dụng đa ngôn ngữ cho tất cả text mục","on_click","Cuộn smooth đến section giải tương ứng","","","","- Click từng mục có cuộn smooth đến đúng section không?
+- Khi cuộn trang thủ công; mục active có tự động cập nhật không?
+- Active state chỉ có gạch dưới text (không có background) đúng không?
+- Trên mobile/tablet; sidebar hiển thị như thế nào?
+- Tất cả text mục có áp dụng đa ngôn ngữ không?"
+"C.1","313:8460","Top Talent","トップタレント（ナビ）","Top Talent Nav Item","others","anchor_link","","","false","","","","","","Mục điều hướng 'Top Talent' trong sidebar; là mục đầu tiên và mặc định active.
+
+Display Elements:
+  - Icon target + text 'Top Talent'
+  - Trạng thái active: text vàng + gạch dưới (không background)
+  - Trạng thái mặc định: text trắng
+
+Function & Logic:
+  - Click: cuộn smooth đến section Top Talent
+  - Mặc định active khi vào trang
+  - Đa ngôn ngữ","on_click","Cuộn đến section Top Talent","","","","- Mục này có mặc định active khi load trang không?
+- Click có cuộn đúng đến section Top Talent không?"
+"C.2","313:8461","Top Project","トッププロジェクト（ナビ）","Top Project Nav Item","others","anchor_link","","","false","","","","","","Mục điều hướng 'Top Project' trong sidebar.
+
+Display Elements:
+  - Icon target + text 'Top Project'
+
+Function & Logic:
+  - Click: cuộn smooth đến section Top Project
+  - Đa ngôn ngữ","on_click","Cuộn đến section Top Project","","","","- Click có cuộn đúng đến section Top Project không?"
+"C.3","313:8462","Top Project Leader","トッププロジェクトリーダー（ナビ）","Top Project Leader Nav Item","others","anchor_link","","","false","","","","","","Mục điều hướng 'Top Project Leader' trong sidebar.
+
+Display Elements:
+  - Icon target + text 'Top Project Leader'
+
+Function & Logic:
+  - Click: cuộn smooth đến section Top Project Leader
+  - Đa ngôn ngữ","on_click","Cuộn đến section Top Project Leader","","","","- Click có cuộn đúng đến section Top Project Leader không?"
+"C.4","313:8463","Best Manager","ベストマネージャー（ナビ）","Best Manager Nav Item","others","anchor_link","","","false","","","","","","Mục điều hướng 'Best Manager' trong sidebar.
+
+Display Elements:
+  - Icon target + text 'Best Manager'
+
+Function & Logic:
+  - Click: cuộn smooth đến section Best Manager
+  - Đa ngôn ngữ","on_click","Cuộn đến section Best Manager","","","","- Click có cuộn đúng đến section Best Manager không?"
+"C.5","313:8464","Signature 2025 Creator","シグネチャー2025クリエイター（ナビ）","Signature 2025 Creator Nav Item","others","anchor_link","","","false","","","","","","Mục điều hướng 'Signature 2025 Creator' trong sidebar.
+
+Display Elements:
+  - Icon target + text 'Signature 2025 Creator'
+
+Function & Logic:
+  - Click: cuộn smooth đến section Signature 2025 Creator
+  - Đa ngôn ngữ","on_click","Cuộn đến section Signature 2025 Creator","","","","- Click có cuộn đúng đến section Signature 2025 Creator không?"
+"C.6","313:8465","MVP","MVP（ナビ）","MVP Nav Item","others","anchor_link","","","false","","","","","","Mục điều hướng 'MVP' trong sidebar; mục cuối cùng.
+
+Display Elements:
+  - Icon target + text 'MVP'
+
+Function & Logic:
+  - Click: cuộn smooth đến section MVP
+  - Đa ngôn ngữ","on_click","Cuộn đến section MVP","","","","- Click có cuộn đúng đến section MVP không?"
+"D.1","313:8467","Top Talent","トップタレント（受賞ブロック）","Top Talent Award Block","others","award_card","","","false","","","","","","Khối thông tin chi tiết giải thưởng Top Talent — giải đầu tiên. Sử dụng common component: ảnh bên trái; nội dung bên phải.
+
+Purpose and Context
+Thẻ giải thưởng Top Talent; hiển thị thông tin chi tiết giải bao gồm ảnh; tiêu đề; mô tả; số lượng và giá trị.
+
+Display Elements:
+  - Ảnh bên trái: Huy hiệu 'TOP TALENT' trong quả cầu vàng (public/images/awards)
+  - Bên phải - Tiêu đề: Icon + 'Top Talent'
+  - Bên phải - Mô tả: Đoạn văn giới thiệu giải (text tĩnh; đa ngôn ngữ)
+  - Đường line ngăn cách
+  - Số lượng giải thưởng: Icon + 'Số lượng giải thưởng:' + '10' + 'Đơn vị'
+  - Đường line ngăn cách
+  - Giá trị giải thưởng: Icon + 'Giá trị giải thưởng:'
+  - Số tiền: '7.000.000 VNĐ'
+  - Ghi chú: 'cho mỗi giải thưởng'
+
+Function & Logic:
+  - Tĩnh; hiển thị text tĩnh
+  - Áp dụng đa ngôn ngữ cho tất cả text
+  - Là section target cho anchor link 'Top Talent' trong sidebar
+  - Layout: ảnh TRÁI; content PHẢI","","","","","","- Layout ảnh trái + content phải có đúng theo design không?
+- Số lượng '10 Đơn vị' và giá trị '7.000.000 VNĐ' có đúng không?
+- Tất cả text có áp dụng đa ngôn ngữ không?
+- Đường line ngăn cách giữa các phần có đúng không?
+- Trên mobile; layout có stack dọc không?
+- Section có đúng là target khi click 'Top Talent' trong sidebar không?"
+"D.2","313:8468","Top Project","トッププロジェクト（受賞ブロック）","Top Project Award Block","others","award_card","","","false","","","","","","Khối thông tin chi tiết giải thưởng Top Project. Common component layout đảo ngược: nội dung trái; ảnh phải.
+
+Purpose and Context
+Thẻ giải thưởng Top Project; vinh danh dự án xuất sắc.
+
+Display Elements:
+  - Bên trái - Tiêu đề: Icon + 'Top Project'
+  - Bên trái - Mô tả: Đoạn văn giới thiệu giải (text tĩnh; đa ngôn ngữ)
+  - Ảnh bên phải: Huy hiệu 'TOP PROJECT' trong quả cầu vàng
+  - Đường line ngăn cách
+  - Số lượng giải thưởng: Icon + 'Số lượng giải thưởng:' + '02' + 'Tập thể'
+  - Đường line ngăn cách
+  - Giá trị giải thưởng: Icon + 'Giá trị giải thưởng:'
+  - Số tiền: '15.000.000 VNĐ'
+  - Ghi chú: 'cho mỗi giải thưởng'
+
+Function & Logic:
+  - Tĩnh; text tĩnh
+  - Áp dụng đa ngôn ngữ
+  - Là section target cho anchor link 'Top Project'
+  - Layout alternating: content TRÁI; ảnh PHẢI","","","","","","- Layout content trái + ảnh phải có đảo ngược đúng so với D.1 không?
+- Số lượng '02 Tập thể' và giá trị '15.000.000 VNĐ' có đúng không?
+- Đường line ngăn cách với section trước có đúng không?
+- Tất cả text có đa ngôn ngữ không?"
+"D.3","313:8469","Top Project Leader","トッププロジェクトリーダー（受賞ブロック）","Top Project Leader Award Block","others","award_card","","","false","","","","","","Khối thông tin chi tiết giải thưởng Top Project Leader. Common component: ảnh trái; nội dung phải.
+
+Purpose and Context
+Thẻ giải thưởng Top Project Leader; vinh danh người dẫn dắt dự án xuất sắc.
+
+Display Elements:
+  - Ảnh bên trái: Huy hiệu 'TOP PROJECT LEADER' trong quả cầu vàng
+  - Bên phải - Tiêu đề: Icon + 'Top Project Leader'
+  - Bên phải - Mô tả: Đoạn văn giới thiệu giải (text tĩnh; đa ngôn ngữ)
+  - Đường line ngăn cách
+  - Số lượng giải thưởng: Icon + 'Số lượng giải thưởng:' + '03' + 'Cá nhân'
+  - Đường line ngăn cách
+  - Giá trị giải thưởng: Icon + 'Giá trị giải thưởng:'
+  - Số tiền: '7.000.000 VNĐ'
+  - Ghi chú: 'cho mỗi giải thưởng'
+
+Function & Logic:
+  - Tĩnh; text tĩnh
+  - Áp dụng đa ngôn ngữ
+  - Là section target cho anchor link 'Top Project Leader'
+  - Layout: ảnh TRÁI; content PHẢI (giống D.1)","","","","","","- Layout ảnh trái + content phải có đúng không?
+- Số lượng '03 Cá nhân' và giá trị '7.000.000 VNĐ' có đúng không?
+- Tất cả text có đa ngôn ngữ không?"
+"D.4","313:8470","Best Manager","ベストマネージャー（受賞ブロック）","Best Manager Award Block","others","award_card","","","false","","","","","","Khối thông tin chi tiết giải thưởng Best Manager. Common component layout đảo ngược: nội dung trái; ảnh phải.
+
+Purpose and Context
+Thẻ giải thưởng Best Manager; vinh danh nhà quản lý xuất sắc.
+
+Display Elements:
+  - Bên trái - Tiêu đề: Icon + 'Best Manager'
+  - Bên trái - Mô tả: Đoạn văn giới thiệu giải (text tĩnh; đa ngôn ngữ)
+  - Ảnh bên phải: Huy hiệu 'BEST MANAGER' trong quả cầu vàng
+  - Đường line ngăn cách
+  - Số lượng giải thưởng: Icon + 'Số lượng giải thưởng:' + '01' + 'Cá nhân'
+  - Đường line ngăn cách
+  - Giá trị giải thưởng: Icon + 'Giá trị giải thưởng:'
+  - Số tiền: '10.000.000 VNĐ'
+
+Function & Logic:
+  - Tĩnh; text tĩnh
+  - Áp dụng đa ngôn ngữ
+  - Là section target cho anchor link 'Best Manager'
+  - Layout alternating: content TRÁI; ảnh PHẢI (giống D.2)","","","","","","- Layout content trái + ảnh phải có đúng không?
+- Số lượng '01 Cá nhân' và giá trị '10.000.000 VNĐ' có đúng không?
+- Tất cả text có đa ngôn ngữ không?"
+"D.5","313:8471","Signature 2025 - Creator","シグネチャー2025クリエイター（受賞ブロック）","Signature 2025 Creator Award Block","others","award_card","","","false","","","","","","Khối thông tin chi tiết giải Signature 2025 - Creator. Đặc biệt: có 2 mức giá trị (cá nhân và tập thể). Common component: ảnh trái; nội dung phải.
+
+Purpose and Context
+Thẻ giải thưởng Signature 2025 - Creator; vinh danh sáng tạo đặc biệt.
+
+Display Elements:
+  - Ảnh bên trái: Huy hiệu 'SIGNATURE 2025 CREATOR' trong quả cầu vàng
+  - Bên phải - Tiêu đề: Icon + 'Signature 2025 - Creator'
+  - Bên phải - Mô tả: 2 đoạn văn giới thiệu giải (text tĩnh; đa ngôn ngữ)
+  - Đường line ngăn cách
+  - Số lượng giải thưởng: Icon + 'Số lượng giải thưởng:' + '01' + 'Cá nhân hoặc tập thể'
+  - Đường line ngăn cách
+  - Giá trị giải thưởng (cá nhân): Icon + 'Giá trị giải thưởng:' + '5.000.000 VNĐ' + 'cho giải cá nhân'
+  - Đường line với text 'Hoặc' ở giữa
+  - Giá trị giải thưởng (tập thể): Icon + 'Giá trị giải thưởng:' + '8.000.000 VNĐ' + 'cho giải tập thể'
+
+Function & Logic:
+  - Tĩnh; text tĩnh
+  - Áp dụng đa ngôn ngữ
+  - Là section target cho anchor link 'Signature 2025 Creator'
+  - Layout: ảnh TRÁI; content PHẢI (giống D.1; D.3)
+  - Đặc biệt: 2 mức giá trị giải ngăn cách bằng đường line + text 'Hoặc'","","","","","","- Hai mức giá trị (5.000.000 VNĐ cá nhân; 8.000.000 VNĐ tập thể) có đúng không?
+- Đường line với text 'Hoặc' ở giữa có hiển thị đúng không?
+- Mô tả có hiển thị đủ 2 đoạn văn không?
+- Layout ảnh trái + content phải có đúng không?
+- Tất cả text có đa ngôn ngữ không?"
+"D.6","313:8510","MVP","MVP（受賞ブロック）","MVP Award Block","others","award_card","","","false","","","","","","Khối thông tin chi tiết giải thưởng MVP (Most Valuable Person). Common component layout đảo ngược: nội dung trái; ảnh phải.
+
+Purpose and Context
+Thẻ giải thưởng MVP; vinh danh cá nhân xuất sắc nhất năm.
+
+Display Elements:
+  - Bên trái - Tiêu đề: Icon + 'MVP (Most Valuable Person)'
+  - Bên trái - Mô tả: Đoạn văn giới thiệu giải (text tĩnh; đa ngôn ngữ)
+  - Ảnh bên phải: Huy hiệu 'MVP' trong quả cầu vàng
+  - Đường line ngăn cách
+  - Số lượng giải thưởng: Icon + 'Số lượng giải thưởng:' + '01' + 'Cá nhân'
+  - Đường line ngăn cách
+  - Giá trị giải thưởng: Icon + 'Giá trị giải thưởng:'
+  - Số tiền: '15.000.000 VNĐ'
+
+Function & Logic:
+  - Tĩnh; text tĩnh
+  - Áp dụng đa ngôn ngữ
+  - Là section target cho anchor link 'MVP'
+  - Layout alternating: content TRÁI; ảnh PHẢI (giống D.2; D.4)","","","","","","- Số lượng '01 Cá nhân' và giá trị '15.000.000 VNĐ' có đúng không?
+- Layout content trái + ảnh phải có đúng (alternating) không?
+- Tất cả text có đa ngôn ngữ không?
+- Responsive: thẻ hiển thị đúng trên mobile không?"
+"D1","335:12023","Sunkudos","Sun*Kudosセクション","Sun* Kudos Section","others","info_block","","","false","","","","","","[TÁI SỬ DỤNG] Section Sun* Kudos — GIỐNG HỆT khối D1 trên màn Homepage SAA (spec: 2167-9026-homepage-saa-c1-d1.csv; itemId: 3390:10349). Sử dụng lại component KudosSection đã implement ở trang chủ.
+
+Purpose and Context
+Section giới thiệu phong trào ghi nhận Sun* Kudos. Component được tái sử dụng từ Homepage SAA — cùng layout; cùng nội dung; cùng logic.
+
+Display Elements:
+  - Background: ảnh nền /images/homepage/kudos-bg.png (cover toàn bộ section)
+  - Nửa trái (Content): Label 'Phong trào ghi nhận'; Title 'Sun* Kudos'; Sub-label 'ĐIỂM MỚI CỦA SAA 2025'; Mô tả hoạt động ghi nhận; Nút 'Chi tiết' (CTA; nền vàng #FFEA9E; text đen #00101A)
+  - Nửa phải: Logo Kudos /images/homepage/kudos.png (kích thước tự nhiên; căn giữa)
+  - Children: Content block (D2); Button (D2.1)
+
+Function & Logic:
+  - Click 'Chi tiết': điều hướng đến /kudos
+  - Hover button: đổi màu nền nhẹ hơn
+  - Responsive: Mobile → xếp dọc (content trên; ảnh dưới); Desktop → chia 2 cột ngang
+  - Áp dụng đa ngôn ngữ cho tất cả text
+  - Implementation: Import và sử dụng lại <KudosSection> từ src/components/homepage/kudos-section.tsx","on_click","Click 'Chi tiết' → điều hướng đến /kudos","","","","- Component KudosSection từ Homepage SAA có được tái sử dụng đúng không?
+- Hiển thị giống hệt trang chủ: layout; nội dung; logo; nút?
+- Click nút 'Chi tiết' có điều hướng tới /kudos không?"
+"D.1.1","I313:8467;214:2525","Picture-Award","受賞画像","Award Picture","others","image","","","false","","","","","","Hình ảnh biểu thị giải thưởng — phần ảnh trong common component thẻ giải.
+
+Purpose and Context
+Component ảnh tái sử dụng cho tất cả thẻ giải thưởng.
+
+Display Elements:
+  - Hình ảnh: Graphic hình cầu pha lê trên bệ đỡ; bên trong hiển thị tên giải
+  - Kích thước: Hình vuông; tỷ lệ cố định
+
+Function & Logic:
+  - Chỉ hiển thị; không có tương tác
+  - Hình ảnh là asset tĩnh; thay đổi theo từng giải
+  - Responsive: co giãn phù hợp trên các kích thước màn hình","","","","","","- Hình ảnh hiển thị đúng tỷ lệ; không bị méo hay cắt?
+- Mỗi thẻ giải có hình ảnh riêng tương ứng?
+- Responsive — co giãn phù hợp trên các kích thước?"
+"D.1.2","I313:8467;214:2526","Content","受賞コンテンツ","Award Content Block","others","content_block","","","false","","","","","","Khối nội dung giải thưởng — phần text trong common component thẻ giải; ví dụ với 'Top Talent'.
+
+Purpose and Context
+Component nội dung tái sử dụng cho tất cả thẻ giải thưởng.
+
+Display Elements:
+  - Icon + Tiêu đề giải: 'Top Talent'
+  - Mô tả: Đoạn văn giới thiệu về giải
+  - Đường phân cách (line)
+  - Dòng số lượng: Icon + label 'Số lượng giải thưởng:' + giá trị '10' + đơn vị 'Đơn vị'
+  - Đường phân cách (line)
+  - Dòng giá trị: Icon + label 'Giá trị giải thưởng:'
+  - Số tiền: '7.000.000 VNĐ'
+  - Ghi chú: 'cho mỗi giải thưởng'
+
+Function & Logic:
+  - Cấu trúc chung: Tiêu đề → Mô tả → Line → Số lượng giải → Line → Giá trị giải + số tiền
+  - Hiển thị tĩnh; text thay đổi theo từng giải
+  - Áp dụng đa ngôn ngữ cho tất cả text (tiêu đề; mô tả; label; đơn vị; ghi chú)","","","","","","- Thứ tự hiển thị đúng: tiêu đề → mô tả → line → số lượng → line → giá trị → số tiền → ghi chú?
+- Các đường phân cách giữa các phần có đúng không?
+- Component có tái sử dụng được cho các giải khác không?
+- Chuyển ngôn ngữ có cập nhật tất cả text không?"
+"D2","I335:12023;313:8419","Content","Sun*Kudosコンテンツ","Sun* Kudos Content Block","others","info_block","","","false","","","","","","[TÁI SỬ DỤNG] Khối nội dung bên trái của section Sun* Kudos — GIỐNG HỆT D2 trên Homepage SAA (spec: 2167-9026-homepage-saa-c1-d1.csv; itemId: I3390:10349;313:8419). Nằm trong component KudosSection tái sử dụng.
+
+Display Elements:
+  - Label: 'Phong trào ghi nhận'
+  - Tiêu đề lớn: 'Sun* Kudos'
+  - Sub-label: 'ĐIỂM MỚI CỦA SAA 2025'
+  - Mô tả: Đoạn văn giới thiệu hoạt động ghi nhận
+  - Nút CTA: 'Chi tiết' với icon mũi tên (child D2.1)
+
+Function & Logic:
+  - Nội dung tĩnh; chỉ nút 'Chi tiết' có tương tác
+  - Click 'Chi tiết': điều hướng tới /kudos
+  - Áp dụng đa ngôn ngữ cho tất cả text
+  - Implementation: Phần này nằm trong <KudosSection> tái sử dụng từ Homepage","on_click","Click 'Chi tiết' → điều hướng đến /kudos","","","",""
+"D2.1","I335:12023;313:8426","Button-IC","「詳細」ボタン","Detail Button","button","","icon_text","","false","","","","","","[TÁI SỬ DỤNG] Nút CTA 'Chi tiết' — GIỐNG HỆT D2.1 trên Homepage SAA (spec: 2167-9026-homepage-saa-c1-d1.csv; itemId: I3390:10349;313:8426). Nằm trong component KudosSection tái sử dụng.
+
+Display Elements:
+  - Text: 'Chi tiết'
+  - Icon: Mũi tên hướng lên-phải (arrow-up-right)
+  - Kiểu nút: Nền vàng #FFEA9E; text đen #00101A; bo tròn
+
+Function & Logic:
+  - Click: điều hướng tới /kudos
+  - Hover: đổi màu nền nhẹ hơn (#E8D68E)
+  - Active: #D4C27E
+  - Áp dụng đa ngôn ngữ cho text nút
+  - State: luôn enabled
+  - Implementation: Phần này nằm trong <KudosSection> tái sử dụng từ Homepage","on_click","Click → điều hướng đến /kudos","","","",""

@@ -1,0 +1,98 @@
+Section,TC_ID,Page_Name,Category,Sub_Category,Sub_Sub_Category,Test_Objective,Precondition,Test_Data,Steps,Expected_Result,Specs,Priority,Testcase_Type,Test_Result,Executed_Date,Tester,Note
+ACCESSING,TC_LANG_ACC_001,Dropdown-ngon-ngu,ACCESSING,Component Visibility,Login Page,Verify language dropdown is visible on the Login page,User is not logged in,,"1. Navigate to /login.
+2. Observe the header area.",Language dropdown is displayed in the header with Vietnam flag icon and "VN" text.,specs.md - UI Elements (A. Dropdown-List),High,Access control and security,,,,
+ACCESSING,TC_LANG_ACC_002,Dropdown-ngon-ngu,ACCESSING,Component Visibility,Home Page (Authenticated),Verify language dropdown is visible on the Home page for authenticated users,User is logged in with valid session,Valid Google account session,"1. Log in successfully.
+2. Navigate to home page.
+3. Observe the header area.",Language dropdown is displayed in the header with current language flag and code.,specs.md - UI Elements (A. Dropdown-List),High,Access control and security,,,,
+ACCESSING,TC_LANG_ACC_003,Dropdown-ngon-ngu,ACCESSING,Component Visibility,Across All Pages,Verify language dropdown is consistently available across all application pages,User is logged in,,"1. Navigate to home page and verify dropdown is present.
+2. Navigate to kudos page and verify dropdown is present.
+3. Navigate to awards page and verify dropdown is present.",Language dropdown is displayed in the header on all pages with consistent appearance.,specs.md - UI Elements (A. Dropdown-List),Medium,Access control and security,,,,
+ACCESSING,TC_LANG_ACC_004,Dropdown-ngon-ngu,ACCESSING,Session State,Expired Session,Verify language dropdown remains visible when session expires,User's session has expired,,"1. Log in successfully.
+2. Wait for session to expire (or manually expire the token).
+3. Refresh the page.
+4. Observe the header area.",Language dropdown is still visible on the redirected login page.,viewpoints.md - Additional Viewpoints,Medium,Access control and security,,,,
+ACCESSING,TC_LANG_ACC_005,Dropdown-ngon-ngu,ACCESSING,Accessibility,Keyboard Reachability,Verify language dropdown is reachable via keyboard Tab navigation,User is on any page with the language dropdown,,"1. Navigate to any page.
+2. Press Tab key repeatedly to cycle through focusable elements.",Language dropdown receives focus and shows a visible focus indicator.,viewpoints.md - Additional Viewpoints,Medium,Access control and security,,,,
+GUI,TC_LANG_GUI_001,Dropdown-ngon-ngu,GUI,Default State,Collapsed Display,Verify the dropdown displays correctly in its default collapsed state,User is on a page with the language dropdown,,"1. Navigate to any page.
+2. Observe the language dropdown in the header.","Dropdown displays: Vietnam flag icon on the left, ""VN"" text on the right, dark gray background. Compact and properly aligned in header.",specs.md - UI Elements (A. Dropdown-List),High,User interface,,,,
+GUI,TC_LANG_GUI_002,Dropdown-ngon-ngu,GUI,Expanded State,Full Dropdown Display,Verify the dropdown displays correctly when expanded,User is on a page with the language dropdown,,"1. Click on the language dropdown.","Dropdown expands showing: Selected item (VN) on top with dark gray background, EN option below with darker/black background. UK flag + ""EN"" text displayed in option area.",specs.md - UI Elements (A. Dropdown-List),High,User interface,,,,
+GUI,TC_LANG_GUI_003,Dropdown-ngon-ngu,GUI,Flag Icons,Vietnam Flag,Verify the Vietnam flag icon renders correctly,Dropdown is visible,,"1. Observe the VN option in the dropdown.",Vietnam flag (red background with yellow star) is displayed as a small rectangular icon. Clearly recognizable.,specs.md - UI Elements (A.1 Tieng Viet),Medium,User interface,,,,
+GUI,TC_LANG_GUI_004,Dropdown-ngon-ngu,GUI,Flag Icons,UK Flag,Verify the UK/British flag icon renders correctly,Dropdown is expanded,,"1. Click on the language dropdown.
+2. Observe the EN option.","UK flag (Union Jack) is displayed as a small rectangular icon on the left side of ""EN"" text. Clearly recognizable.",specs.md - UI Elements (A.2 Tieng Anh),Medium,User interface,,,,
+GUI,TC_LANG_GUI_005,Dropdown-ngon-ngu,GUI,Text Display,Color and Contrast,Verify text is readable with proper contrast against dark background,Dropdown is visible,,"1. Observe VN text in collapsed state.
+2. Open dropdown and observe EN text.","Both ""VN"" and ""EN"" text are displayed in white color with sufficient contrast against the dark backgrounds.",specs.md - Visual Design,Medium,User interface,,,,
+GUI,TC_LANG_GUI_006,Dropdown-ngon-ngu,GUI,Hover State,EN Option Hover,Verify hover visual feedback on the EN language option,Dropdown is expanded,,"1. Click to open the dropdown.
+2. Hover mouse over the EN option.",EN option background changes to a highlight color to indicate interactive state. Cursor changes to pointer.,specs.md - UI Elements (A.2 Tieng Anh),Medium,User interface,,,,
+GUI,TC_LANG_GUI_007,Dropdown-ngon-ngu,GUI,Hover State,VN Option Hover,Verify hover visual feedback on the VN language option when not selected,Current language is EN and dropdown is expanded,,"1. Switch language to EN first.
+2. Click to open the dropdown.
+3. Hover mouse over the VN option.",VN option background changes to indicate hover state. Cursor changes to pointer.,specs.md - UI Elements (A.1 Tieng Viet),Medium,User interface,,,,
+GUI,TC_LANG_GUI_008,Dropdown-ngon-ngu,GUI,Selected State,Visual Distinction,Verify visual difference between selected and non-selected language,Dropdown is expanded,,"1. Click to open the dropdown.
+2. Compare the selected language item vs the non-selected option.","Selected language (top area) has a distinct dark gray background. Non-selected language (bottom area) has a darker/black background. Clear visual distinction between the two states.",specs.md - UI Elements (A. Dropdown-List),High,User interface,,,,
+GUI,TC_LANG_GUI_009,Dropdown-ngon-ngu,GUI,Dimensions,EN Option Size,Verify the EN option item matches design dimensions,Dropdown is expanded,,"1. Open dropdown.
+2. Inspect EN option element dimensions.",EN option measures approximately 110x56px as per design spec.,specs.md - UI Elements (A.2 Tieng Anh),Low,User interface,,,,
+GUI,TC_LANG_GUI_010,Dropdown-ngon-ngu,GUI,Responsive Design,Mobile (320px),Verify dropdown displays correctly on mobile viewport,Browser viewport set to 320px width,,"1. Set viewport to 320px width.
+2. Navigate to any page.
+3. Observe language dropdown.","Language dropdown is visible, properly sized for mobile, touch target at least 44x44px. Flag and text are not cut off.",specs.md - Responsive Design,High,User interface,,,,
+GUI,TC_LANG_GUI_011,Dropdown-ngon-ngu,GUI,Responsive Design,Tablet (768px),Verify dropdown displays correctly on tablet viewport,Browser viewport set to 768px width,,"1. Set viewport to 768px width.
+2. Navigate to any page.
+3. Observe language dropdown.","Language dropdown displays correctly, properly positioned in header, all elements visible.",specs.md - Responsive Design,Medium,User interface,,,,
+GUI,TC_LANG_GUI_012,Dropdown-ngon-ngu,GUI,Responsive Design,Desktop (1024px+),Verify dropdown displays correctly on desktop viewport,Browser viewport set to 1024px or wider,,"1. Set viewport to 1024px width.
+2. Navigate to any page.
+3. Observe language dropdown.","Language dropdown displays correctly at top-right of header, matching Figma design specifications.",specs.md - Responsive Design,Medium,User interface,,,,
+GUI,TC_LANG_GUI_013,Dropdown-ngon-ngu,GUI,Layout,Header Position,Verify dropdown is positioned correctly within the page header,User is on any page,,"1. Navigate to any page.
+2. Observe dropdown position within header.","Dropdown is positioned at the top-right area of the header, properly aligned with other header elements.",specs.md - UI Elements (A. Dropdown-List),Medium,User interface,,,,
+GUI,TC_LANG_GUI_014,Dropdown-ngon-ngu,GUI,Accessibility,Focus Indicator,Verify visible focus indicator when dropdown receives keyboard focus,User is on any page,,"1. Use Tab key to navigate to the dropdown.
+2. Observe the focus state.",A visible focus ring/outline is displayed around the dropdown when it receives keyboard focus.,viewpoints.md - Additional Viewpoints,Medium,User interface,,,,
+GUI,TC_LANG_GUI_015,Dropdown-ngon-ngu,GUI,Display Update,After Switch to EN,Verify dropdown updates its display after switching to English,Current language is VN,,"1. Open dropdown.
+2. Click EN option.
+3. Observe collapsed dropdown.","Collapsed dropdown now shows UK flag + ""EN"" text. Previously displayed VN flag is replaced.",specs.md - UI Elements (A. Dropdown-List),High,User interface,,,,
+FUNCTION,TC_LANG_FUN_001,Dropdown-ngon-ngu,FUNCTION,Open/Close,Open by Click,Verify clicking the dropdown opens the language menu,Dropdown is in collapsed state,,"1. Click on the language dropdown.",Dropdown expands showing both VN and EN options. Selected language is visually distinguished from the non-selected option.,specs.md - Functional Requirements,High,Functional,,,,
+FUNCTION,TC_LANG_FUN_002,Dropdown-ngon-ngu,FUNCTION,Open/Close,Close by Click on Dropdown,Verify clicking the dropdown again closes the menu,Dropdown is expanded,,"1. Click on the language dropdown to open it.
+2. Click on the dropdown trigger again.",Dropdown collapses. Current language selection remains unchanged.,specs.md - Functional Requirements,High,Functional,,,,
+FUNCTION,TC_LANG_FUN_003,Dropdown-ngon-ngu,FUNCTION,Open/Close,Close by Click Outside,Verify clicking outside the dropdown closes the menu,Dropdown is expanded,,"1. Click on the language dropdown to open it.
+2. Click on any area outside the dropdown.",Dropdown collapses. Current language selection remains unchanged.,viewpoints.md - Event in Select Box,High,Functional,,,,
+FUNCTION,TC_LANG_FUN_004,Dropdown-ngon-ngu,FUNCTION,Language Selection,Select English,Verify selecting EN changes the application language to English,Current language is VN,,"1. Click on the language dropdown.
+2. Click on the EN option.","Dropdown closes. Dropdown display updates to show UK flag + ""EN"". Application UI text changes to English.",specs.md - UI Elements (A.2 Tieng Anh),High,Functional,,,,
+FUNCTION,TC_LANG_FUN_005,Dropdown-ngon-ngu,FUNCTION,Language Selection,Select Vietnamese,Verify selecting VN changes the application language to Vietnamese,Current language is EN,,"1. Click on the language dropdown.
+2. Click on the VN option.","Dropdown closes. Dropdown display updates to show Vietnam flag + ""VN"". Application UI text changes to Vietnamese.",specs.md - UI Elements (A.1 Tieng Viet),High,Functional,,,,
+FUNCTION,TC_LANG_FUN_006,Dropdown-ngon-ngu,FUNCTION,Language Selection,Re-select Current Language,Verify selecting the already-active language does not cause errors,Current language is VN,,"1. Click on the language dropdown.
+2. Click on the VN option (already selected).",Dropdown closes. Language remains VN. No errors or visual glitches occur.,viewpoints.md - Select value from list,Medium,Functional,,,,
+FUNCTION,TC_LANG_FUN_007,Dropdown-ngon-ngu,FUNCTION,Persistence,After Page Reload,Verify selected language persists after reloading the page,User has switched language to EN,,"1. Switch language to EN.
+2. Reload the page (F5).",After reload dropdown shows EN and UI remains in English.,viewpoints.md - Additional Viewpoints,High,Functional,,,,
+FUNCTION,TC_LANG_FUN_008,Dropdown-ngon-ngu,FUNCTION,Persistence,Across Pages,Verify selected language persists when navigating between pages,User has switched language to EN,,"1. Switch language to EN on the current page.
+2. Navigate to a different page (e.g. kudos page).
+3. Observe language dropdown and page content.",Dropdown shows EN on the new page. UI content is displayed in English.,viewpoints.md - Additional Viewpoints,High,Functional,,,,
+FUNCTION,TC_LANG_FUN_009,Dropdown-ngon-ngu,FUNCTION,Language Selection,Switch Multiple Times,Verify switching language back and forth works correctly,,,"1. Switch to EN.
+2. Verify UI is in English.
+3. Switch back to VN.
+4. Verify UI is in Vietnamese.
+5. Switch to EN again.
+6. Verify UI is in English.",Each switch correctly updates the dropdown display and application UI language without errors.,viewpoints.md - Select value from list,High,Functional,,,,
+FUNCTION,TC_LANG_FUN_010,Dropdown-ngon-ngu,FUNCTION,Keyboard Interaction,Open with Enter,Verify dropdown can be opened via keyboard Enter key,Dropdown has keyboard focus,,"1. Tab to the language dropdown.
+2. Press Enter key.",Dropdown expands showing language options.,viewpoints.md - Event in Select Box,Medium,Functional,,,,
+FUNCTION,TC_LANG_FUN_011,Dropdown-ngon-ngu,FUNCTION,Keyboard Interaction,Arrow Keys Navigation,Verify arrow keys navigate between language options,Dropdown is expanded via keyboard,,"1. Open dropdown with Enter.
+2. Press Down arrow key.
+3. Press Up arrow key.",Down arrow highlights the next option. Up arrow highlights the previous option. Highlighted option is visually indicated.,viewpoints.md - Event in Select Box,Medium,Functional,,,,
+FUNCTION,TC_LANG_FUN_012,Dropdown-ngon-ngu,FUNCTION,Keyboard Interaction,Select with Enter,Verify pressing Enter selects the highlighted language option,"Dropdown is expanded, an option is highlighted",,"1. Open dropdown.
+2. Use arrow keys to highlight EN.
+3. Press Enter.",EN is selected. Dropdown closes. Language updates to English.,viewpoints.md - Event in Select Box,Medium,Functional,,,,
+FUNCTION,TC_LANG_FUN_013,Dropdown-ngon-ngu,FUNCTION,Keyboard Interaction,Close with Escape,Verify pressing Escape closes the dropdown without changing selection,Dropdown is expanded,,"1. Open dropdown.
+2. Press Escape key.",Dropdown closes. Language selection remains unchanged.,viewpoints.md - Event in Select Box,Medium,Functional,,,,
+FUNCTION,TC_LANG_FUN_014,Dropdown-ngon-ngu,FUNCTION,Language Selection,Auth State Unaffected,Verify switching language does not affect authentication state,User is logged in,Valid Google account session,"1. Log in to the application.
+2. Switch language from VN to EN.
+3. Verify user is still authenticated.",User remains logged in after language switch. No re-authentication required.,specs.md - Security Considerations,High,Functional,,,,
+FUNCTION,TC_LANG_FUN_015,Dropdown-ngon-ngu,FUNCTION,Touch Interaction,Mobile Touch,Verify dropdown works correctly with touch interactions on mobile,User is on a mobile device or emulated touch device,,"1. Tap on the language dropdown.
+2. Tap on EN option.",Dropdown opens on first tap. Language switches to EN on second tap. Dropdown closes after selection.,viewpoints.md - Additional Viewpoints,High,Functional,,,,
+FUNCTION,TC_LANG_FUN_016,Dropdown-ngon-ngu,FUNCTION,Edge Cases,Rapid Click,Verify rapid clicking does not cause inconsistent state,,,"1. Rapidly click on the dropdown toggle multiple times.",Dropdown opens and closes correctly without getting stuck in an inconsistent state.,viewpoints.md - Event in Select Box,Medium,Functional,,,,
+FUNCTION,TC_LANG_FUN_017,Dropdown-ngon-ngu,FUNCTION,Security,Client-Side Value Manipulation,Verify changing language value via dev tools does not affect server-side behavior,User is on any page,,"1. Open browser dev tools.
+2. Inspect the dropdown element.
+3. Change the language value attribute to an invalid value.
+4. Attempt to submit or navigate.",Application behavior is unaffected by the client-side manipulation. Server uses validated language value.,viewpoints.md - Update Value List (Security),Medium,Functional,,,,
+FUNCTION,TC_LANG_FUN_018,Dropdown-ngon-ngu,FUNCTION,Security,Inspect Add New Option,Verify adding a new language option via dev tools does not affect functionality,User is on any page,,"1. Open browser dev tools.
+2. Add a new option element (e.g. ""FR"") to the dropdown.
+3. Select the new option.",Application ignores the invalid option. Only VN and EN are accepted as valid language selections.,viewpoints.md - Update Value List (Security),Medium,Functional,,,,
+FUNCTION,TC_LANG_FUN_019,Dropdown-ngon-ngu,FUNCTION,Persistence,After Browser Restart,Verify language preference is remembered after closing and reopening browser,User switched language to EN,,"1. Switch language to EN.
+2. Close the browser completely.
+3. Reopen browser and navigate to the application.",Application loads with EN language (or falls back to default VN based on cookie/storage implementation).,viewpoints.md - Additional Viewpoints,Low,Functional,,,,
+FUNCTION,TC_LANG_FUN_020,Dropdown-ngon-ngu,FUNCTION,Default Behavior,First Visit Default Language,Verify the default language is VN on first visit,User visits application for the first time (no cookies/storage),,"1. Clear all browser data for the application.
+2. Navigate to the application.","Language dropdown shows Vietnam flag + ""VN"". Application UI is displayed in Vietnamese.",specs.md - Functional Requirements,High,Functional,,,,

@@ -1,0 +1,101 @@
+Section,TC_ID,Page_Name,Category,Sub_Category,Sub_Sub_Category,Test_Objective,Precondition,Test_Data,Steps,Expected_Result,Specs,Priority,Testcase_Type,Test_Result,Executed_Date,Tester,Note
+ACCESSING,TC_LOGIN_ACC_001,Login,ACCESSING,URL Access,Direct Navigation,Verify unauthenticated user can access the Login page via direct URL,User is not logged in. Browser has no active session.,URL: /login,"1. Open browser.
+2. Navigate to /login.",Login page is displayed with all elements (header, hero section, Login button, footer).,specs.md - Screen Overview,High,Access control and security,,,,
+ACCESSING,TC_LOGIN_ACC_002,Login,ACCESSING,Authenticated Redirect,Already Logged In,Verify authenticated user is redirected away from the Login page,User is already logged in with a valid session.,Valid Google account session,"1. Log in successfully with Google account.
+2. Navigate to /login directly.",User is redirected to the home page (or appropriate landing page). Login page is not displayed.,specs.md - Security Considerations,High,Access control and security,,,,
+ACCESSING,TC_LOGIN_ACC_003,Login,ACCESSING,Session Expiry,Expired Token,Verify user with expired session token is shown the Login page,User previously logged in but session token has expired.,Expired session token,"1. Log in successfully.
+2. Wait for session token to expire (or manually clear/expire the token).
+3. Navigate to a protected page.",User is redirected to the Login page. Login page displays correctly.,viewpoints.md - Login by Google Account (Expired token),High,Access control and security,,,,
+ACCESSING,TC_LOGIN_ACC_004,Login,ACCESSING,Session Expiry,Cleared Cookies,Verify user is shown Login page after clearing browser cookies,User previously logged in.,Browser with cookies,"1. Log in successfully.
+2. Clear all browser cookies.
+3. Navigate to the application.",User is redirected to the Login page. No auto-login occurs.,viewpoints.md - Login by Google Account (Clear cookies),High,Access control and security,,,,
+ACCESSING,TC_LOGIN_ACC_005,Login,ACCESSING,Security Headers,HTTP Headers,Verify security headers are present on the Login page response,Application is deployed and accessible.,,"1. Open browser developer tools.
+2. Navigate to /login.
+3. Inspect response headers.","Response includes: X-Content-Type-Options: nosniff, X-Frame-Options: DENY, Referrer-Policy: strict-origin-when-cross-origin.",specs.md - Security Considerations,Medium,Access control and security,,,,
+ACCESSING,TC_LOGIN_ACC_006,Login,ACCESSING,URL Access,Login Page as Default,Verify the Login page is the default landing page for unauthenticated users,User is not logged in.,URL: / (root),"1. Open browser.
+2. Navigate to the root URL /.",User is redirected to /login or the Login page is displayed.,specs.md - Security Considerations,High,Access control and security,,,,
+ACCESSING,TC_LOGIN_ACC_007,Login,ACCESSING,Authenticated Redirect,Post-Logout Access,Verify Login page is accessible after logout,User has just logged out.,,"1. Log in successfully.
+2. Log out.
+3. Observe the page displayed.",Login page is displayed. No auto-login occurs. User must re-authenticate to access protected content.,viewpoints.md - Login by Google Account (After Logout),High,Access control and security,,,,
+GUI,TC_LOGIN_GUI_001,Login,GUI,Screen Layout,Overall Layout,Verify the Login page displays all elements correctly per design specs,User is not logged in.,,"1. Navigate to /login.
+2. Observe the overall page layout.","Page displays: Header with logo and language selector at top, Hero section with key visual and ""ROOT FURTHER"" title, description text, ""LOGIN With Google"" button, and Footer with copyright text at bottom. All elements match the designed spec.",specs.md - UI Elements,High,User interface,,,,
+GUI,TC_LOGIN_GUI_002,Login,GUI,Header,Logo Display,Verify the logo displays correctly in the header,User is on the Login page.,,"1. Navigate to /login.
+2. Observe the header area at the top-left.","""Sun Annual Awards 2025"" logo is displayed at the top-left corner. Logo is non-interactive.",specs.md - UI Elements (A.1 Logo),Medium,User interface,,,,
+GUI,TC_LOGIN_GUI_003,Login,GUI,Header,Language Selector Default,Verify the language selector displays default state correctly,User is on the Login page.,,"1. Navigate to /login.
+2. Observe the language selector at the top-right of the header.","Language selector displays: flag icon on the left, ""VN"" text, and a chevron/down arrow icon.",specs.md - UI Elements (A.2 Language Selector),Medium,User interface,,,,
+GUI,TC_LOGIN_GUI_004,Login,GUI,Hero Section,Key Visual,Verify the key visual and title display correctly,User is on the Login page.,,"1. Navigate to /login.
+2. Observe the hero section.",Background artwork/illustration is displayed. """ROOT FURTHER"" title text is visible and properly styled.",specs.md - UI Elements (B.1 Key Visual),Medium,User interface,,,,
+GUI,TC_LOGIN_GUI_005,Login,GUI,Hero Section,Content Text,Verify the description text displays correctly,User is on the Login page.,,"1. Navigate to /login.
+2. Observe the text content in the hero section.","Two lines of text are displayed:
+- ""Bat dau hanh trinh cua ban cung SAA 2025.""
+- ""Dang nhap de kham pha!""",specs.md - UI Elements (B.2 Content),Medium,User interface,,,,
+GUI,TC_LOGIN_GUI_006,Login,GUI,Login Button,Default State,Verify the Login button displays correctly in default state,User is on the Login page.,,"1. Navigate to /login.
+2. Observe the ""LOGIN With Google"" button.","Button displays with Google icon and text ""LOGIN With Google"". Button is enabled and clickable.",specs.md - UI Elements (B.3 Login Button),High,User interface,,,,
+GUI,TC_LOGIN_GUI_007,Login,GUI,Login Button,Hover State,Verify the Login button hover state,User is on the Login page.,,"1. Navigate to /login.
+2. Hover the mouse cursor over the ""LOGIN With Google"" button.",Button shows a slight elevation/shadow effect on hover. Cursor changes to pointer.,specs.md - UI Elements (B.3 Login Button),Medium,User interface,,,,
+GUI,TC_LOGIN_GUI_008,Login,GUI,Login Button,Loading State,Verify the Login button loading/processing state,User is on the Login page. Google OAuth flow is initiated.,,"1. Navigate to /login.
+2. Click the ""LOGIN With Google"" button.
+3. Observe the button during the authentication process.",Button becomes disabled. A loading indicator is displayed on or near the button. Button does not respond to additional clicks.,specs.md - UI Elements (B.3 Login Button),High,User interface,,,,
+GUI,TC_LOGIN_GUI_009,Login,GUI,Footer,Copyright Display,Verify the footer displays correctly,User is on the Login page.,,"1. Navigate to /login.
+2. Scroll to the bottom of the page (if needed).
+3. Observe the footer area.","""Ban quyen thuoc ve Sun* (c) 2025"" is displayed. Footer is fixed at the bottom of the page. Footer is non-interactive.",specs.md - UI Elements (D. Footer),Medium,User interface,,,,
+FUNCTION,TC_LOGIN_FUN_001,Login,FUNCTION,Google Login,First Time - Logged In Google,Verify first-time login when user is already logged into Google with a registered account,User has not logged into the application before. User is currently logged into Google with a registered account.,Valid Google account registered in the system,"1. Navigate to /login.
+2. Click ""LOGIN With Google"" button.",Google OAuth flow completes. User is authenticated and redirected to the home page successfully without needing to enter Google credentials.,viewpoints.md - Login by Google Account (First time - registered logging),High,Functional,,,,
+FUNCTION,TC_LOGIN_FUN_002,Login,FUNCTION,Google Login,First Time - Other Google Account,Verify first-time login when a different Google account is logged in,User has not logged into the application before. A non-registered Google account is currently logged in on the browser.,Non-registered Google account active in browser,"1. Navigate to /login.
+2. Click ""LOGIN With Google"" button.
+3. Google account chooser is displayed.
+4. Select or enter the registered account.",Google account selection screen is shown. User can switch to the registered account and login successfully.,viewpoints.md - Login by Google Account (First time - other account),High,Functional,,,,
+FUNCTION,TC_LOGIN_FUN_003,Login,FUNCTION,Google Login,First Time - No Google Session (PC),Verify first-time login when no Google account is active on PC,User has not logged into the application before. No Google account is logged in on the browser.,Valid Google account credentials,"1. Navigate to /login.
+2. Click ""LOGIN With Google"" button.
+3. Google login screen is displayed.
+4. Enter valid Google credentials.
+5. Complete Google authentication.","Google login screen is displayed. After entering valid credentials, user is authenticated and redirected to the home page.",viewpoints.md - Login by Google Account (First time - no Google session PC),High,Functional,,,,
+FUNCTION,TC_LOGIN_FUN_004,Login,FUNCTION,Google Login,First Time - No Google Account (Mobile),Verify first-time login on mobile with no Google account on device,User is on a mobile device with no Google account configured.,Valid Google account credentials,"1. Open the application on mobile browser.
+2. Navigate to /login.
+3. Click ""LOGIN With Google"" button.
+4. Google login screen is displayed.
+5. Enter valid Google credentials.","Google login screen is displayed. After entering valid credentials, user is authenticated and redirected to the home page.",viewpoints.md - Login by Google Account (First time - mobile no account),High,Functional,,,,
+FUNCTION,TC_LOGIN_FUN_005,Login,FUNCTION,Session Management,Auto-Login - Valid Token + Google Active,Verify auto-login when session token is valid and Google account is active,User has previously logged in. Session token has not expired. Registered Google account is logged in.,Valid session token,"1. Close the application tab (do not logout).
+2. Reopen the application URL.",User is automatically logged in and redirected to the home page without seeing the Login page.,viewpoints.md - Login by Google Account (Next time - valid token - Google active),High,Functional,,,,
+FUNCTION,TC_LOGIN_FUN_006,Login,FUNCTION,Session Management,Auto-Login - Valid Token + Google Inactive,Verify auto-login when session token is valid but Google account is not active,User has previously logged in. Session token has not expired. Registered Google account is not currently logged in on Google.,Valid session token,"1. Log out of Google (but not the application).
+2. Navigate to the application URL.",User is automatically logged in and redirected to the home page (session is independent of Google session).,viewpoints.md - Login by Google Account (Next time - valid token - Google inactive),High,Functional,,,,
+FUNCTION,TC_LOGIN_FUN_007,Login,FUNCTION,Session Management,Expired Token + Google Active,Verify login behavior when session token expired but Google is active,User has previously logged in. Session token has expired. Registered Google account is logged in.,Expired session token,"1. Wait for the session token to expire.
+2. Navigate to the application URL.","Login page is displayed. User can click ""LOGIN With Google"" and re-authenticate successfully.",viewpoints.md - Login by Google Account (Next time - expired token - Google active),High,Functional,,,,
+FUNCTION,TC_LOGIN_FUN_008,Login,FUNCTION,Session Management,Expired Token + Google Inactive,Verify login behavior when session token expired and Google is inactive,User has previously logged in. Session token has expired. Registered Google account is not logged in on Google.,Expired session token,"1. Wait for the session token to expire.
+2. Log out of Google.
+3. Navigate to the application URL.","Login page is displayed. User clicks ""LOGIN With Google"", Google login screen appears. User enters credentials and logs in successfully.",viewpoints.md - Login by Google Account (Next time - expired token - Google inactive),High,Functional,,,,
+FUNCTION,TC_LOGIN_FUN_009,Login,FUNCTION,Session Management,After Clear Cookies,Verify login behavior after clearing browser cookies,User has previously logged in successfully.,,"1. Log in successfully.
+2. Clear all browser cookies.
+3. Navigate to the application URL.","Login page is displayed. No auto-login occurs. User must click ""LOGIN With Google"" to re-authenticate.",viewpoints.md - Login by Google Account (Clear cookies),High,Functional,,,,
+FUNCTION,TC_LOGIN_FUN_010,Login,FUNCTION,Session Management,After Logout,Verify login page is shown after user logs out,User is currently logged in.,,"1. Log out from the application.
+2. Observe the page displayed.","Login page is displayed. No auto-login occurs. User must click ""LOGIN With Google"" to re-authenticate.",viewpoints.md - Login by Google Account (After logout),High,Functional,,,,
+FUNCTION,TC_LOGIN_FUN_011,Login,FUNCTION,Session Management,Different Browser,Verify login behavior on a different browser,User has logged in on browser A.,Valid Google account,"1. Log in successfully on Browser A.
+2. Open Browser B (where user has not logged in before).
+3. Navigate to the application URL on Browser B.",Login page is displayed on Browser B. No auto-login occurs. User must authenticate separately on Browser B.,viewpoints.md - Login by Google Account (Another browser),Medium,Functional,,,,
+FUNCTION,TC_LOGIN_FUN_012,Login,FUNCTION,Language Selector,Open Dropdown,Verify language selector opens the language dropdown,User is on the Login page.,,"1. Navigate to /login.
+2. Click the language selector ""VN"" button in the header.",Language dropdown is displayed with available language options.,specs.md - UI Elements (A.2 Language Selector),Medium,Functional,,,,
+FUNCTION,TC_LOGIN_FUN_013,Login,FUNCTION,Language Selector,Switch Language,Verify language can be changed from the Login page,User is on the Login page. Language dropdown is open.,,"1. Navigate to /login.
+2. Click the language selector.
+3. Select a different language from the dropdown.",The page content updates to reflect the selected language. Language selector displays the newly selected language.,specs.md - UI Elements (A.2 Language Selector),Medium,Functional,,,,
+FUNCTION,TC_LOGIN_FUN_014,Login,FUNCTION,Error Handling,Google Auth Cancelled,Verify behavior when user cancels Google authentication,User is on the Login page.,,"1. Navigate to /login.
+2. Click ""LOGIN With Google"" button.
+3. Google OAuth popup/page appears.
+4. Close or cancel the Google authentication.",User is returned to the Login page. No error crash occurs. Login button returns to its default (enabled) state.,specs.md - UI Elements (B.3 Login Button),High,Functional,,,,
+FUNCTION,TC_LOGIN_FUN_015,Login,FUNCTION,Error Handling,Network Error,Verify behavior when network connection is lost during login,User is on the Login page.,,"1. Navigate to /login.
+2. Disconnect from the network.
+3. Click ""LOGIN With Google"" button.",An appropriate error message is displayed or browser shows network error. Login button returns to default state when network is restored.,specs.md - Security Considerations,Medium,Functional,,,,
+FUNCTION,TC_LOGIN_FUN_016,Login,FUNCTION,Error Handling,Deleted Account,Verify login with a deleted Google account,User's account has been deleted from the system.,Deleted Google account credentials,"1. Navigate to /login.
+2. Click ""LOGIN With Google"" button.
+3. Authenticate with the deleted account's Google credentials.",Login fails. An appropriate error message is displayed. User remains on the Login page.,viewpoints.md - Other Cases (Special account),High,Functional,,,,
+FUNCTION,TC_LOGIN_FUN_017,Login,FUNCTION,Error Handling,Inactive Account,Verify login with an inactive/disabled account,User's account exists but is inactive/disabled in the system.,Inactive Google account credentials,"1. Navigate to /login.
+2. Click ""LOGIN With Google"" button.
+3. Authenticate with the inactive account's Google credentials.",Login fails. An appropriate error message is displayed indicating the account is inactive. User remains on the Login page.,viewpoints.md - Other Cases (Special account),High,Functional,,,,
+FUNCTION,TC_LOGIN_FUN_018,Login,FUNCTION,Error Handling,Blocked Account,Verify login with a blocked account,User's account exists but is blocked in the system.,Blocked Google account credentials,"1. Navigate to /login.
+2. Click ""LOGIN With Google"" button.
+3. Authenticate with the blocked account's Google credentials.",Login fails. An appropriate error message is displayed indicating the account is blocked. User remains on the Login page.,viewpoints.md - Other Cases (Special account),High,Functional,,,,
+FUNCTION,TC_LOGIN_FUN_019,Login,FUNCTION,Multi-device,Simultaneous Login,Verify login on multiple devices simultaneously,User has one valid Google account. Two devices are available.,Valid Google account,"1. Log in on Device A.
+2. Log in on Device B with the same account.
+3. Verify session on both devices.","Based on application spec: both sessions remain active, or the earlier session is invalidated.",viewpoints.md - Other Cases (Multi devices),Medium,Functional,,,,
+FUNCTION,TC_LOGIN_FUN_020,Login,FUNCTION,Multi-device,Multiple Accounts on One Device,Verify logging in with multiple accounts on one device,User has two valid Google accounts.,Two valid Google accounts,"1. Log in with Account A.
+2. Log out.
+3. Log in with Account B.",Each login/logout cycle works correctly. The application displays the correct user data for each account.,viewpoints.md - Other Cases (Multi accounts),Medium,Functional,,,,

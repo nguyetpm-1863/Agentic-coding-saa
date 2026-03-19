@@ -1,0 +1,55 @@
+Section,TC_ID,Page_Name,Category,Sub_Category,Sub_Sub_Category,Test_Objective,Precondition,Test_Data,Steps,Expected_Result,Specs,Priority,Testcase_Type,Test_Result,Executed_Date,Tester,Note
+Floating Action Button,ACC-001,Floating Action Button - phim noi chuc nang,ACCESSING,FAB Visibility,,"Confirm the Floating Action Button is visible on screens where it should appear",User is logged in and on a page that should display the FAB,,"1. Navigate to a page where FAB is specified to appear
+2. Observe the bottom-right area of the screen","FAB widget button is displayed at the bottom-right corner with two icons and '/' separator on yellow background","A. Widget Button: Nut noi mo option hanh dong nhanh. Display: hai icon va '/' tren nen vien vang (41x32px)",High,Normal,,,,
+Floating Action Button,ACC-002,Floating Action Button - phim noi chuc nang,ACCESSING,FAB Visibility After Scroll,,"Confirm the FAB stays fixed in position when the user scrolls the page",User is on a page with scrollable content and FAB is displayed,,"1. Scroll down the page using mouse wheel
+2. Scroll up the page
+3. Scroll using keyboard (Page Down, Page Up, Arrow keys)","FAB remains visible and fixed at the bottom-right corner throughout scrolling","A. Widget Button: Fixed position floating button",High,Normal,,,,
+Floating Action Button,ACC-003,Floating Action Button - phim noi chuc nang,ACCESSING,FAB Visibility by User Role,,"Confirm the FAB is hidden for users who should not have access",User is not logged in or does not have the required role,,"1. Navigate to a page where FAB would normally appear
+2. Observe the bottom-right area of the screen",FAB is not displayed,,Medium,Normal,,,,
+Floating Action Button,ACC-004,Floating Action Button - phim noi chuc nang,ACCESSING,FAB Visibility After Reload,,"Confirm the FAB persists after refreshing the page",User is logged in on a page with the FAB,,"1. Verify FAB is displayed
+2. Reload the page (F5 or browser refresh)
+3. Observe the FAB area","FAB is displayed correctly after page reload in collapsed state","A. Widget Button: Default collapsed state",Medium,Normal,,,,
+Floating Action Button,GUI-001,Floating Action Button - phim noi chuc nang,GUI,FAB Default Appearance,,"Confirm the FAB displays correctly in its default collapsed state",User is on a page with the FAB displayed,,"1. Observe the FAB widget button
+2. Check the shape, size, background color, and icon layout","FAB is a rounded button with yellow background
+Size is 41x32px
+Two icons displayed with '/' separator between them
+Left icon: kudos/write icon, Right icon: the le SAA icon","A. Widget Button: hai icon va '/' tren nen vien vang (41x32px)",High,Normal,,,,
+Floating Action Button,GUI-002,Floating Action Button - phim noi chuc nang,GUI,FAB Position,,"Confirm the FAB is positioned at the bottom-right corner of the viewport",User is on a page with the FAB displayed,,"1. Observe the FAB position on the screen
+2. Compare with design spec","FAB is positioned at the bottom-right corner of the viewport, matching the design specification","A. Widget Button: Position as per design",High,Normal,,,,
+Floating Action Button,GUI-003,Floating Action Button - phim noi chuc nang,GUI,FAB Hover State,,"Confirm the FAB shows a light shadow effect on hover",User is on a page with the FAB displayed,,"1. Move the mouse cursor over the FAB widget button
+2. Observe the visual change",FAB displays a light shadow effect when hovered,"A. Widget Button: Hover: Bong nhe",Medium,Normal,,,,
+Floating Action Button,GUI-004,Floating Action Button - phim noi chuc nang,GUI,FAB Icon Rendering,,"Confirm both icons inside the FAB render correctly",User is on a page with the FAB displayed,,"1. Observe the kudos (write) icon on the left
+2. Observe the '/' separator
+3. Observe the the le SAA icon on the right","Both icons are clearly visible, properly sized, and the '/' separator is displayed between them","A.1 icon viet kudos, A.2 icon the le saa: hai icon va '/' tren nen vien vang",High,Normal,,,,
+Floating Action Button,GUI-005,Floating Action Button - phim noi chuc nang,GUI,FAB Z-Index,,"Confirm the FAB floats above all other page content",User is on a page with content near the bottom-right corner,,"1. Scroll so that page content overlaps the FAB position
+2. Observe whether FAB is above or below the content","FAB always floats above page content, never hidden behind other elements",,Medium,Normal,,,,
+Floating Action Button,GUI-006,Floating Action Button - phim noi chuc nang,GUI,FAB Responsive,Mobile,"Confirm the FAB displays correctly on mobile viewport",Page is viewed on a mobile device or viewport width < 768px,,"1. Resize browser to mobile width (320px - 767px)
+2. Observe the FAB position, size, and appearance","FAB is displayed correctly, positioned at bottom-right, touch target is at least 44x44px",,High,Normal,,,,
+Floating Action Button,GUI-007,Floating Action Button - phim noi chuc nang,GUI,FAB Responsive,Tablet,"Confirm the FAB displays correctly on tablet viewport",Page is viewed on a tablet device or viewport width 768px - 1023px,,"1. Resize browser to tablet width (768px)
+2. Observe the FAB position, size, and appearance",FAB is displayed correctly at bottom-right corner matching design specs,,Medium,Normal,,,,
+Floating Action Button,GUI-008,Floating Action Button - phim noi chuc nang,GUI,FAB Responsive,Desktop,"Confirm the FAB displays correctly on desktop viewport","Page is viewed on a desktop device or viewport width >= 1024px",,"1. Resize browser to desktop width (1024px, 1440px)
+2. Observe the FAB position, size, and appearance",FAB is displayed correctly at bottom-right corner matching design specs,,Medium,Normal,,,,
+Floating Action Button,GUI-009,Floating Action Button - phim noi chuc nang,GUI,FAB Zoom,,"Confirm FAB layout is not broken when zooming",User is on a page with the FAB displayed,,"1. Zoom in to 150%
+2. Observe FAB appearance and position
+3. Zoom out to 75%
+4. Observe FAB appearance and position",FAB remains properly displayed without layout breakage at various zoom levels,,Low,Normal,,,,
+Floating Action Button,FUN-001,Floating Action Button - phim noi chuc nang,FUNCTION,FAB Click to Expand,,"Confirm clicking the FAB widget button expands to show 2 action options",User is on a page with the FAB displayed in collapsed state,,1. Click on the FAB widget button,"FAB expands to show 2 action options: 'the le SAA' and 'viet kudos' (navigates to expanded state 313:9139)","A. Widget Button: Click -> Mo 2 option chon xem the le hoac viet kudos. Navigation: on_click -> 313:9139",High,Normal,,,,
+Floating Action Button,FUN-002,Floating Action Button - phim noi chuc nang,FUNCTION,FAB Double Click,,"Confirm the FAB behaves correctly on double click",User is on a page with the FAB displayed in collapsed state,,1. Double-click on the FAB widget button,"FAB expands to show 2 action options (same as single click), no error or unexpected behavior","A. Widget Button: Click behavior",Medium,Normal,,,,
+Floating Action Button,FUN-003,Floating Action Button - phim noi chuc nang,FUNCTION,FAB Keyboard Access,Tab Navigation,"Confirm the FAB is accessible via keyboard Tab navigation",User is on a page with the FAB displayed,,"1. Press Tab key repeatedly until focus reaches the FAB
+2. Observe focus indicator on the FAB",FAB receives keyboard focus with visible focus indicator,,Medium,Normal,,,,
+Floating Action Button,FUN-004,Floating Action Button - phim noi chuc nang,FUNCTION,FAB Keyboard Access,Enter Activation,"Confirm pressing Enter on focused FAB opens the expanded state",FAB has keyboard focus,,"1. Tab to the FAB widget button
+2. Press Enter key",FAB expands to show 2 action options (same as click behavior),"A. Widget Button: on_click -> 313:9139",Medium,Normal,,,,
+Floating Action Button,FUN-005,Floating Action Button - phim noi chuc nang,FUNCTION,FAB Position on Scroll,,"Confirm FAB position does not change when scrolling",User is on a scrollable page with the FAB displayed,,"1. Note the FAB position
+2. Scroll down using mouse wheel
+3. Scroll down using keyboard arrows
+4. Scroll using Page Down button
+5. Check FAB position after each scroll action",FAB remains at the same fixed position on screen throughout all scroll methods,,High,Normal,,,,
+Floating Action Button,FUN-006,Floating Action Button - phim noi chuc nang,FUNCTION,FAB Hover Effect,,"Confirm the hover effect produces a light shadow",User is on a page with the FAB displayed,,"1. Move mouse cursor onto the FAB
+2. Observe the shadow effect
+3. Move mouse cursor away from FAB
+4. Observe shadow removal",Light shadow appears on hover and disappears when cursor moves away,"A. Widget Button: Hover: Bong nhe",Low,Normal,,,,
+Floating Action Button,FUN-007,Floating Action Button - phim noi chuc nang,FUNCTION,FAB Background Interaction,,"Confirm page background content is fully interactive when FAB is in collapsed state",User is on a page with the FAB in collapsed state,,"1. Click on various page elements behind/near the FAB
+2. Scroll the page
+3. Interact with other UI elements","All background page elements are fully interactive; FAB does not block interactions except on the FAB button itself",,Medium,Normal,,,,
+Floating Action Button,FUN-008,Floating Action Button - phim noi chuc nang,FUNCTION,FAB Icon Click,Kudos Icon,"Confirm clicking the kudos (write) icon within the FAB triggers the expand action",User is on a page with the FAB displayed in collapsed state,,1. Click specifically on the kudos/write icon (left icon) within the FAB,"FAB expands to show 2 action options (navigates to expanded state 313:9139)","A.1 icon viet kudos: on_click -> 313:9139",Medium,Normal,,,,
+Floating Action Button,FUN-009,Floating Action Button - phim noi chuc nang,FUNCTION,FAB Icon Click,The Le SAA Icon,"Confirm clicking the the le SAA icon within the FAB triggers the expand action",User is on a page with the FAB displayed in collapsed state,,1. Click specifically on the the le SAA icon (right icon) within the FAB,"FAB expands to show 2 action options (navigates to expanded state 313:9139)","A.2 icon the le saa: on_click -> 313:9139",Medium,Normal,,,,

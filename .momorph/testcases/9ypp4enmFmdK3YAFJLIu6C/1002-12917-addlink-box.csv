@@ -1,0 +1,145 @@
+Section,TC_ID,Page_Name,Category,Sub_Category,Sub_Sub_Category,Test_Objective,Precondition,Test_Data,Steps,Expected_Result,Specs,Priority,Testcase_Type,Test_Result,Executed_Date,Tester,Note
+Addlink Box,AC-001,Addlink Box,ACCESSING,Open Modal,,Verify modal opens when user clicks the trigger element,User is on the parent page containing the Add link trigger,,"1. Click the ""Add link"" button/link on the parent page","Modal ""Them duong dan"" is displayed centered on screen with dimmed background overlay. All fields are empty by default.","A, B, C, D",High,Normal,,,,
+Addlink Box,AC-002,Addlink Box,ACCESSING,Open Modal,,Verify modal opens correctly on double-click without duplicate modals,User is on the parent page containing the Add link trigger,,"1. Double-click the ""Add link"" button/link on the parent page",Only one modal instance is displayed. No duplicate modals appear.,"A, B, C, D",Medium,Normal,,,,
+Addlink Box,AC-003,Addlink Box,ACCESSING,Open Modal,,Verify modal can be opened via keyboard navigation,User is on the parent page containing the Add link trigger,,"1. Press Tab to navigate focus to the ""Add link"" trigger
+2. Press Enter","Modal ""Them duong dan"" is displayed correctly.","A, B, C, D",Medium,Normal,,,,
+Addlink Box,AC-004,Addlink Box,ACCESSING,Close Modal,,Verify modal closes when Cancel (Huy) button is clicked,"Modal ""Them duong dan"" is open",,"1. Click the ""Huy"" (Cancel) button",Modal is closed. No data is saved. Parent page returns to previous state.,D.1,High,Normal,,,,
+Addlink Box,AC-005,Addlink Box,ACCESSING,Close Modal,,Verify modal closes when ESC key is pressed,"Modal ""Them duong dan"" is open",,1. Press the ESC key,Modal is closed without saving any data.,D.1,Medium,Normal,,,,
+Addlink Box,AC-006,Addlink Box,ACCESSING,Close Modal,,Verify behavior when clicking outside the modal area,"Modal ""Them duong dan"" is open",,1. Click on the dimmed background area outside the modal,"Modal is closed (or remains open based on spec). No data is saved if closed.",D,Medium,Normal,,,,
+Addlink Box,AC-007,Addlink Box,ACCESSING,Background Blocked,,Verify that background elements are not interactive while modal is displayed,"Modal ""Them duong dan"" is open",,1. Try to click on various elements on the parent page behind the modal overlay,No interaction occurs with background elements. Modal remains displayed.,D,High,Normal,,,,
+Addlink Box,GUI-001,Addlink Box,GUI,Layout,Modal Position,Verify modal is displayed centered with dimmed background overlay,Modal is triggered to open,,"1. Open the ""Add link"" modal
+2. Observe position and background",Modal is centered on the screen. Background is dimmed/covered with overlay.,"A, B, C, D",High,Normal,,,,
+Addlink Box,GUI-002,Addlink Box,GUI,Layout,Title,"Verify title ""Them duong dan"" is displayed correctly",Modal is open,,1. Observe the title area at top of modal,"Title ""Them duong dan"" (Add link) is displayed in bold, dark text, top-left aligned within the modal.",A,High,Normal,,,,
+Addlink Box,GUI-003,Addlink Box,GUI,Layout,Input Fields,"Verify label ""Noi dung"" is displayed correctly for the Text input",Modal is open,,1. Observe the first input field area,"Label ""Noi dung"" is displayed to the left of the text input box.",B.1,High,Normal,,,,
+Addlink Box,GUI-004,Addlink Box,GUI,Layout,Input Fields,Verify the Text input box displays correctly,Modal is open,,1. Observe the Text input box,"Input box is displayed with white background, thin border, rounded corners, approximately 610x56px. Field is empty by default.",B.2,High,Normal,,,,
+Addlink Box,GUI-005,Addlink Box,GUI,Layout,Input Fields,"Verify label ""URL"" is displayed correctly for the Link input",Modal is open,,1. Observe the second input field area,"Label ""URL"" is displayed to the left of the link input box.",C.1,High,Normal,,,,
+Addlink Box,GUI-006,Addlink Box,GUI,Layout,Input Fields,Verify the Link/URL input box displays correctly,Modal is open,,1. Observe the Link input box,"Input box is displayed with white background, thin border, rounded corners, approximately 609x56px. Field is empty by default.",C.2,High,Normal,,,,
+Addlink Box,GUI-007,Addlink Box,GUI,Layout,Buttons,Verify Cancel (Huy) button displays correctly,Modal is open,,1. Observe the Cancel button at bottom-left of modal,"Button displays text ""Huy"" with ""X"" icon. Small size, outlined/bordered style.",D.1,High,Normal,,,,
+Addlink Box,GUI-008,Addlink Box,GUI,Layout,Buttons,Verify Save (Luu) button displays correctly,Modal is open,,1. Observe the Save button at bottom-right of modal,"Button displays text ""Luu"" with link icon. Large size, yellow background.",D.2,High,Normal,,,,
+Addlink Box,GUI-009,Addlink Box,GUI,Display State,Focus State,Verify Text input shows focus highlight when focused,Modal is open,,1. Click into the Text input box,Input box shows a highlighted border (focus ring) indicating it is active.,B.2,Medium,Normal,,,,
+Addlink Box,GUI-010,Addlink Box,GUI,Display State,Focus State,Verify Link input shows focus highlight when focused,Modal is open,,1. Click into the Link/URL input box,Input box shows a highlighted border (focus ring) indicating it is active.,C.2,Medium,Normal,,,,
+Addlink Box,GUI-011,Addlink Box,GUI,Display State,Error State,Verify error message displays correctly when Text field validation fails,Modal is open,,"1. Leave Text field empty
+2. Click Save (Luu)","Error message is displayed near the Text field with correct format, position, and styling.","B, B.2",High,Normal,,,,
+Addlink Box,GUI-012,Addlink Box,GUI,Display State,Error State,Verify error message displays correctly when Link field validation fails,Modal is open,,"1. Leave Link field empty
+2. Click Save (Luu)","Error message is displayed near the Link field with correct format, position, and styling.","C, C.2",High,Normal,,,,
+Addlink Box,GUI-013,Addlink Box,GUI,Responsive,Zoom,Verify modal displays correctly when browser is zoomed,Modal is open,,"1. Zoom browser to 150%
+2. Observe modal layout
+3. Zoom browser to 75%
+4. Observe modal layout",Modal layout is not broken. All elements remain visible and usable at different zoom levels.,"A, B, C, D",Low,Normal,,,,
+Addlink Box,GUI-014,Addlink Box,GUI,Responsive,Screen Size,Verify modal is responsive across different viewport sizes,Modal is open,,"1. View modal at 320px width (mobile)
+2. View at 768px (tablet)
+3. View at 1024px (desktop)
+4. View at 1440px (wide)","Modal adjusts appropriately for each breakpoint. No overflow or cut-off elements. Touch targets >= 44x44px on mobile.","A, B, C, D",Medium,Normal,,,,
+Addlink Box,GUI-015,Addlink Box,GUI,Tab Order,,Verify correct tab order among focusable elements,Modal is open,,1. Press Tab repeatedly to cycle through elements,"Focus moves in order: Text input -> Link input -> Cancel button -> Save button. Focus stays within the modal (focus trap).","B.2, C.2, D.1, D.2",Medium,Normal,,,,
+Addlink Box,GUI-016,Addlink Box,GUI,Scroll Behavior,,Verify modal remains visible when background page has scrollable content,"Modal is open, parent page has scrollable content",,1. Attempt to scroll the page while modal is open,Modal remains centered and fully visible. Background scroll is prevented or modal stays in position.,"A, B, C, D",Medium,Normal,,,,
+Addlink Box,FN-001,Addlink Box,FUNCTION,Text Field,Valid Input,Verify Text field accepts alphabet characters,Modal is open,"""Click here""","1. Enter ""Click here"" in Text field
+2. Enter valid URL in Link field
+3. Click Save",Data saved successfully. Modal closes.,"B, B.2",High,Normal,,,,
+Addlink Box,FN-002,Addlink Box,FUNCTION,Text Field,Valid Input,Verify Text field accepts numeric characters,Modal is open,"""Link123""","1. Enter ""Link123"" in Text field
+2. Enter valid URL in Link field
+3. Click Save",Data saved successfully. Modal closes.,"B, B.2",High,Normal,,,,
+Addlink Box,FN-003,Addlink Box,FUNCTION,Text Field,Valid Input,Verify Text field accepts special characters,Modal is open,"""Link @#$%&!""","1. Enter special characters in Text field
+2. Enter valid URL in Link field
+3. Click Save",Data saved with special characters preserved.,"B, B.2",Medium,Normal,,,,
+Addlink Box,FN-004,Addlink Box,FUNCTION,Text Field,Valid Input,Verify Text field accepts Unicode/multibyte characters,Modal is open,"""Duong dan lien ket""","1. Enter Unicode text in Text field
+2. Enter valid URL in Link field
+3. Click Save",Data saved with Unicode characters preserved.,"B, B.2",Medium,Normal,,,,
+Addlink Box,FN-005,Addlink Box,FUNCTION,Text Field,Valid Input,Verify Text field accepts full-width Japanese characters,Modal is open,"リンクテキスト","1. Enter Japanese text in Text field
+2. Enter valid URL in Link field
+3. Click Save",Data saved with Japanese characters preserved.,"B, B.2",Medium,Normal,,,,
+Addlink Box,FN-006,Addlink Box,FUNCTION,Text Field,Valid Input,Verify Text field handles leading/trailing/between spaces,Modal is open,"""  Hello  World  ""","1. Enter text with redundant spaces in Text field
+2. Enter valid URL in Link field
+3. Click Save",Data saved. Leading/trailing spaces may be trimmed.,"B, B.2",Medium,Normal,,,,
+Addlink Box,FN-007,Addlink Box,FUNCTION,Text Field,Boundary,Verify Text field accepts minimum length (1 char),Modal is open,"""A"" (1 character)","1. Enter ""A"" in Text field
+2. Enter valid URL
+3. Click Save",Data saved successfully.,"B, B.2",High,Normal,,,,
+Addlink Box,FN-008,Addlink Box,FUNCTION,Text Field,Boundary,Verify Text field accepts min+1 length (2 chars),Modal is open,"""AB"" (2 characters)","1. Enter ""AB"" in Text field
+2. Enter valid URL
+3. Click Save",Data saved successfully.,"B, B.2",Medium,Normal,,,,
+Addlink Box,FN-009,Addlink Box,FUNCTION,Text Field,Boundary,Verify Text field accepts maximum length (100 chars),Modal is open,100-character string,"1. Enter 100-char string in Text field
+2. Enter valid URL
+3. Click Save",Data saved successfully.,"B, B.2",High,Normal,,,,
+Addlink Box,FN-010,Addlink Box,FUNCTION,Text Field,Boundary,Verify Text field accepts max-1 length (99 chars),Modal is open,99-character string,"1. Enter 99-char string in Text field
+2. Enter valid URL
+3. Click Save",Data saved successfully.,"B, B.2",Medium,Normal,,,,
+Addlink Box,FN-011,Addlink Box,FUNCTION,Text Field,Invalid Input,Verify error when Text field is empty,Modal is open,(empty),"1. Leave Text field empty
+2. Enter valid URL
+3. Click Save",Error message displayed. Modal remains open.,"B, B.2",High,Normal,,,,
+Addlink Box,FN-012,Addlink Box,FUNCTION,Text Field,Invalid Input,Verify error when Text field has only whitespace,Modal is open,"""     "" (spaces only)","1. Enter only spaces in Text field
+2. Enter valid URL
+3. Click Save",Error message displayed. Modal remains open.,"B, B.2",High,Normal,,,,
+Addlink Box,FN-013,Addlink Box,FUNCTION,Text Field,Invalid Input,Verify behavior when Text exceeds max length (101 chars),Modal is open,101-character string,"1. Enter 101-char string in Text field
+2. Enter valid URL
+3. Click Save",Input truncated to 100 chars or error message displayed.,"B, B.2",High,Normal,,,,
+Addlink Box,FN-014,Addlink Box,FUNCTION,Link Field,Valid Input,Verify Link field accepts valid HTTP URL,Modal is open,"""http://example.com""","1. Enter valid text in Text field
+2. Enter ""http://example.com"" in Link field
+3. Click Save",Data saved successfully. Modal closes.,"C, C.2",High,Normal,,,,
+Addlink Box,FN-015,Addlink Box,FUNCTION,Link Field,Valid Input,Verify Link field accepts valid HTTPS URL,Modal is open,"""https://example.com""","1. Enter valid text in Text field
+2. Enter ""https://example.com"" in Link field
+3. Click Save",Data saved successfully. Modal closes.,"C, C.2",High,Normal,,,,
+Addlink Box,FN-016,Addlink Box,FUNCTION,Link Field,Valid Input,Verify Link field accepts complex URLs with path and query params,Modal is open,"""https://example.com/path?param=value&key=123#section""","1. Enter valid text in Text field
+2. Enter complex URL in Link field
+3. Click Save",Data saved with full URL preserved.,"C, C.2",Medium,Normal,,,,
+Addlink Box,FN-017,Addlink Box,FUNCTION,Link Field,Valid Input,Verify Link field accepts URLs with encoded characters,Modal is open,"""https://example.com/path/%E3%83%86%E3%82%B9%E3%83%88""","1. Enter valid text in Text field
+2. Enter encoded URL in Link field
+3. Click Save",Data saved successfully.,"C, C.2",Low,Normal,,,,
+Addlink Box,FN-018,Addlink Box,FUNCTION,Link Field,Boundary,Verify Link field with minimum length URL (5 chars),Modal is open,"""h://a"" (5 characters)","1. Enter valid text in Text field
+2. Enter 5-char URL in Link field
+3. Click Save",Depends on URL format validation.,"C, C.2",High,Normal,,,,
+Addlink Box,FN-019,Addlink Box,FUNCTION,Link Field,Boundary,Verify Link field with min+1 length URL (6 chars),Modal is open,"""http:a"" (6 characters)","1. Enter valid text in Text field
+2. Enter 6-char URL in Link field
+3. Click Save",Depends on URL format validation.,"C, C.2",Medium,Normal,,,,
+Addlink Box,FN-020,Addlink Box,FUNCTION,Link Field,Boundary,Verify Link field accepts maximum length URL (2048 chars),Modal is open,Valid URL of 2048 characters,"1. Enter valid text in Text field
+2. Enter 2048-char valid URL in Link field
+3. Click Save",Data saved successfully.,"C, C.2",High,Normal,,,,
+Addlink Box,FN-021,Addlink Box,FUNCTION,Link Field,Boundary,Verify Link field with max-1 length URL (2047 chars),Modal is open,Valid URL of 2047 characters,"1. Enter valid text in Text field
+2. Enter 2047-char valid URL in Link field
+3. Click Save",Data saved successfully.,"C, C.2",Medium,Normal,,,,
+Addlink Box,FN-022,Addlink Box,FUNCTION,Link Field,Invalid Input,Verify error when Link field is empty,Modal is open,(empty),"1. Enter valid text in Text field
+2. Leave Link field empty
+3. Click Save",Error message displayed. Modal remains open.,"C, C.2",High,Normal,,,,
+Addlink Box,FN-023,Addlink Box,FUNCTION,Link Field,Invalid Input,Verify error for URL without http/https protocol,Modal is open,"""example.com""","1. Enter valid text in Text field
+2. Enter ""example.com"" in Link field
+3. Blur Link field
+4. Click Save",Error message displayed indicating invalid URL format.,"C, C.2",High,Normal,,,,
+Addlink Box,FN-024,Addlink Box,FUNCTION,Link Field,Invalid Input,Verify error for non-URL text in Link field,Modal is open,"""not a url at all""","1. Enter valid text in Text field
+2. Enter ""not a url at all"" in Link field
+3. Click Save",Error message displayed indicating invalid URL format.,"C, C.2",High,Normal,,,,
+Addlink Box,FN-025,Addlink Box,FUNCTION,Link Field,Invalid Input,Verify error when URL exceeds maximum length (2049 chars),Modal is open,2049-character URL string,"1. Enter valid text in Text field
+2. Enter 2049-char URL in Link field
+3. Click Save",Input truncated or error message displayed.,"C, C.2",High,Normal,,,,
+Addlink Box,FN-026,Addlink Box,FUNCTION,Link Field,Invalid Input,Verify error when URL is below minimum length (4 chars),Modal is open,"""http"" (4 characters)","1. Enter valid text in Text field
+2. Enter ""http"" in Link field
+3. Click Save",Error message displayed.,"C, C.2",Medium,Normal,,,,
+Addlink Box,FN-027,Addlink Box,FUNCTION,Link Field,Invalid Input,Verify URL validation triggers on field blur,Modal is open,"""invalid-url""","1. Enter ""invalid-url"" in Link field
+2. Click into Text field (blur Link field)",Error message displayed immediately on blur.,"C, C.2",Medium,Normal,,,,
+Addlink Box,FN-028,Addlink Box,FUNCTION,Save Action,Success,Verify successful save with valid Text and Link values,Modal is open,"Text: ""My Link"", Link: ""https://example.com""","1. Enter ""My Link"" in Text field
+2. Enter ""https://example.com"" in Link field
+3. Click Save (Luu)","Data saved successfully. Modal closes. Link added to parent page/component.","D.2, B, C",High,Normal,,,,
+Addlink Box,FN-029,Addlink Box,FUNCTION,Save Action,Failure,Verify errors when both fields are empty,Modal is open,(both fields empty),"1. Leave both fields empty
+2. Click Save (Luu)",Error messages displayed for both fields. Modal remains open.,"D.2, B, C",High,Normal,,,,
+Addlink Box,FN-030,Addlink Box,FUNCTION,Save Action,Success,Verify no duplicate submission on double-click Save,Modal is open with valid data,"Text: ""My Link"", Link: ""https://example.com""","1. Enter valid data in both fields
+2. Double-click the Save (Luu) button",Only one link saved. No duplicate entries created.,D.2,Medium,Normal,,,,
+Addlink Box,FN-031,Addlink Box,FUNCTION,Save Action,Success,Verify Save can be triggered via keyboard (Tab + Enter),Modal is open with valid data,,"1. Enter valid data in both fields
+2. Press Tab to focus Save button
+3. Press Enter",Data saved successfully. Modal closes.,D.2,Medium,Normal,,,,
+Addlink Box,FN-032,Addlink Box,FUNCTION,Cancel Action,Discard,Verify Cancel discards entered data,Modal is open,,"1. Enter ""Some text"" in Text field
+2. Enter ""https://example.com"" in Link field
+3. Click Cancel (Huy)",Modal closes. No data saved. Entered data is discarded.,D.1,High,Normal,,,,
+Addlink Box,FN-033,Addlink Box,FUNCTION,Cancel Action,Discard,Verify Cancel works when fields are empty,Modal is open,,1. Click Cancel (Huy) without entering any data,Modal closes without error.,D.1,Medium,Normal,,,,
+Addlink Box,FN-034,Addlink Box,FUNCTION,Cancel Action,Discard,Verify no error on double-clicking Cancel,Modal is open,,1. Double-click the Cancel (Huy) button,Modal closes normally. No error occurs.,D.1,Low,Normal,,,,
+Addlink Box,FN-035,Addlink Box,FUNCTION,Security,XSS/Injection,Verify SQL injection handled safely in Text field,Modal is open,"""'; DROP TABLE users; --""","1. Enter ""'; DROP TABLE users; --"" in Text field
+2. Enter valid URL in Link field
+3. Click Save",Input treated as plain text. No SQL execution. Data saved safely or rejected.,"B, B.2",High,Normal,,,,
+Addlink Box,FN-036,Addlink Box,FUNCTION,Security,XSS/Injection,Verify XSS prevention in Text field,Modal is open,"""<script>alert('XSS')</script>""","1. Enter ""<script>alert('XSS')</script>"" in Text field
+2. Enter valid URL in Link field
+3. Click Save",Input sanitized. No script execution. Content escaped or rejected.,"B, B.2",High,Normal,,,,
+Addlink Box,FN-037,Addlink Box,FUNCTION,Security,XSS/Injection,Verify JavaScript protocol URLs are rejected in Link field,Modal is open,"""javascript:alert('XSS')""","1. Enter valid text in Text field
+2. Enter ""javascript:alert('XSS')"" in Link field
+3. Click Save",URL rejected as invalid format. Only http/https protocols accepted.,"C, C.2",High,Normal,,,,
+Addlink Box,FN-038,Addlink Box,FUNCTION,Keyboard,Tab Order,Verify correct tab order and focus trap within modal,Modal is open,,1. Press Tab repeatedly from the first focusable element,"Focus moves: Text input -> Link input -> Cancel button -> Save button -> loops back. Focus remains trapped within modal.","B.2, C.2, D.1, D.2",Medium,Normal,,,,
+Addlink Box,FN-039,Addlink Box,FUNCTION,Keyboard,Copy/Paste,Verify copy/paste works correctly in input fields,Modal is open,"Clipboard: ""https://example.com""","1. Copy a URL to clipboard
+2. Click into the Link field
+3. Press Ctrl+V (Cmd+V on Mac)",Text pasted correctly into the field.,"B.2, C.2",Medium,Normal,,,,
+Addlink Box,FN-040,Addlink Box,FUNCTION,Keyboard,Page Reload,Verify behavior when page is reloaded with modal open,Modal is open with data entered,,"1. Enter data in both fields
+2. Reload the page (F5 or Ctrl+R)",Modal closes. Entered data is lost. Page returns to default state.,"A, B, C, D",Low,Normal,,,,

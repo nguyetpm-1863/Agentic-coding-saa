@@ -1,0 +1,95 @@
+Section,TC_ID,Page_Name,Category,Sub_Category,Sub_Sub_Category,Test_Objective,Precondition,Test_Data,Steps,Expected_Result,Specs,Priority,Testcase_Type,Test_Result,Executed_Date,Tester,Note
+ACCESSING,TC_DP_ACC_001,Dropdown-profile,ACCESSING,Open Dropdown,Click Avatar,Verify dropdown opens when user clicks the avatar in the header,User is authenticated and on any page with the header,,"1. Click the user avatar in the header.","Dropdown is displayed with two items: ""Profile"" (with user icon) and ""Logout"" (with chevron-right icon). Dropdown appears below the avatar with open animation (opacity + translateY, 150ms).",721-5223-specs.md - A; A.1; A.2,High,Access control and security,,,,
+ACCESSING,TC_DP_ACC_002,Dropdown-profile,ACCESSING,Open Dropdown,Double Click Avatar,Verify no duplicate dropdowns appear on double-click,User is authenticated and on any page with the header,,"1. Double-click the user avatar in the header.",Only one dropdown instance is displayed. No duplicate or flickering behavior.,721-5223-specs.md - A,Medium,Access control and security,,,,
+ACCESSING,TC_DP_ACC_003,Dropdown-profile,ACCESSING,Open Dropdown (Keyboard),Tab + Enter,Verify dropdown can be opened via keyboard (Tab + Enter),User is authenticated and on any page with the header,,"1. Press Tab to navigate focus to the avatar.
+2. Press Enter.",Dropdown is displayed correctly with focus on the first item (Profile).,721-5223-specs.md - A; A.1; A.2,Medium,Access control and security,,,,
+ACCESSING,TC_DP_ACC_004,Dropdown-profile,ACCESSING,Open Dropdown (Keyboard),Tab + Space,Verify dropdown can be opened via Space key,User is authenticated and on any page with the header,,"1. Press Tab to navigate focus to the avatar.
+2. Press Space.",Dropdown is displayed correctly with focus on the first item (Profile).,721-5223-specs.md - A; A.1; A.2,Medium,Access control and security,,,,
+ACCESSING,TC_DP_ACC_005,Dropdown-profile,ACCESSING,Close Dropdown,Click Outside,Verify dropdown closes when clicking outside,Dropdown is open,,"1. Click on any area outside the dropdown.","Dropdown closes with close animation (opacity + translateY, 100ms). No action is performed.",721-5223-specs.md - A,High,Access control and security,,,,
+ACCESSING,TC_DP_ACC_006,Dropdown-profile,ACCESSING,Close Dropdown,Escape Key,Verify dropdown closes when Escape key is pressed,Dropdown is open,,"1. Press the Escape key.",Dropdown closes. No action is performed. Focus returns to the avatar.,721-5223-specs.md - A,High,Access control and security,,,,
+ACCESSING,TC_DP_ACC_007,Dropdown-profile,ACCESSING,Close Dropdown,Item Selection,Verify dropdown closes after an item is clicked,Dropdown is open,,"1. Click the ""Profile"" menu item.",Dropdown closes. Navigation to /profile occurs.,721-5223-specs.md - A.1,High,Access control and security,,,,
+ACCESSING,TC_DP_ACC_008,Dropdown-profile,ACCESSING,Close Dropdown,Toggle Avatar,Verify avatar click toggles dropdown open/close,Dropdown is open,,"1. Click the avatar again.",Dropdown closes. Clicking avatar once more re-opens it.,721-5223-specs.md - A,Medium,Access control and security,,,,
+ACCESSING,TC_DP_ACC_009,Dropdown-profile,ACCESSING,Authentication Gate,Unauthenticated User,Verify dropdown is not accessible when user is not logged in,User is not authenticated (no session),,"1. Navigate to /login.
+2. Observe the header area.",No avatar is displayed. No dropdown trigger is available.,721-5223-specs.md - A,High,Access control and security,,,,
+ACCESSING,TC_DP_ACC_010,Dropdown-profile,ACCESSING,Authentication Gate,All Authenticated Pages,Verify dropdown is accessible from any page with the header,User is authenticated,,"1. Navigate to the home page.
+2. Click the avatar.
+3. Close dropdown.
+4. Navigate to another page.
+5. Click the avatar.",Dropdown opens correctly on all authenticated pages with the same content and behavior.,721-5223-specs.md - A; A.1; A.2,Medium,Access control and security,,,,
+GUI,TC_DP_GUI_001,Dropdown-profile,GUI,Layout,Container,Verify the dropdown container displays correctly per design specs,User is authenticated. Dropdown is open.,,"1. Click the avatar to open dropdown.
+2. Observe the container.","Dropdown container displays with: dark background (#00070C), gold border (1px solid #998C5F), border-radius 8px, padding 6px, flex column layout. Positioned absolutely below the avatar.",721-5223-specs.md - A,High,User interface,,,,
+GUI,TC_DP_GUI_002,Dropdown-profile,GUI,Layout,Profile Item - Default,Verify the Profile menu item displays correctly in default state,User is authenticated and NOT on the profile page. Dropdown is open.,,"1. Click the avatar.
+2. Observe the ""Profile"" item.","Profile item shows: label ""Profile"" in white (#FFFFFF), Montserrat 16px Bold, letter-spacing 0.15px. User icon (24x24px, white) displayed. Item height 56px, padding 0 16px, border-radius 4px. Background transparent.",721-5223-specs.md - A.1,High,User interface,,,,
+GUI,TC_DP_GUI_003,Dropdown-profile,GUI,Layout,Profile Item - Active,Verify the Profile item shows active state when on the profile page,User is authenticated and on /profile. Dropdown is open.,,"1. Navigate to /profile.
+2. Click the avatar.
+3. Observe the ""Profile"" item.","Profile item shows active state: gold-tinted background (rgba(255,234,158,0.10)), gold glow text shadow (0 4px 4px rgba(0,0,0,0.25), 0 0 6px #FAE287).",721-5223-specs.md - A.1,High,User interface,,,,
+GUI,TC_DP_GUI_004,Dropdown-profile,GUI,Layout,Logout Item,Verify the Logout menu item displays correctly,User is authenticated. Dropdown is open.,,"1. Click the avatar.
+2. Observe the ""Logout"" item.","Logout item shows: label ""Logout"" in white (#FFFFFF), Montserrat 16px Bold, letter-spacing 0.15px. Chevron-right icon (24x24px, white). Item height 56px, padding 0 16px, border-radius 4px. Background transparent. No text shadow/glow.",721-5223-specs.md - A.2,High,User interface,,,,
+GUI,TC_DP_GUI_005,Dropdown-profile,GUI,Layout,Item Order,Verify menu items appear in correct order,User is authenticated. Dropdown is open.,,"1. Click the avatar.
+2. Observe the order of items.","Profile item appears first (top), Logout item appears second (bottom).",721-5223-specs.md - A; A.1; A.2,High,User interface,,,,
+GUI,TC_DP_GUI_006,Dropdown-profile,GUI,Display State,Profile Hover,Verify the Profile item hover visual effect,User is authenticated and NOT on /profile. Dropdown is open.,,"1. Click the avatar.
+2. Hover over the ""Profile"" item.","Background changes to gold-tinted (rgba(255,234,158,0.10)) with 150ms ease-in-out transition. Cursor changes to pointer.",721-5223-specs.md - A.1,Medium,User interface,,,,
+GUI,TC_DP_GUI_007,Dropdown-profile,GUI,Display State,Logout Hover,Verify the Logout item hover visual effect,User is authenticated. Dropdown is open.,,"1. Click the avatar.
+2. Hover over the ""Logout"" item.","Background changes to gold-tinted (rgba(255,234,158,0.10)) with 150ms ease-in-out transition. Cursor changes to pointer.",721-5223-specs.md - A.2,Medium,User interface,,,,
+GUI,TC_DP_GUI_008,Dropdown-profile,GUI,Display State,Focus State,Verify focus indicator displays on keyboard navigation,User is authenticated. Dropdown is open via keyboard.,,"1. Open dropdown via keyboard.
+2. Press ArrowDown to move focus between items.","Focused item shows outline: 2px solid #FFEA9E with 2px offset. Focus moves from Profile to Logout.",721-5223-specs.md - A.1; A.2,Medium,User interface,,,,
+GUI,TC_DP_GUI_009,Dropdown-profile,GUI,Animation,Open Animation,Verify the dropdown open animation,User is authenticated.,,"1. Click the avatar to open dropdown.
+2. Observe the animation.","Dropdown appears with opacity fade-in and translateY from -4px to 0, duration 150ms, ease-out easing.",721-5223-specs.md - A,Low,User interface,,,,
+GUI,TC_DP_GUI_010,Dropdown-profile,GUI,Animation,Close Animation,Verify the dropdown close animation,Dropdown is open.,,"1. Click outside the dropdown.
+2. Observe the animation.","Dropdown disappears with opacity fade-out and translateY from 0 to -4px, duration 100ms, ease-in easing.",721-5223-specs.md - A,Low,User interface,,,,
+GUI,TC_DP_GUI_011,Dropdown-profile,GUI,Responsive,Mobile Viewport,Verify dropdown avoids viewport overflow on mobile,User is authenticated on a mobile device (320px width).,Viewport: 320px width,"1. Click the avatar.
+2. Observe dropdown position.","Dropdown is fully visible within the viewport. Right-aligned to prevent overflow. All items are readable and tappable (min 44x44px touch target).",721-5223-specs.md - A,High,User interface,,,,
+GUI,TC_DP_GUI_012,Dropdown-profile,GUI,Responsive,Zoom In/Out,Verify dropdown displays correctly when page is zoomed,User is authenticated. Dropdown is open.,,"1. Open dropdown.
+2. Zoom in to 150%.
+3. Observe.
+4. Zoom out to 75%.
+5. Observe.",Dropdown displays without layout break or overflow at both zoom levels.,721-5223-specs.md - A,Low,User interface,,,,
+GUI,TC_DP_GUI_013,Dropdown-profile,GUI,Icons,Icon Specs,Verify icons display correctly per design specs,User is authenticated. Dropdown is open.,,"1. Open dropdown.
+2. Observe the user icon on Profile item.
+3. Observe the chevron-right icon on Logout item.","User icon: 24x24px, #FFFFFF color, 8px gap from text. Chevron-right icon: 24x24px, #FFFFFF color, 8px gap from text.",721-5223-specs.md - A.1; A.2,Medium,User interface,,,,
+GUI,TC_DP_GUI_014,Dropdown-profile,GUI,Typography,Item Text,Verify text styling is consistent across both menu items,User is authenticated. Dropdown is open.,,"1. Open dropdown.
+2. Inspect text styling of both items.","Both items use: Montserrat font, 16px size, 700 weight, 24px line-height, 0.15px letter-spacing, #FFFFFF color.",721-5223-specs.md - A.1; A.2,Medium,User interface,,,,
+FUNCTION,TC_DP_FUN_001,Dropdown-profile,FUNCTION,Profile Navigation,Click Profile,Verify clicking Profile navigates user to /profile,User is authenticated. Dropdown is open.,,"1. Click the avatar.
+2. Click ""Profile"" item.",User is navigated to the profile page (/profile). Dropdown closes. Page loads correctly.,721-5223-specs.md - A.1,High,Functional,,,,
+FUNCTION,TC_DP_FUN_002,Dropdown-profile,FUNCTION,Profile Navigation,Active Indicator - On Profile,Verify Profile item shows active state when user is on profile page,User is authenticated and on /profile.,,"1. Navigate to /profile.
+2. Click the avatar to open dropdown.","Profile item displays with active state: gold-tinted background and gold glow text shadow.",721-5223-specs.md - A.1,Medium,Functional,,,,
+FUNCTION,TC_DP_FUN_003,Dropdown-profile,FUNCTION,Profile Navigation,Active Indicator - Other Page,Verify Profile item does NOT show active state on non-profile pages,User is authenticated and on the home page (not /profile).,,"1. Navigate to a non-profile page.
+2. Click the avatar.","Profile item displays in default state (transparent background, no gold glow).",721-5223-specs.md - A.1,Medium,Functional,,,,
+FUNCTION,TC_DP_FUN_004,Dropdown-profile,FUNCTION,Logout,Click Logout,Verify clicking Logout calls signOut() and redirects to /login,User is authenticated. Dropdown is open.,,"1. Click the avatar.
+2. Click ""Logout"" item.",Supabase signOut() is called. Session is cleared. User is redirected to /login. Dropdown closes.,721-5223-specs.md - A.2,High,Functional,,,,
+FUNCTION,TC_DP_FUN_005,Dropdown-profile,FUNCTION,Logout,Performance,Verify logout completes and redirects within 2 seconds,User is authenticated. Dropdown is open.,,"1. Click the avatar.
+2. Click ""Logout"".
+3. Measure time until /login is displayed.",Redirect to /login completes within 2 seconds.,721-5223-specs.md - A.2,High,Functional,,,,
+FUNCTION,TC_DP_FUN_006,Dropdown-profile,FUNCTION,Logout,Session Cleared,Verify no auth state leaks remain after logout,User has just logged out.,URL: any protected page,"1. Log out via dropdown.
+2. Navigate to a protected page via URL.",User is redirected to /login. No auto-login occurs. Protected content is not accessible.,721-5223-specs.md - A.2,High,Functional,,,,
+FUNCTION,TC_DP_FUN_007,Dropdown-profile,FUNCTION,Logout,SignOut Failure,Verify behavior when Supabase signOut() call fails,User is authenticated. signOut() will fail (network error).,Simulated network disconnection,"1. Simulate signOut() failure (e.g., disconnect network).
+2. Click avatar.
+3. Click ""Logout"".",An error notification is displayed. User is NOT left in an ambiguous auth state.,721-5223-specs.md - A.2,High,Functional,,,,
+FUNCTION,TC_DP_FUN_008,Dropdown-profile,FUNCTION,Logout,Expired Session,Verify logout behavior when session has already expired,User's session token has expired.,Expired session token,"1. Wait for session to expire.
+2. Click avatar.
+3. Click ""Logout"".",User is redirected to /login. No error occurs.,721-5223-specs.md - A.2,Medium,Functional,,,,
+FUNCTION,TC_DP_FUN_009,Dropdown-profile,FUNCTION,Dropdown Behavior,Toggle,Verify avatar click toggles dropdown open and close,User is authenticated.,,"1. Click avatar (dropdown opens).
+2. Click avatar again (dropdown closes).
+3. Click avatar again (dropdown opens).",Dropdown toggles correctly on each click.,721-5223-specs.md - A,Medium,Functional,,,,
+FUNCTION,TC_DP_FUN_010,Dropdown-profile,FUNCTION,Dropdown Behavior,Close on Outside Click,Verify dropdown closes when clicking outside,Dropdown is open.,,"1. Click on any area outside the dropdown and avatar.",Dropdown closes. No navigation or action occurs.,721-5223-specs.md - A,High,Functional,,,,
+FUNCTION,TC_DP_FUN_011,Dropdown-profile,FUNCTION,Dropdown Behavior,Close on Escape,Verify dropdown closes when Escape key is pressed,Dropdown is open.,,"1. Press the Escape key.",Dropdown closes. Focus returns to the avatar trigger.,721-5223-specs.md - A,High,Functional,,,,
+FUNCTION,TC_DP_FUN_012,Dropdown-profile,FUNCTION,Keyboard,ArrowDown Navigation,Verify ArrowDown moves focus between menu items,Dropdown is open via keyboard.,,"1. Open dropdown via keyboard.
+2. Press ArrowDown.",Focus moves from Profile to Logout. ArrowDown on last item wraps to first or stops.,721-5223-specs.md - A.1; A.2,Medium,Functional,,,,
+FUNCTION,TC_DP_FUN_013,Dropdown-profile,FUNCTION,Keyboard,ArrowUp Navigation,Verify ArrowUp moves focus between menu items,Dropdown is open. Focus is on Logout.,,"1. Open dropdown.
+2. Navigate to Logout.
+3. Press ArrowUp.",Focus moves from Logout to Profile.,721-5223-specs.md - A.1; A.2,Medium,Functional,,,,
+FUNCTION,TC_DP_FUN_014,Dropdown-profile,FUNCTION,Keyboard,Enter Activation,Verify pressing Enter on a focused menu item activates it,Dropdown is open. Profile is focused.,,"1. Open dropdown.
+2. Focus on Profile.
+3. Press Enter.",User navigates to /profile. Dropdown closes.,721-5223-specs.md - A.1,Medium,Functional,,,,
+FUNCTION,TC_DP_FUN_015,Dropdown-profile,FUNCTION,Accessibility,Container ARIA,Verify dropdown container has role=menu,Dropdown is open.,,"1. Open dropdown.
+2. Inspect the container element.",Container has role=""menu"".,721-5223-specs.md - A,Medium,Functional,,,,
+FUNCTION,TC_DP_FUN_016,Dropdown-profile,FUNCTION,Accessibility,Item ARIA,Verify menu items have role=menuitem,Dropdown is open.,,"1. Open dropdown.
+2. Inspect Profile and Logout elements.",Both items have role=""menuitem"".,721-5223-specs.md - A.1; A.2,Medium,Functional,,,,
+FUNCTION,TC_DP_FUN_017,Dropdown-profile,FUNCTION,Accessibility,Avatar aria-expanded,Verify avatar trigger has correct aria-expanded attribute,User is authenticated.,,"1. Inspect avatar element (dropdown closed).
+2. Click avatar.
+3. Inspect avatar element (dropdown open).","aria-expanded=""false"" when closed. aria-expanded=""true"" when open.",721-5223-specs.md - A,Medium,Functional,,,,
+FUNCTION,TC_DP_FUN_018,Dropdown-profile,FUNCTION,Edge Cases,Rapid Click Logout,Verify no duplicate signOut calls on rapid clicks,Dropdown is open.,,"1. Rapidly click ""Logout"" multiple times.",signOut() is called only once. User is redirected to /login without errors.,721-5223-specs.md - A.2,Medium,Functional,,,,
+FUNCTION,TC_DP_FUN_019,Dropdown-profile,FUNCTION,Edge Cases,Rapid Click Profile,Verify no duplicate navigations on rapid clicks,Dropdown is open.,,"1. Rapidly click ""Profile"" multiple times.",Navigation to /profile occurs once. No errors or duplicate page loads.,721-5223-specs.md - A.1,Low,Functional,,,,
+FUNCTION,TC_DP_FUN_020,Dropdown-profile,FUNCTION,Edge Cases,Cross-Page Consistency,Verify dropdown works correctly after navigating between pages,User is authenticated.,,"1. Open dropdown on home page and close it.
+2. Navigate to another page.
+3. Open dropdown again.",Dropdown opens correctly on each page. Active state reflects current page.,721-5223-specs.md - A; A.1,Medium,Functional,,,,

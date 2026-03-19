@@ -1,0 +1,137 @@
+No,itemId,itemName,nameJP,nameTrans,itemType,itemSubtype,buttonType,dataType,required,format,minLength,maxLength,defaultValue,validationNote,description,userAction,transitionNote,databaseTable,databaseColumn,databaseNote,qa
+"C1","2167:9069","Header Giải thưởng","受賞セクションヘッダー","Awards Section Header","others","info_block","","","false","","","","","","Tiêu đề section giới thiệu hệ thống giải thưởng.
+
+Purpose and Context
+Khối tiêu đề phía trên danh sách giải thưởng; căn trái.
+
+Display Elements:
+  - Caption: Label – 'Sun* annual awards 2025' (Montserrat 24px/32px Bold; màu trắng #FFFFFF)
+  - Đường gạch ngang trang trí (Rectangle) phía dưới caption
+  - Title: Text – 'Hệ thống giải thưởng' (Montserrat 57px/64px Bold; màu vàng #FFEA9E; letter-spacing -0.25px)
+
+Function & Logic:
+  - Static: chỉ hiển thị thông tin; không tương tác
+  - Responsive: Mobile text-3xl → Tablet text-4xl → Desktop text-[57px]","","","","","",""
+"C2","5005:14974","Award list","受賞リスト","Award List","others","card","","","false","","","","","","Danh sách 6 hạng mục giải thưởng hiển thị dạng lưới thẻ.
+
+Purpose and Context
+Container chứa 6 thẻ giải thưởng; mỗi thẻ gồm ảnh; tiêu đề; mô tả; link 'Chi tiết'.
+
+Display Elements:
+  - Grid layout: 3 cột trên Desktop (lg); 2 cột trên Tablet (md); 1 cột trên Mobile
+  - Mỗi thẻ gồm: Ảnh vuông (bo góc; viền vàng; hiệu ứng ánh sáng); Tiêu đề (Montserrat 24px/32px Regular #FFEA9E); Mô tả (Montserrat 16px/24px Regular #FFFFFF; tối đa 2 dòng; overflow hiển thị ...); Link 'Chi tiết' kèm icon arrow-up-right (Montserrat 16px/24px Medium #FFFFFF)
+  - Hàng 1: Top Talent (/images/homepage/Picture-Award-Talent.png); Top Project (/images/homepage/Picture-Award-Project.png); Top Project Leader (/images/homepage/Picture-Award-Leader.png)
+  - Hàng 2: Best Manager (/images/homepage/Picture-Award-Manager.png); Signature 2025 - Creator (/images/homepage/Picture-Award-Signature.png); MVP (/images/homepage/Picture-Award-MVP.png)
+
+Function & Logic:
+  - Click ảnh/tiêu đề/'Chi tiết': điều hướng đến /awards#<slug> để smooth scroll tới vị trí giải
+  - Hover: nâng nhẹ thẻ; viền/ánh sáng nổi bật
+  - Responsive: Mobile 1 cột; Tablet 2 cột; Desktop 3 cột","on_click","Click vào thẻ giải hoặc 'Chi tiết' → điều hướng đến /awards kèm anchor (#slug) và cuộn mượt tới vị trí tương ứng","","","Dữ liệu lấy từ bảng award_categories; mỗi giải có slug dùng làm anchor","- Slug cụ thể cho mỗi hạng mục giải thưởng cần xác nhận (top-talent; top-project; top-project-leader; best-manager; signature; mvp)"
+"C2.1","2167:9075","Top Talent Award","トップタレント賞","Top Talent Award Card","others","card","","","false","","","","","","Thẻ hiển thị thông tin hạng mục giải thưởng 'Top Talent'.
+
+Display Elements:
+  - Ảnh: /images/homepage/Picture-Award-Talent.png (vuông; bo góc; viền vàng; hiệu ứng ánh sáng vòng)
+  - Title: 'Top Talent' (Montserrat 24px/32px Regular; #FFEA9E)
+  - Description: 'Vinh danh top cá nhân xuất sắc trên mọi phương diện' (Montserrat 16px/24px Regular; #FFFFFF; tối đa 2 dòng; overflow ...)
+  - Link: 'Chi tiết' kèm icon arrow-up-right (Montserrat 16px/24px Medium; #FFFFFF)
+
+Function & Logic:
+  - Click ảnh/tiêu đề/'Chi tiết': mở /awards#top-talent; smooth scroll đến anchor
+  - Hover: nâng nhẹ và viền/ánh sáng nổi bật","on_click","Click → /awards#top-talent; cuộn mượt đến vị trí giải Top Talent","","","",""
+"C2.2","2167:9076","Top Project Award","トッププロジェクト賞","Top Project Award Card","others","card","","","false","","","","","","Thẻ hiển thị thông tin hạng mục 'Top Project'.
+
+Display Elements:
+  - Ảnh: /images/homepage/Picture-Award-Project.png
+  - Title: 'Top Project' (Montserrat 24px/32px Regular; #FFEA9E)
+  - Description: 'Vinh danh dự án xuất sắc trên mọi phương diện; dự án có doanh thu nổi bật' (Montserrat 16px/24px Regular; #FFFFFF; tối đa 2 dòng)
+  - Link: 'Chi tiết' kèm icon arrow-up-right
+
+Function & Logic:
+  - Click ảnh/tiêu đề/'Chi tiết': mở /awards#top-project; smooth scroll
+  - Hover: nâng nhẹ và viền/ánh sáng nổi bật","on_click","Click → /awards#top-project","","","",""
+"C2.3","2167:9077","Top Project Leader Award","トッププロジェクトリーダー賞","Top Project Leader Award Card","others","card","","","false","","","","","","Thẻ hiển thị thông tin hạng mục 'Top Project Leader'.
+
+Display Elements:
+  - Ảnh: /images/homepage/Picture-Award-Leader.png
+  - Title: 'Top Project Leader' (Montserrat 24px/32px Regular; #FFEA9E)
+  - Description: 'Vinh danh người quản lý truyền cảm hứng và dẫn dắt dự án bứt phá' (Montserrat 16px/24px Regular; #FFFFFF; tối đa 2 dòng)
+  - Link: 'Chi tiết' kèm icon arrow-up-right
+
+Function & Logic:
+  - Click ảnh/tiêu đề/'Chi tiết': mở /awards#top-project-leader; smooth scroll
+  - Hover: nâng nhẹ và viền/ánh sáng nổi bật","on_click","Click → /awards#top-project-leader","","","",""
+"C2.4","2167:9079","Best Manager Award","ベストマネージャー賞","Best Manager Award Card","others","card","","","false","","","","","","Thẻ hiển thị thông tin hạng mục 'Best Manager'.
+
+Display Elements:
+  - Ảnh: /images/homepage/Picture-Award-Manager.png
+  - Title: 'Best Manager' (Montserrat 24px/32px Regular; #FFEA9E)
+  - Description: 'Vinh danh người quản lý có năng lực quản lý tốt; dẫn dắt đội nhóm' (Montserrat 16px/24px Regular; #FFFFFF; tối đa 2 dòng)
+  - Link: 'Chi tiết' kèm icon arrow-up-right
+
+Function & Logic:
+  - Click ảnh/tiêu đề/'Chi tiết': mở /awards#best-manager; smooth scroll
+  - Hover: nâng nhẹ và viền/ánh sáng nổi bật","on_click","Click → /awards#best-manager","","","",""
+"C2.5","2167:9080","Signature 2025 - Creator Award","シグネチャー2025クリエイター賞","Signature 2025 Creator Award Card","others","card","","","false","","","","","","Thẻ hiển thị thông tin hạng mục 'Signature 2025 - Creator'.
+
+Display Elements:
+  - Ảnh: /images/homepage/Picture-Award-Signature.png
+  - Title: 'Signature 2025 - Creator' (Montserrat 24px/32px Regular; #FFEA9E)
+  - Description: 'Vinh danh người quản lý có năng lực quản lý tốt; dẫn dắt đội nhóm' (Montserrat 16px/24px Regular; #FFFFFF; tối đa 2 dòng)
+  - Link: 'Chi tiết' kèm icon arrow-up-right
+
+Function & Logic:
+  - Click ảnh/tiêu đề/'Chi tiết': mở /awards#signature; smooth scroll
+  - Hover: nâng nhẹ và viền/ánh sáng nổi bật","on_click","Click → /awards#signature","","","",""
+"C2.6","2167:9081","MVP Award","MVP賞","MVP Award Card","others","card","","","false","","","","","","Thẻ hiển thị thông tin hạng mục 'MVP (Most Valuable Person)'.
+
+Display Elements:
+  - Ảnh: /images/homepage/Picture-Award-MVP.png
+  - Title: 'MVP (Most Valuable Person)' (Montserrat 24px/32px Regular; #FFEA9E)
+  - Description: 'Vinh danh người quản lý có năng lực quản lý tốt; dẫn dắt đội nhóm' (Montserrat 16px/24px Regular; #FFFFFF; tối đa 2 dòng)
+  - Link: 'Chi tiết' kèm icon arrow-up-right
+
+Function & Logic:
+  - Click ảnh/tiêu đề/'Chi tiết': mở /awards#mvp; smooth scroll
+  - Hover: nâng nhẹ và viền/ánh sáng nổi bật","on_click","Click → /awards#mvp","","","",""
+"D1","3390:10349","Sunkudos","Sun*Kudosセクション","Sun* Kudos Section","others","card","","","false","","","","","","Khối quảng bá 'Sun* Kudos' với ảnh nền; nội dung chia 2 nửa; nút CTA.
+
+Purpose and Context
+Section giới thiệu phong trào ghi nhận Sun* Kudos trên trang chủ.
+
+Display Elements:
+  - Background: ảnh nền /images/homepage/kudos-bg.png (cover toàn bộ section)
+  - Nửa trái (Content):
+    - Label: 'Phong trào ghi nhận' (Montserrat 24px/32px Bold; #FFFFFF)
+    - Title: 'Sun* Kudos' (Montserrat 57px/64px Bold; #FFEA9E; letter-spacing -0.25px)
+    - Sub-label: 'ĐIỂM MỚI CỦA SAA 2025' (uppercase; Montserrat 16px/24px Bold; #FFFFFF)
+    - Description: đoạn mô tả hoạt động ghi nhận (Montserrat 16px/24px Bold; #FFFFFF; text-align justify; letter-spacing 0.5px)
+    - Button: 'Chi tiết' kèm icon arrow-up-right (bo tròn; nền vàng nhạt; viền #998C5F)
+  - Nửa phải:
+    - Ảnh: /images/homepage/kudos.png (logo KUDOS lớn; căn chính giữa khung)
+
+Function & Logic:
+  - Click 'Chi tiết': điều hướng đến /kudos
+  - Hover button: đổi màu nền nhẹ
+  - Responsive: Mobile → xếp dọc (content trên; ảnh dưới); Desktop → chia 2 cột ngang","on_click","Click 'Chi tiết' → điều hướng đến /kudos","","","",""
+"D2","I3390:10349;313:8419","Content","Sun*Kudosコンテンツ","Sun* Kudos Content Block","others","info_block","","","false","","","","","","Khối nội dung bên trái của section Sun* Kudos.
+
+Display Elements:
+  - Label: 'Phong trào ghi nhận' (Montserrat 24px/32px Bold; #FFFFFF)
+  - Title: 'Sun* Kudos' (Montserrat 57px/64px Bold; #FFEA9E; letter-spacing -0.25px)
+  - Sub-label: 'ĐIỂM MỚI CỦA SAA 2025' (Montserrat 16px/24px Bold; #FFFFFF)
+  - Paragraph: Mô tả chi tiết hoạt động (Montserrat 16px/24px Bold; #FFFFFF; text-align justify)
+  - Button container: chứa nút 'Chi tiết'
+
+Function & Logic:
+  - Static text; chỉ nút 'Chi tiết' có tương tác","","","","","",""
+"D2.1","I3390:10349;313:8426","Button-IC","「詳細」ボタン","Detail Button","button","","icon_text","","false","","","","","","Nút 'Chi tiết' mở trang chi tiết Sun* Kudos.
+
+Display Elements:
+  - Text: 'Chi tiết' (Montserrat 16px/24px Medium; #FFFFFF)
+  - Icon: arrow-up-right (bên phải text)
+  - Background: nền vàng nhạt mờ; viền #998C5F; bo tròn
+
+Function & Logic:
+  - Click: điều hướng đến /kudos
+  - Hover: đổi màu nền nhẹ hơn
+  - State: luôn enabled","on_click","Click → điều hướng đến /kudos","","","",""

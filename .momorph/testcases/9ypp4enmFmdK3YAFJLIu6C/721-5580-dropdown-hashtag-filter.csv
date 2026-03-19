@@ -1,0 +1,95 @@
+Section,TC_ID,Page_Name,Category,Sub_Category,Sub_Sub_Category,Test_Objective,Precondition,Test_Data,Steps,Expected_Result,Specs,Priority,Testcase_Type,Test_Result,Executed_Date,Tester,Note
+ACCESSING,ACC-001,Dropdown Hashtag Filter,ACCESSING,Dropdown Trigger,Open dropdown,Verify the dropdown hashtag list opens when the user clicks the dropdown trigger,"User is on the page containing the hashtag filter dropdown; dropdown is closed",,"1. Locate the hashtag filter dropdown trigger on the page
+2. Click on the dropdown trigger","Dropdown list opens and displays the list of 13 hashtag items",A (Dropdown-List),High,Manual,,,,
+ACCESSING,ACC-002,Dropdown Hashtag Filter,ACCESSING,Dropdown Trigger,Close dropdown (click outside),Verify the dropdown closes when the user clicks outside the dropdown area,Dropdown is open,,"1. Open the hashtag filter dropdown
+2. Click on any area outside the dropdown","Dropdown closes; no selection change occurs",A (Dropdown-List),High,Manual,,,,
+ACCESSING,ACC-003,Dropdown Hashtag Filter,ACCESSING,Dropdown Trigger,Close dropdown (Escape key),Verify the dropdown closes when the user presses the Escape key,Dropdown is open,,"1. Open the hashtag filter dropdown
+2. Press the Escape key on the keyboard","Dropdown closes; no selection change occurs",A (Dropdown-List),Medium,Manual,,,,
+ACCESSING,ACC-004,Dropdown Hashtag Filter,ACCESSING,Dropdown Trigger,Visibility on page load,Verify the dropdown is closed by default when the page loads,Page containing the hashtag filter has loaded,,"1. Navigate to the page containing the hashtag filter
+2. Observe the dropdown trigger area","Dropdown list is not visible (closed state); only the trigger element is shown",A (Dropdown-List),High,Manual,,,,
+ACCESSING,ACC-005,Dropdown Hashtag Filter,ACCESSING,Dropdown Trigger,Re-open after closing,Verify the dropdown can be reopened after being closed,Dropdown has been opened and then closed,,"1. Open the dropdown
+2. Close the dropdown (click outside)
+3. Click the dropdown trigger again","Dropdown reopens and displays the full list of hashtag items",A (Dropdown-List),Medium,Manual,,,,
+GUI,GUI-001,Dropdown Hashtag Filter,GUI,Layout,Dropdown container,Verify the dropdown container displays with correct position and size and background and border,Dropdown is open,,"1. Open the hashtag filter dropdown
+2. Inspect the dropdown container visually","Container has dark (near-black) background, rounded corners, subtle border, positioned correctly below the trigger",A (Dropdown-List),High,Manual,,,,
+GUI,GUI-002,Dropdown Hashtag Filter,GUI,Layout,Item dimensions,Verify each hashtag item has correct dimensions and spacing,Dropdown is open,,"1. Open the dropdown
+2. Inspect individual tag items","Each tag item is approximately 131x56px with consistent spacing between items","A.1, A.2, A.3",High,Manual,,,,
+GUI,GUI-003,Dropdown Hashtag Filter,GUI,Display States,Default state,Verify unselected hashtag items display with correct default styling,Dropdown is open with at least one unselected item visible,,"1. Open the dropdown
+2. Observe unselected hashtag items","Unselected items show white/bright bold text with '#' prefix on dark background, no glow effect","A.2 (Tag2), A.3 (Tag3)",High,Manual,,,,
+GUI,GUI-004,Dropdown Hashtag Filter,GUI,Display States,Selected state,Verify the selected hashtag item displays with glow/highlight effect,Dropdown is open; one item is selected,,"1. Open the dropdown
+2. Select a hashtag item
+3. Reopen the dropdown
+4. Observe the selected item","Selected item has dark background with glowing border/highlight effect and bright text, visually distinct from unselected items",A.1 (Tag1),High,Manual,,,,
+GUI,GUI-005,Dropdown Hashtag Filter,GUI,Display States,Hover state,Verify hashtag items show hover effect when mouse hovers over them,Dropdown is open,,"1. Open the dropdown
+2. Hover the mouse over an unselected hashtag item","Item displays a light background highlight to indicate interactivity",A.2 (Tag2),Medium,Manual,,,,
+GUI,GUI-006,Dropdown Hashtag Filter,GUI,Text,All 13 hashtags display,"Verify all 13 hashtag labels are displayed with correct text",Dropdown is open,,"1. Open the dropdown
+2. Scroll through the entire list
+3. Verify each hashtag label","All 13 hashtags display correctly: Toan dien, Gioi chuyen mon, Hieu suat cao, Truyen cam hung, Cong hien, Aim High, Be Agile, Wasshoi, Huong muc tieu, Huong khach hang, Chuan quy trinh, Giai phap sang tao, Quan ly xuat sac",A (Dropdown-List),High,Manual,,,,
+GUI,GUI-007,Dropdown Hashtag Filter,GUI,Text,Hashtag '#' prefix,Verify all hashtag items are displayed with '#' prefix,Dropdown is open,,"1. Open the dropdown
+2. Check text format of each item","Each hashtag label is prefixed with '#' character (e.g., '#Dedicated', '#Inspring')","A.1, A.2, A.3",Medium,Manual,,,,
+GUI,GUI-008,Dropdown Hashtag Filter,GUI,Text,Font style and color consistency,Verify font style and size and color are consistent across all hashtag items,Dropdown is open,,"1. Open the dropdown
+2. Compare font properties across all items","All items use the same font family, size, weight (bold), and color (white/bright for default, bright for selected)","A.1, A.2, A.3",Medium,Manual,,,,
+GUI,GUI-009,Dropdown Hashtag Filter,GUI,Layout,Scrollbar appearance,Verify vertical scrollbar appears when list exceeds container height,Dropdown is open,,"1. Open the dropdown
+2. Check if all 13 items fit within the visible area","If items exceed the container height, a vertical scrollbar appears and functions correctly (scroll up/down)",A (Dropdown-List),Medium,Manual,,,,
+GUI,GUI-010,Dropdown Hashtag Filter,GUI,Layout,No horizontal scrollbar,Verify no horizontal scrollbar appears in the dropdown,Dropdown is open,,"1. Open the dropdown
+2. Check for horizontal scrollbar","No horizontal scrollbar is displayed; all content fits within the container width",A (Dropdown-List),Low,Manual,,,,
+GUI,GUI-011,Dropdown Hashtag Filter,GUI,Layout,Hashtag order,Verify hashtag items appear in the correct order as specified,Dropdown is open,,"1. Open the dropdown
+2. Verify the order of items from top to bottom","Items appear in the defined order matching the spec list (Toan dien first through Quan ly xuat sac last)",A (Dropdown-List),Medium,Manual,,,,
+GUI,GUI-012,Dropdown Hashtag Filter,GUI,Responsive,Mobile (320px),Verify dropdown displays correctly on mobile viewport,Browser viewport set to 320px width,,"1. Set viewport to 320px width
+2. Open the hashtag filter dropdown
+3. Inspect layout, text, and item visibility","Dropdown displays correctly; items are readable; touch targets are at least 44x44px; no content overflow",A (Dropdown-List),Medium,Manual,,,,
+GUI,GUI-013,Dropdown Hashtag Filter,GUI,Responsive,Tablet (768px),Verify dropdown displays correctly on tablet viewport,Browser viewport set to 768px width,,"1. Set viewport to 768px width
+2. Open the hashtag filter dropdown
+3. Inspect layout","Dropdown displays correctly with proper sizing and alignment for tablet",A (Dropdown-List),Medium,Manual,,,,
+GUI,GUI-014,Dropdown Hashtag Filter,GUI,Responsive,Desktop (1024px+),Verify dropdown displays correctly on desktop viewport,Browser viewport set to 1024px+ width,,"1. Set viewport to 1024px or wider
+2. Open the hashtag filter dropdown
+3. Inspect layout","Dropdown displays correctly with proper sizing and alignment for desktop",A (Dropdown-List),Medium,Manual,,,,
+GUI,GUI-015,Dropdown Hashtag Filter,GUI,Display States,Selected item visual distinction,Verify the selected item is clearly distinguishable from unselected items,Dropdown is open with one item selected,,"1. Select a hashtag
+2. Reopen the dropdown
+3. Compare selected vs unselected items visually","Selected item has clearly visible glow/highlight effect that makes it easily distinguishable from unselected items",A.1 (Tag1),High,Manual,,,,
+FUNCTION,FUN-001,Dropdown Hashtag Filter,FUNCTION,Selection,Select item by clicking,Verify clicking an unselected hashtag selects it and applies the filter,Dropdown is open; no item is currently selected,,"1. Open the dropdown
+2. Click on '#Dedicated' hashtag item","'#Dedicated' is selected (shown with glow effect); dropdown closes; page content is filtered by '#Dedicated'","A.1 (Tag1), A (Dropdown-List)",High,Manual,,,,
+FUNCTION,FUN-002,Dropdown Hashtag Filter,FUNCTION,Selection,Deselect item (toggle off),Verify clicking a selected hashtag deselects it,A hashtag is currently selected; dropdown is open,,"1. Open the dropdown
+2. Click on the currently selected hashtag item","Item is deselected; filter is removed; page shows unfiltered content",A.1 (Tag1),High,Manual,,,,
+FUNCTION,FUN-003,Dropdown Hashtag Filter,FUNCTION,Selection,Single select enforcement,Verify only one hashtag can be active at a time,'#Dedicated' is currently selected,,"1. Open the dropdown
+2. Click on '#Inspring' (a different hashtag)","'#Inspring' becomes selected; '#Dedicated' is deselected; filter updates to '#Inspring'; dropdown closes","A (Dropdown-List), A.2 (Tag2)",High,Manual,,,,
+FUNCTION,FUN-004,Dropdown Hashtag Filter,FUNCTION,Selection,Select first item,Verify the first hashtag in the list can be selected,Dropdown is open; scroll position is at top,,"1. Open the dropdown
+2. Click on the first item (Toan dien)","First item is selected; dropdown closes; filter applied correctly",A (Dropdown-List),Medium,Manual,,,,
+FUNCTION,FUN-005,Dropdown Hashtag Filter,FUNCTION,Selection,Select middle item,Verify a middle hashtag in the list can be selected,Dropdown is open,,"1. Open the dropdown
+2. Scroll to middle of list if needed
+3. Click on a middle item (e.g., 'Aim High')","Middle item is selected; dropdown closes; filter applied correctly",A (Dropdown-List),Medium,Manual,,,,
+FUNCTION,FUN-006,Dropdown Hashtag Filter,FUNCTION,Selection,Select last item,Verify the last hashtag in the list can be selected,Dropdown is open,,"1. Open the dropdown
+2. Scroll to the bottom of the list
+3. Click on the last item (Quan ly xuat sac)","Last item is selected; dropdown closes; filter applied correctly",A (Dropdown-List),Medium,Manual,,,,
+FUNCTION,FUN-007,Dropdown Hashtag Filter,FUNCTION,Dropdown behavior,Close on select,Verify the dropdown automatically closes after a hashtag is selected,Dropdown is open,,"1. Open the dropdown
+2. Click on any hashtag item","Dropdown closes immediately after selection; selected filter is applied",A (Dropdown-List),High,Manual,,,,
+FUNCTION,FUN-008,Dropdown Hashtag Filter,FUNCTION,Filter,Apply filter,Verify the selected hashtag filter is applied to the entire page content,Page has content associated with different hashtags,,"1. Open the dropdown
+2. Select '#Dedicated'
+3. Observe page content","Page displays only content tagged with '#Dedicated'; unrelated content is hidden or filtered out",A (Dropdown-List),High,Manual,,,,
+FUNCTION,FUN-009,Dropdown Hashtag Filter,FUNCTION,Filter,Remove filter,Verify removing the filter shows all unfiltered content,A hashtag filter is currently active,,"1. Open the dropdown
+2. Click the currently selected hashtag to deselect
+3. Observe page content","Page returns to showing all content without any hashtag filter",A (Dropdown-List),High,Manual,,,,
+FUNCTION,FUN-010,Dropdown Hashtag Filter,FUNCTION,Filter,Change filter,Verify changing the active filter updates page content correctly,'#Dedicated' filter is currently active,,"1. Open the dropdown
+2. Select '#Inspring' (different hashtag)
+3. Observe page content","Page content updates to show only items tagged with '#Inspring'; previous '#Dedicated' filter is replaced","A (Dropdown-List), A.2 (Tag2)",High,Manual,,,,
+FUNCTION,FUN-011,Dropdown Hashtag Filter,FUNCTION,Keyboard,Arrow key navigation,Verify Up and Down arrow keys navigate through hashtag items,Dropdown is open,,"1. Open the dropdown
+2. Press the Down arrow key multiple times
+3. Press the Up arrow key multiple times","Each Down press highlights the next item; each Up press highlights the previous item; highlight wraps or stops at boundaries",A (Dropdown-List),Medium,Manual,,,,
+FUNCTION,FUN-012,Dropdown Hashtag Filter,FUNCTION,Keyboard,Enter key selection,Verify pressing Enter selects the currently highlighted item,Dropdown is open; an item is highlighted via keyboard navigation,,"1. Open the dropdown
+2. Use Down arrow to highlight a hashtag
+3. Press Enter","Highlighted hashtag is selected; dropdown closes; filter is applied to the page",A (Dropdown-List),Medium,Manual,,,,
+FUNCTION,FUN-013,Dropdown Hashtag Filter,FUNCTION,Keyboard,Escape key close,Verify pressing Escape closes the dropdown without changing selection,Dropdown is open; a hashtag is highlighted but not yet selected,,"1. Open the dropdown
+2. Navigate with arrow keys to highlight an item
+3. Press Escape","Dropdown closes; no selection change; previous filter state remains unchanged",A (Dropdown-List),Medium,Manual,,,,
+FUNCTION,FUN-014,Dropdown Hashtag Filter,FUNCTION,Scroll,Vertical scroll,Verify the dropdown list scrolls vertically when items exceed container height,Dropdown is open; 13 items exceed visible area,,"1. Open the dropdown
+2. Scroll down using mouse wheel or trackpad
+3. Scroll back up","List scrolls smoothly; all 13 items are accessible via scrolling; scroll does not exceed list boundaries",A (Dropdown-List),Medium,Manual,,,,
+FUNCTION,FUN-015,Dropdown Hashtag Filter,FUNCTION,Dropdown behavior,Close on outside click,Verify clicking outside the dropdown closes it and preserves current state,"Dropdown is open; '#Dedicated' is currently selected",,"1. Open the dropdown
+2. Click on an area outside the dropdown","Dropdown closes; '#Dedicated' remains the active filter; page content unchanged",A (Dropdown-List),Medium,Manual,,,,
+FUNCTION,FUN-016,Dropdown Hashtag Filter,FUNCTION,Dropdown behavior,Rapid open/close,Verify dropdown handles rapid open/close interactions without errors,Page with dropdown is loaded,,"1. Click the dropdown trigger rapidly (open-close-open-close) multiple times","Dropdown opens and closes correctly each time without visual glitches, lag, or errors",A (Dropdown-List),Low,Manual,,,,
+FUNCTION,FUN-017,Dropdown Hashtag Filter,FUNCTION,Selection,All 13 hashtags selectable,Verify every one of the 13 hashtags can be selected and applies a filter,Dropdown is functional,,"1. For each of the 13 hashtags: open dropdown, select hashtag, verify filter is applied, verify page content updates","All 13 hashtags are selectable; each applies the correct filter; page content updates accordingly for each",A (Dropdown-List),High,Manual,,,,
+FUNCTION,FUN-018,Dropdown Hashtag Filter,FUNCTION,Filter,State persistence,Verify the selected hashtag filter persists while the user interacts with filtered page content,A hashtag filter is active,,"1. Select a hashtag filter
+2. Interact with the filtered page content (scroll page, click items)
+3. Reopen the dropdown","Previously selected hashtag is still shown as selected in the dropdown",A (Dropdown-List),Medium,Manual,,,,
+FUNCTION,FUN-019,Dropdown Hashtag Filter,FUNCTION,Keyboard,No text input,Verify users cannot type text into the dropdown list,Dropdown is open,,"1. Open the dropdown
+2. Attempt to type characters on the keyboard","No text input is accepted; dropdown does not have a text input field; typing has no effect on the list (except for keyboard navigation keys)",A (Dropdown-List),Low,Manual,,,,

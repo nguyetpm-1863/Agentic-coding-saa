@@ -1,0 +1,110 @@
+Section,TC_ID,Page_Name,Category,Sub_Category,Sub_Sub_Category,Test_Objective,Precondition,Test_Data,Steps,Expected_Result,Specs,Priority,Testcase_Type,Test_Result,Executed_Date,Tester,Note
+ACCESSING,TC_DPB_ACC_001,Dropdown Phong ban,ACCESSING,Open Dropdown,Click Trigger,Verify the department dropdown opens when user clicks the dropdown trigger,User is logged in and on a page containing the department dropdown,,"1. Navigate to the page with the department dropdown.
+2. Click on the department dropdown trigger.","Dropdown list expands showing department items with dark background, rounded corners. Currently selected department is highlighted.",721-5684-specs.md - Visual Specifications,High,User interface,,,,
+ACCESSING,TC_DPB_ACC_002,Dropdown Phong ban,ACCESSING,Open Dropdown,Keyboard Open,"Verify the department dropdown opens when user presses Enter or Space on focused trigger",User is logged in and on a page containing the department dropdown,,"1. Navigate to the page with the department dropdown.
+2. Tab to focus on the dropdown trigger.
+3. Press Enter (or Space).",Dropdown list expands showing department items.,721-5684-viewpoints.md - Keyboard interactions,Medium,User interface,,,,
+ACCESSING,TC_DPB_ACC_003,Dropdown Phong ban,ACCESSING,Close Dropdown,Select Item,Verify the dropdown closes after selecting a department,Dropdown is open,,"1. Open the department dropdown.
+2. Click on any department item.",Dropdown closes. Selected department is applied as filter.,721-5684-specs.md - Functional Behavior,High,User interface,,,,
+ACCESSING,TC_DPB_ACC_004,Dropdown Phong ban,ACCESSING,Close Dropdown,Click Outside,Verify the dropdown closes when user clicks outside the dropdown area,Dropdown is open,,"1. Open the department dropdown.
+2. Click on any area outside the dropdown.",Dropdown closes. Previously selected department remains unchanged.,721-5684-specs.md - Functional Behavior,High,User interface,,,,
+ACCESSING,TC_DPB_ACC_005,Dropdown Phong ban,ACCESSING,Close Dropdown,Escape Key,Verify the dropdown closes when user presses the Escape key,Dropdown is open,,"1. Open the department dropdown.
+2. Press the Escape key.",Dropdown closes. Previously selected department remains unchanged.,721-5684-viewpoints.md - Keyboard interactions,Medium,User interface,,,,
+ACCESSING,TC_DPB_ACC_006,Dropdown Phong ban,ACCESSING,Open Dropdown,Double Click,Verify dropdown behaves correctly on double-click,User is logged in and on a page containing the department dropdown,,"1. Double-click on the department dropdown trigger.","Dropdown opens and closes (or opens once) without error. No duplicate actions.",721-5684-specs.md - Functional Behavior,Low,User interface,,,,
+GUI,TC_DPB_GUI_001,Dropdown Phong ban,GUI,Layout,Container,Verify the dropdown container displays correctly per design specs,User is logged in and dropdown is open,,"1. Open the department dropdown.
+2. Observe the dropdown container.","Dropdown container displays with dark background, rounded corners, approximately 101x348px dimensions.",721-5684-specs.md - Visual Specifications,High,User interface,,,,
+GUI,TC_DPB_GUI_002,Dropdown Phong ban,GUI,Layout,Position,Verify the dropdown appears in correct position relative to the trigger element,User is logged in,,"1. Click on the department dropdown trigger.
+2. Observe the position of the dropdown list.","Dropdown list appears directly below (or near) the trigger element, properly aligned.",721-5684-specs.md - Visual Specifications,Medium,User interface,,,,
+GUI,TC_DPB_GUI_003,Dropdown Phong ban,GUI,Layout,Text Alignment,Verify all department items have centered text,Dropdown is open,,"1. Open the department dropdown.
+2. Observe text alignment of all visible items.",All department names are centered within their respective list items.,721-5684-specs.md - Visual Specifications,Medium,User interface,,,,
+GUI,TC_DPB_GUI_004,Dropdown Phong ban,GUI,Layout,Text Color,Verify unselected items display white text on dark background,Dropdown is open,,"1. Open the department dropdown.
+2. Observe text color of unselected items.",Unselected items display white text on dark background.,721-5684-specs.md - Visual Specifications,Medium,User interface,,,,
+GUI,TC_DPB_GUI_005,Dropdown Phong ban,GUI,Layout,Item Spacing,Verify consistent spacing between department items,Dropdown is open,,"1. Open the department dropdown.
+2. Observe spacing between consecutive items.","All items have consistent, uniform spacing between them.",721-5684-specs.md - Visual Specifications,Low,User interface,,,,
+GUI,TC_DPB_GUI_006,Dropdown Phong ban,GUI,Display State,Default State,Verify the default selected department is displayed correctly when dropdown opens,"User is on the page, no department filter change has been made",,"1. Open the department dropdown.
+2. Observe the initially selected/highlighted item.",The default department (e.g. user's own department) is highlighted with a lighter background.,721-5684-specs.md - Visual Specifications; 721-5684-viewpoints.md - Default display,High,User interface,,,,
+GUI,TC_DPB_GUI_007,Dropdown Phong ban,GUI,Display State,Default State,Verify visible departments display correctly in the initial view,Dropdown is open,,"1. Open the department dropdown.
+2. Observe the visible items without scrolling.","Approximately 6 department items are visible (CEVC2, CEVC3, CEVC4, CEVC1, OPD, Infra as shown in design). Text is readable and not truncated.",721-5684-specs.md - Design Items,High,User interface,,,,
+GUI,TC_DPB_GUI_008,Dropdown Phong ban,GUI,Display State,Selected State,Verify the selected department item has a distinct highlighted appearance,"Dropdown is open with a department selected",,"1. Open the department dropdown.
+2. Observe the currently selected department item.","Selected item displays with a lighter/brighter background, clearly distinguishable from unselected items.",721-5684-specs.md - Visual Specifications,High,User interface,,,,
+GUI,TC_DPB_GUI_009,Dropdown Phong ban,GUI,Display State,Selected State,Verify only one department can be visually highlighted as selected,Dropdown is open,,"1. Open the department dropdown.
+2. Count the number of items with selected/highlight state.",Exactly one item displays the selected/highlighted state.,721-5684-specs.md - Functional Behavior,High,User interface,,,,
+GUI,TC_DPB_GUI_010,Dropdown Phong ban,GUI,Display State,Hover State,Verify hover effect appears on unselected department items,Dropdown is open,,"1. Open the department dropdown.
+2. Hover over an unselected department item.",Item displays a subtle highlight effect. Cursor changes to pointer.,721-5684-specs.md - Visual Specifications,Medium,User interface,,,,
+GUI,TC_DPB_GUI_011,Dropdown Phong ban,GUI,Display State,Hover State,Verify hover effect on the already selected department item,Dropdown is open,,"1. Open the department dropdown.
+2. Hover over the currently selected (highlighted) department item.",Cursor changes to pointer. Selected highlight is maintained.,721-5684-specs.md - Visual Specifications,Low,User interface,,,,
+GUI,TC_DPB_GUI_012,Dropdown Phong ban,GUI,Scroll,Scrollbar Display,Verify scrollbar appears when department list exceeds visible area,"Dropdown is open (50 departments, ~6 visible)",,"1. Open the department dropdown.
+2. Observe whether a vertical scrollbar is present.",A vertical scrollbar is displayed since the list contains 50 departments but only ~6 are visible at once.,721-5684-viewpoints.md - Scroll behavior,High,User interface,,,,
+GUI,TC_DPB_GUI_013,Dropdown Phong ban,GUI,Scroll,Scroll to Bottom,Verify user can scroll to see all departments including the last item,Dropdown is open,,"1. Open the department dropdown.
+2. Scroll down to the bottom of the list.",The last department in the list is visible and accessible. Scrolling is smooth.,721-5684-viewpoints.md - Scroll behavior,High,User interface,,,,
+GUI,TC_DPB_GUI_014,Dropdown Phong ban,GUI,Scroll,Scroll to Top,Verify user can scroll back to the top of the department list,"Dropdown is open, scrolled to bottom",,"1. Open the department dropdown.
+2. Scroll to the bottom of the list.
+3. Scroll back to the top.",The first department in the list is visible. Scrolling is smooth.,721-5684-viewpoints.md - Scroll behavior,Medium,User interface,,,,
+GUI,TC_DPB_GUI_015,Dropdown Phong ban,GUI,Responsive,Mobile (320px),Verify dropdown displays correctly on mobile viewport,Browser viewport set to 320px width,,"1. Set viewport to 320px width.
+2. Open the department dropdown.","Dropdown displays correctly without overflowing the screen. Items are readable and tappable (touch targets at least 44x44px).",721-5684-specs.md - Visual Specifications,High,User interface,,,,
+GUI,TC_DPB_GUI_016,Dropdown Phong ban,GUI,Responsive,Tablet (768px),Verify dropdown displays correctly on tablet viewport,Browser viewport set to 768px width,,"1. Set viewport to 768px width.
+2. Open the department dropdown.","Dropdown displays correctly, properly positioned, items readable.",721-5684-specs.md - Visual Specifications,Medium,User interface,,,,
+GUI,TC_DPB_GUI_017,Dropdown Phong ban,GUI,Responsive,Desktop (1024px+),Verify dropdown displays correctly on desktop viewport,Browser viewport set to 1024px or wider,,"1. Set viewport to 1024px width.
+2. Open the department dropdown.","Dropdown displays correctly as per design specs (101x348px container, dark background, rounded corners).",721-5684-specs.md - Visual Specifications,Medium,User interface,,,,
+FUNCTION,TC_DPB_FUN_001,Dropdown Phong ban,FUNCTION,Selection,Select First Item,Verify selecting the first department in the list works correctly,"Dropdown is open, no department currently selected (or different department selected)",,"1. Open the department dropdown.
+2. Click on the first department item in the list.","Department is selected, dropdown closes, page filter is applied showing kudos for people in that department.",721-5684-specs.md - Functional Behavior; 721-5684-viewpoints.md - Single selection,High,Functional,,,,
+FUNCTION,TC_DPB_FUN_002,Dropdown Phong ban,FUNCTION,Selection,Select Middle Item,Verify selecting a department from the middle of the list works correctly,Dropdown is open,,"1. Open the department dropdown.
+2. Scroll to a department in the middle of the list (e.g. CEVEC).
+3. Click on that department item.","Department is selected, dropdown closes, page filter is applied showing kudos for people in that department.",721-5684-specs.md - Functional Behavior; 721-5684-viewpoints.md - Single selection,High,Functional,,,,
+FUNCTION,TC_DPB_FUN_003,Dropdown Phong ban,FUNCTION,Selection,Select Last Item,Verify selecting the last department in the list works correctly,Dropdown is open,,"1. Open the department dropdown.
+2. Scroll to the bottom of the list.
+3. Click on the last department item (PAO - PAO).","Department is selected, dropdown closes, page filter is applied showing kudos for people in that department.",721-5684-specs.md - Functional Behavior; 721-5684-viewpoints.md - Single selection,High,Functional,,,,
+FUNCTION,TC_DPB_FUN_004,Dropdown Phong ban,FUNCTION,Selection,Change Selection,Verify switching between departments updates the filter correctly,A department is currently selected (e.g. CEVC2),,"1. Observe current filter results for CEVC2.
+2. Open the department dropdown.
+3. Select a different department (e.g. CEVC3).","Dropdown closes. Page filter updates to show kudos for people in CEVC3. Previous CEVC2 filter is no longer applied. CEVC3 is now highlighted as selected.",721-5684-specs.md - Functional Behavior,High,Functional,,,,
+FUNCTION,TC_DPB_FUN_005,Dropdown Phong ban,FUNCTION,Selection,Re-select Current,Verify selecting the already-selected department does not cause errors,CEVC2 is currently selected,,"1. Open the department dropdown.
+2. Click on CEVC2 (the already highlighted/selected department).",Dropdown closes. Filter remains the same for CEVC2. No errors or unexpected behavior.,721-5684-specs.md - Functional Behavior,Medium,Functional,,,,
+FUNCTION,TC_DPB_FUN_006,Dropdown Phong ban,FUNCTION,Filter,Apply Filter,Verify page content is filtered correctly for the selected department,User is on the kudos page,,"1. Open the department dropdown.
+2. Select department CEVC2.
+3. Observe the kudos displayed on the page.",Only kudos addressed to people belonging to CEVC2 department are displayed.,721-5684-specs.md - Functional Behavior,High,Functional,,,,
+FUNCTION,TC_DPB_FUN_007,Dropdown Phong ban,FUNCTION,Filter,Empty Results,Verify behavior when selecting a department that has no associated kudos,User is on the kudos page,,"1. Open the department dropdown.
+2. Select a department with no kudos (e.g. a newly created department).","Page displays an empty state or ""no results"" message. No errors.",721-5684-specs.md - Functional Behavior,Medium,Functional,,,,
+FUNCTION,TC_DPB_FUN_008,Dropdown Phong ban,FUNCTION,Filter,Filter Persistence,Verify the department filter remains applied when interacting with other page elements,A department filter is applied,,"1. Select a department (e.g. CEVC3).
+2. Interact with other elements on the page (scroll, view details, etc.).
+3. Observe whether the filter is still active.",Department filter remains active. Content continues to show only kudos for the selected department.,721-5684-specs.md - Functional Behavior,Medium,Functional,,,,
+FUNCTION,TC_DPB_FUN_009,Dropdown Phong ban,FUNCTION,Department List,Value List,Verify all departments from the database are displayed in the dropdown,Dropdown is open,,"1. Open the department dropdown.
+2. Scroll through the entire list.
+3. Count and verify all department names.","All 50 departments are present in the list, matching the expected department data.",721-5684-specs.md - Department List; 721-5684-viewpoints.md - Default display,High,Functional,,,,
+FUNCTION,TC_DPB_FUN_010,Dropdown Phong ban,FUNCTION,Department List,Order,Verify departments are listed in the correct order,Dropdown is open,,"1. Open the department dropdown.
+2. Scroll through and verify the order of departments.",Departments are displayed in the expected order as specified in the design.,721-5684-specs.md - Department List,Medium,Functional,,,,
+FUNCTION,TC_DPB_FUN_011,Dropdown Phong ban,FUNCTION,Keyboard,Up/Down Keys,Verify keyboard navigation through department items using arrow keys,Dropdown is open,,"1. Open the department dropdown.
+2. Press the Down arrow key multiple times.
+3. Press the Up arrow key multiple times.",Highlight moves to the next item on Down press and previous item on Up press. Highlight wraps or stops at boundaries.,721-5684-viewpoints.md - Keyboard interactions,Medium,Functional,,,,
+FUNCTION,TC_DPB_FUN_012,Dropdown Phong ban,FUNCTION,Keyboard,Enter Key,Verify pressing Enter selects the currently highlighted department,"Dropdown is open, an item is highlighted via keyboard",,"1. Open the department dropdown.
+2. Press Down arrow to highlight a different department.
+3. Press Enter.",Highlighted department is selected. Dropdown closes. Page filter is applied for the selected department.,721-5684-viewpoints.md - Keyboard interactions,Medium,Functional,,,,
+FUNCTION,TC_DPB_FUN_013,Dropdown Phong ban,FUNCTION,Keyboard,Type Prevention,Verify that typing text in the dropdown does not input characters,Dropdown is open,,"1. Open the department dropdown.
+2. Type random characters on the keyboard (e.g. ""abc"").",No text is entered or displayed in the dropdown. The dropdown remains functional.,721-5684-viewpoints.md - Keyboard interactions,Low,Functional,,,,
+FUNCTION,TC_DPB_FUN_014,Dropdown Phong ban,FUNCTION,Scroll,Mouse Wheel,Verify scrolling through the department list with mouse wheel,Dropdown is open,,"1. Open the department dropdown.
+2. Use mouse wheel to scroll down through the list.",List scrolls smoothly. All departments below the initial view become visible.,721-5684-viewpoints.md - Scroll behavior,High,Functional,,,,
+FUNCTION,TC_DPB_FUN_015,Dropdown Phong ban,FUNCTION,Scroll,Rapid Scroll,Verify rapid scrolling through the department list does not cause issues,Dropdown is open,,"1. Open the department dropdown.
+2. Quickly scroll from top to bottom and back.",Scrolling is smooth. Items render correctly without visual glitches. Dropdown remains responsive.,721-5684-viewpoints.md - Scroll behavior,Low,Functional,,,,
+FUNCTION,TC_DPB_FUN_016,Dropdown Phong ban,FUNCTION,Data Integrity,Add Department,Verify the dropdown reflects a newly added department after page reload,Access to database to add a new department,,"1. Add a new department to the database.
+2. Reload the page.
+3. Open the department dropdown.",New department appears in the dropdown list. Dropdown operates normally.,721-5684-viewpoints.md - List update behavior,Medium,Functional,,,,
+FUNCTION,TC_DPB_FUN_017,Dropdown Phong ban,FUNCTION,Data Integrity,Delete Department,Verify the dropdown reflects a deleted department after page reload,Access to database to delete a department,,"1. Delete a department from the database.
+2. Reload the page.
+3. Open the department dropdown.",Deleted department no longer appears in the dropdown list. Dropdown operates normally.,721-5684-viewpoints.md - List update behavior,Medium,Functional,,,,
+FUNCTION,TC_DPB_FUN_018,Dropdown Phong ban,FUNCTION,Data Integrity,Update Department Name,Verify an updated department name is reflected in the dropdown after page reload,Access to database to update a department name,,"1. Update a department name in the database.
+2. Reload the page.
+3. Open the department dropdown.",Updated department name is displayed correctly. Dropdown operates normally.,721-5684-viewpoints.md - List update behavior,Medium,Functional,,,,
+FUNCTION,TC_DPB_FUN_019,Dropdown Phong ban,FUNCTION,Data Integrity,Stale Selection,Verify behavior when the currently selected department is deleted from DB without page reload,"A department is selected, then that department is deleted from DB",,"1. Select a department (e.g. CEVC3).
+2. Without reloading, delete CEVC3 from the database (via another session).
+3. Interact with the page (e.g. attempt to use the filter).",An appropriate error message is displayed or the page handles gracefully (e.g. resets to default).,721-5684-viewpoints.md - List update behavior,Medium,Functional,,,,
+FUNCTION,TC_DPB_FUN_020,Dropdown Phong ban,FUNCTION,Security,Inspect Non-existent Value,Verify server-side is not affected when dropdown value is changed to a non-existent value via browser DevTools,"Dropdown is open, user has browser DevTools access",,"1. Open browser DevTools.
+2. Inspect the dropdown element.
+3. Change the selected value to a non-existent department ID.
+4. Submit/apply the filter.",Server rejects the invalid value or ignores it. Page function is unaffected. No server error.,721-5684-viewpoints.md - Client-side manipulation,High,Security,,,,
+FUNCTION,TC_DPB_FUN_021,Dropdown Phong ban,FUNCTION,Security,Inspect Existing Value,Verify server-side correctly processes when dropdown value is changed to an existing valid value via browser DevTools,"Dropdown is open, user has browser DevTools access",,"1. Open browser DevTools.
+2. Inspect the dropdown element.
+3. Change the selected value to a different existing department ID.
+4. Submit/apply the filter.",Operation is unaffected by the client-side manipulation. Server validates and processes correctly.,721-5684-viewpoints.md - Client-side manipulation,Medium,Security,,,,
+FUNCTION,TC_DPB_FUN_022,Dropdown Phong ban,FUNCTION,Security,Inspect Add Fake Item,Verify adding a fake dropdown item via DevTools does not affect server operation,"Dropdown is open, user has browser DevTools access",,"1. Open browser DevTools.
+2. Add a new option element to the dropdown with a fabricated value.
+3. Select the fabricated item.
+4. Submit/apply the filter.",Server rejects the fabricated value. Operation is unaffected. No data corruption.,721-5684-viewpoints.md - Client-side manipulation,Medium,Security,,,,

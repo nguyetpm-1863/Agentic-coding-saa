@@ -1,0 +1,75 @@
+Section,TC_ID,Page_Name,Category,Sub_Category,Sub_Sub_Category,Test_Objective,Precondition,Test_Data,Steps,Expected_Result,Specs,Priority,Testcase_Type,Test_Result,Executed_Date,Tester,Note
+Floating Action Button 2,ACC-001,Floating Action Button - phim noi chuc nang 2,ACCESSING,Expanded State Visibility,,"Confirm the expanded FAB panel appears when user clicks the collapsed FAB widget",User is on a page with the collapsed FAB (313:9137) displayed,,"1. Click the collapsed FAB widget button
+2. Observe the expanded FAB panel","Expanded FAB panel is displayed showing 3 buttons: 'The le', 'Viet KUDOS', and cancel (X) button","A. Button the le, B. Button viet kudos, C. Button huy: Expanded state of FAB",High,Normal,,,,
+Floating Action Button 2,ACC-002,Floating Action Button - phim noi chuc nang 2,ACCESSING,Expanded State Availability,,"Confirm all action buttons are visible and accessible in the expanded FAB",FAB is in expanded state,,"1. Observe the expanded FAB panel
+2. Check for 'The le' button
+3. Check for 'Viet KUDOS' button
+4. Check for cancel (X) button",All 3 buttons are visible and not clipped or hidden,"A. Button the le, B. Button viet kudos, C. Button huy",High,Normal,,,,
+Floating Action Button 2,ACC-003,Floating Action Button - phim noi chuc nang 2,ACCESSING,Expanded State After Scroll,,"Confirm the expanded FAB panel stays fixed when scrolling the page",FAB is in expanded state on a scrollable page,,"1. Scroll down using mouse wheel
+2. Scroll up
+3. Scroll using keyboard (Page Down, Page Up)",Expanded FAB panel remains at the same fixed position throughout scrolling,,High,Normal,,,,
+Floating Action Button 2,ACC-004,Floating Action Button - phim noi chuc nang 2,ACCESSING,Expanded State After Reload,,"Confirm the expanded FAB state behavior after page refresh",FAB is in expanded state,,"1. Reload the page (F5 or browser refresh)
+2. Observe the FAB state",FAB returns to collapsed state after page reload,,Medium,Normal,,,,
+Floating Action Button 2,GUI-001,Floating Action Button - phim noi chuc nang 2,GUI,Panel Layout,,"Confirm the expanded FAB panel displays buttons in correct vertical stack order",FAB is in expanded state,,"1. Observe the expanded FAB panel layout
+2. Check button stacking order from top to bottom","Buttons are stacked vertically at bottom-right: 'The le' on top, 'Viet KUDOS' in middle, cancel (X) button at bottom","A. Button the le (top), B. Button viet kudos (middle), C. Button huy (bottom)",High,Normal,,,,
+Floating Action Button 2,GUI-002,Floating Action Button - phim noi chuc nang 2,GUI,Button The le,Appearance,"Confirm the 'The le' button displays correctly per design specs",FAB is in expanded state,,"1. Observe the 'The le' button
+2. Check icon, label text, size, background color, border radius","Icon displayed on the left side
+Label text: 'The le'
+Size: 149x64px
+Background: light yellow
+Rounded corners","A. Button the le: 149x64px, nen vang nhat, bo goc, Icon 'IC' ben trai",High,Normal,,,,
+Floating Action Button 2,GUI-003,Floating Action Button - phim noi chuc nang 2,GUI,Button Viet KUDOS,Appearance,"Confirm the 'Viet KUDOS' button displays correctly per design specs",FAB is in expanded state,,"1. Observe the 'Viet KUDOS' button
+2. Check icon (pen), label text, background color, border radius","Pen/write icon displayed on the left
+Label text: 'Viet KUDOS'
+Background: light yellow
+Rounded corners","B. Button viet kudos: icon_text button, yellow background",High,Normal,,,,
+Floating Action Button 2,GUI-004,Floating Action Button - phim noi chuc nang 2,GUI,Button Huy,Appearance,"Confirm the cancel button displays correctly per design specs",FAB is in expanded state,,"1. Observe the cancel (X) button
+2. Check shape, size, color, icon","Circular shape
+Size: 56x56px
+Background: red
+White 'X' icon centered
+Light shadow effect","C. Button huy: 56x56px, mau do, icon 'x' trang, co shadow nhe",High,Normal,,,,
+Floating Action Button 2,GUI-005,Floating Action Button - phim noi chuc nang 2,GUI,Button The le,Hover State,"Confirm the 'The le' button shows proper hover effect",FAB is in expanded state,,"1. Move mouse cursor over the 'The le' button
+2. Observe visual change
+3. Move cursor away",Light shadow increases on hover; returns to normal when cursor leaves,"A. Button the le: Hover: tang nhe shadow",Medium,Normal,,,,
+Floating Action Button 2,GUI-006,Floating Action Button - phim noi chuc nang 2,GUI,Button Viet KUDOS,Hover State,"Confirm the 'Viet KUDOS' button shows proper hover effect",FAB is in expanded state,,"1. Move mouse cursor over the 'Viet KUDOS' button
+2. Observe visual change
+3. Move cursor away",Shadow increases and brightness changes on hover; returns to normal when cursor leaves,"B. Button viet kudos: Hover: tang bong nhe va doi do sang",Medium,Normal,,,,
+Floating Action Button 2,GUI-007,Floating Action Button - phim noi chuc nang 2,GUI,Button Huy,Hover State,"Confirm the cancel button shows proper hover effect",FAB is in expanded state,,"1. Move mouse cursor over the cancel (X) button
+2. Observe visual change","Visual feedback on hover (e.g., darker red or increased shadow)","C. Button huy: 56x56px red circle button",Low,Normal,,,,
+Floating Action Button 2,GUI-008,Floating Action Button - phim noi chuc nang 2,GUI,FAB Z-Index,,"Confirm the expanded FAB panel floats above all page content",FAB is in expanded state on a page with content near bottom-right,,"1. Scroll so page content overlaps the FAB position
+2. Observe layering",Expanded FAB panel and all buttons float above page content,,Medium,Normal,,,,
+Floating Action Button 2,GUI-009,Floating Action Button - phim noi chuc nang 2,GUI,FAB Responsive,Mobile,"Confirm expanded FAB displays correctly on mobile viewport","FAB is in expanded state, viewport < 768px",,"1. Resize browser to mobile width (320px - 767px)
+2. Observe the expanded FAB layout, button sizes, positions","All buttons are visible, properly sized, touch targets at least 44x44px, no overlap or clipping",,High,Normal,,,,
+Floating Action Button 2,GUI-010,Floating Action Button - phim noi chuc nang 2,GUI,FAB Responsive,Tablet,"Confirm expanded FAB displays correctly on tablet viewport","FAB is in expanded state, viewport 768px - 1023px",,"1. Resize browser to tablet width (768px)
+2. Observe the expanded FAB layout",All buttons displayed correctly matching design specs,,Medium,Normal,,,,
+Floating Action Button 2,GUI-011,Floating Action Button - phim noi chuc nang 2,GUI,FAB Responsive,Desktop,"Confirm expanded FAB displays correctly on desktop viewport","FAB is in expanded state, viewport >= 1024px",,"1. Resize browser to desktop width (1024px, 1440px)
+2. Observe the expanded FAB layout",All buttons displayed correctly matching design specs,,Medium,Normal,,,,
+Floating Action Button 2,GUI-012,Floating Action Button - phim noi chuc nang 2,GUI,FAB Zoom,,"Confirm expanded FAB layout is not broken when zooming",FAB is in expanded state,,"1. Zoom in to 150%
+2. Observe expanded FAB appearance
+3. Zoom out to 75%
+4. Observe expanded FAB appearance",Expanded FAB remains properly displayed without layout breakage at various zoom levels,,Low,Normal,,,,
+Floating Action Button 2,FUN-001,Floating Action Button - phim noi chuc nang 2,FUNCTION,Button The le Click,,"Confirm clicking 'The le' button opens the The le UPDATE page/modal",FAB is in expanded state,,1. Click the 'The le' button,The le UPDATE page/modal (3204:6051) is opened,"A. Button the le: on_click -> The le UPDATE (3204:6051)",High,Normal,,,,
+Floating Action Button 2,FUN-002,Floating Action Button - phim noi chuc nang 2,FUNCTION,Button Viet KUDOS Click,,"Confirm clicking 'Viet KUDOS' button opens the Viet Kudo form/modal",FAB is in expanded state,,1. Click the 'Viet KUDOS' button,Viet Kudo form/modal (520:11602) is opened for composing kudos,"B. Button viet kudos: on_click -> Viet Kudo (520:11602)",High,Normal,,,,
+Floating Action Button 2,FUN-003,Floating Action Button - phim noi chuc nang 2,FUNCTION,Button Huy Click,,"Confirm clicking the cancel (X) button closes the expanded FAB panel",FAB is in expanded state,,1. Click the cancel (X) button,Expanded FAB panel closes and returns to collapsed state (313:9137),"C. Button huy: Click -> Huy/dong panel hoac modal hien tai",High,Normal,,,,
+Floating Action Button 2,FUN-004,Floating Action Button - phim noi chuc nang 2,FUNCTION,Button The le,Double Click,"Confirm double clicking 'The le' button behaves correctly",FAB is in expanded state,,1. Double-click the 'The le' button,The le UPDATE page/modal is opened once without error or duplicate actions,"A. Button the le: on_click -> The le UPDATE",Medium,Normal,,,,
+Floating Action Button 2,FUN-005,Floating Action Button - phim noi chuc nang 2,FUNCTION,Button Viet KUDOS,Double Click,"Confirm double clicking 'Viet KUDOS' button behaves correctly",FAB is in expanded state,,1. Double-click the 'Viet KUDOS' button,Viet Kudo form is opened once without error or duplicate actions,"B. Button viet kudos: on_click -> Viet Kudo",Medium,Normal,,,,
+Floating Action Button 2,FUN-006,Floating Action Button - phim noi chuc nang 2,FUNCTION,Button Huy,Double Click,"Confirm double clicking cancel button behaves correctly",FAB is in expanded state,,1. Double-click the cancel (X) button,FAB collapses without error,"C. Button huy: Close action",Medium,Normal,,,,
+Floating Action Button 2,FUN-007,Floating Action Button - phim noi chuc nang 2,FUNCTION,Keyboard Navigation,Tab Order,"Confirm Tab key navigates through all buttons in correct order",FAB is in expanded state,,"1. Press Tab to focus on first button in expanded FAB
+2. Continue pressing Tab to cycle through buttons
+3. Observe focus order","Focus moves through buttons in order: The le -> Viet KUDOS -> Huy (X), with visible focus indicator on each",,Medium,Normal,,,,
+Floating Action Button 2,FUN-008,Floating Action Button - phim noi chuc nang 2,FUNCTION,Keyboard Activation,Enter on The le,"Confirm pressing Enter on focused 'The le' button triggers navigation","FAB is expanded, 'The le' button has keyboard focus",,"1. Tab to focus on 'The le' button
+2. Press Enter",The le UPDATE page/modal (3204:6051) is opened,"A. Button the le: on_click -> 3204:6051",Medium,Normal,,,,
+Floating Action Button 2,FUN-009,Floating Action Button - phim noi chuc nang 2,FUNCTION,Keyboard Activation,Enter on Viet KUDOS,"Confirm pressing Enter on focused 'Viet KUDOS' button triggers navigation","FAB is expanded, 'Viet KUDOS' button has keyboard focus",,"1. Tab to focus on 'Viet KUDOS' button
+2. Press Enter",Viet Kudo form/modal (520:11602) is opened,"B. Button viet kudos: on_click -> 520:11602",Medium,Normal,,,,
+Floating Action Button 2,FUN-010,Floating Action Button - phim noi chuc nang 2,FUNCTION,Keyboard Activation,Enter on Huy,"Confirm pressing Enter on focused cancel button collapses the FAB","FAB is expanded, cancel (X) button has keyboard focus",,"1. Tab to focus on cancel (X) button
+2. Press Enter",Expanded FAB panel closes and returns to collapsed state,"C. Button huy: Close action",Medium,Normal,,,,
+Floating Action Button 2,FUN-011,Floating Action Button - phim noi chuc nang 2,FUNCTION,ESC Key,,"Confirm pressing Escape key collapses the expanded FAB panel",FAB is in expanded state,,1. Press ESC key,Expanded FAB panel closes and returns to collapsed state,,Medium,Normal,,,,
+Floating Action Button 2,FUN-012,Floating Action Button - phim noi chuc nang 2,FUNCTION,Click Outside,,"Confirm behavior when clicking outside the expanded FAB panel area",FAB is in expanded state,,1. Click on an area outside the expanded FAB panel,Expanded FAB panel closes and returns to collapsed state,,Medium,Normal,,,,
+Floating Action Button 2,FUN-013,Floating Action Button - phim noi chuc nang 2,FUNCTION,Background Interaction,,"Confirm whether background page elements are interactive while FAB is expanded",FAB is in expanded state,,"1. Try clicking on background page elements
+2. Try scrolling the page",Background elements are not interactive while the expanded FAB is open (or closes FAB first then allows interaction - based on spec),,Medium,Normal,,,,
+Floating Action Button 2,FUN-014,Floating Action Button - phim noi chuc nang 2,FUNCTION,FAB Position on Scroll,,"Confirm the expanded panel stays fixed when user scrolls",FAB is in expanded state on a scrollable page,,"1. Scroll down using mouse wheel
+2. Scroll using keyboard arrows
+3. Scroll using Page Down",Expanded FAB panel and all buttons remain at fixed position,,High,Normal,,,,
+Floating Action Button 2,FUN-015,Floating Action Button - phim noi chuc nang 2,FUNCTION,FAB State After Reload,,"Confirm the FAB reverts to collapsed state on page reload",FAB is in expanded state,,"1. Press F5 or reload the page
+2. Observe the FAB state",FAB is displayed in collapsed state after reload,,Low,Normal,,,,

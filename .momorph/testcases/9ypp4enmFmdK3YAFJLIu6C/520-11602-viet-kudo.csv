@@ -1,0 +1,190 @@
+Section,TC_ID,Page_Name,Category,Sub_Category,Sub_Sub_Category,Test_Objective,Precondition,Test_Data,Steps,Expected_Result,Specs,Priority,Testcase_Type,Test_Result,Executed_Date,Tester,Note
+ACCESSING,TC_KUDO_ACC_001,Viet Kudo,ACCESSING,Authentication,,Verify that an authenticated user can access the Viet Kudo modal,User is logged in with valid credentials,,"1. Navigate to the Kudos page
+2. Click the ""Viet Kudo"" button",Modal opens successfully,,High,Functional,,,,
+ACCESSING,TC_KUDO_ACC_002,Viet Kudo,ACCESSING,Authentication,,Verify that an unauthenticated user cannot access the Viet Kudo modal,User is not logged in,,"1. Navigate to the Kudos page (or attempt to)
+2. Attempt to click the ""Viet Kudo"" button",User is redirected to login page or the button is not visible/accessible,,High,Functional,,,,
+ACCESSING,TC_KUDO_ACC_003,Viet Kudo,ACCESSING,Modal Display on Open,,Verify modal overlay covers the background content,User is authenticated and on the Kudos page,,"1. Click the ""Viet Kudo"" button
+2. Observe the background",Semi-transparent overlay covers the entire background; background content is not clickable,Dialog_popup: Check layout/content/action,Medium,Functional,,,,
+ACCESSING,TC_KUDO_ACC_004,Viet Kudo,ACCESSING,Modal Display on Open,,Verify modal appears centered on the viewport,User is authenticated,,"1. Click the ""Viet Kudo"" button
+2. Observe modal position",Modal is centered horizontally and vertically on the screen,Dialog_popup: Check layout/content/action,Medium,Functional,,,,
+ACCESSING,TC_KUDO_ACC_005,Viet Kudo,ACCESSING,Modal Display on Open,,Verify all fields are in default state when modal first opens,User is authenticated,,"1. Click the ""Viet Kudo"" button
+2. Observe all form fields","All fields are empty/default; recipient field is blank; textarea shows placeholder; no hashtags selected; no images uploaded; anonymous toggle is off; ""Gui"" button is disabled","Design items B, D, E, F, G, H",High,Functional,,,,
+ACCESSING,TC_KUDO_ACC_006,Viet Kudo,ACCESSING,Open Modal,,"Verify modal opens when user clicks the ""Viet Kudo"" button on the parent screen",User is authenticated and on the Kudos page,,"1. Navigate to the Kudos page
+2. Click the ""Viet Kudo"" button","Modal ""Gui loi cam on va ghi nhan den dong doi"" displays correctly with overlay background",Design item A: Title label,High,Functional,,,,
+ACCESSING,TC_KUDO_ACC_007,Viet Kudo,ACCESSING,Open Modal,,Verify modal opens correctly when user double-clicks the trigger button,User is authenticated and on the Kudos page,,"1. Navigate to the Kudos page
+2. Double-click the ""Viet Kudo"" button",Modal opens once (not duplicated); displays correctly without error,Dialog_popup: Check open a dialog/popup,Medium,Functional,,,,
+ACCESSING,TC_KUDO_ACC_008,Viet Kudo,ACCESSING,Open Modal,,Verify modal opens when user navigates to trigger button via Tab and presses Enter,User is authenticated and on the Kudos page,,"1. Navigate to the Kudos page
+2. Press Tab to focus on the ""Viet Kudo"" button
+3. Press Enter",Modal opens correctly with focus trapped inside the modal,Dialog_popup: Check open a dialog/popup,Medium,Functional,,,,
+GUI,TC_KUDO_GUI_001,Viet Kudo,GUI,Action Buttons,,"Verify ""Huy"" (Cancel) button styling and position",Modal is open,,"1. Open the modal
+2. Observe the footer action buttons","""Huy"" button displayed with icon + text style; positioned on the left side of the footer","Design item H.1: ""Huy"" button (icon_text)",High,GUI,,,,
+GUI,TC_KUDO_GUI_002,Viet Kudo,GUI,Action Buttons,,"Verify ""Gui"" (Submit) button disabled state when form is incomplete","Modal is open, required fields are empty",,"1. Open the modal without filling any fields
+2. Observe the ""Gui"" button","""Gui"" button displayed with yellow background but in disabled state (reduced opacity or grayed out); not clickable","Design item H.2: ""Gui"" disabled when required fields empty",High,GUI,,,,
+GUI,TC_KUDO_GUI_003,Viet Kudo,GUI,Action Buttons,,"Verify ""Gui"" button enabled state when all required fields are filled","Modal is open, all required fields filled",,"1. Fill recipient, message, and at least 1 hashtag
+2. Observe the ""Gui"" button","""Gui"" button displayed with yellow background in active/enabled state; clickable","Design item H.2: ""Gui"" enabled when all required filled",High,GUI,,,,
+GUI,TC_KUDO_GUI_004,Viet Kudo,GUI,Anonymous Toggle,,Verify anonymous toggle checkbox and label display,Modal is open,,"1. Open the modal
+2. Observe the anonymous toggle","Toggle/checkbox is displayed unchecked by default; label ""Gui an danh"" is visible; description ""Gui loi cam on va ghi nhan an danh"" is shown","Design item G: ""Gui an danh"" toggle",Medium,GUI,,,,
+GUI,TC_KUDO_GUI_005,Viet Kudo,GUI,Anonymous Toggle,,Verify display when anonymous toggle is enabled,Modal is open,,"1. Click the anonymous toggle to enable it
+2. Observe the toggle state and additional fields",Toggle shows checked/enabled state; anonymous name text field becomes visible,Design item G: Toggle on shows name field,Medium,GUI,,,,
+GUI,TC_KUDO_GUI_006,Viet Kudo,GUI,Hashtag Field,,"Verify ""Hashtag"" label with ""*"" required marker",Modal is open,,"1. Open the modal
+2. Observe the hashtag field label","Label ""Hashtag"" displayed with red ""*"" indicating required field","Design item E.1: Label ""Hashtag"" (*)",High,GUI,,,,
+GUI,TC_KUDO_GUI_007,Viet Kudo,GUI,Hashtag Field,,"Verify ""+ Hashtag"" button and ""Toi da 5"" note are displayed",Modal is open,,"1. Open the modal
+2. Observe the hashtag section","""+ Hashtag"" button and ""Toi da 5"" (Maximum 5) note are displayed correctly","Design item E: ""+ Hashtag"" button and note",High,GUI,,,,
+GUI,TC_KUDO_GUI_008,Viet Kudo,GUI,Hashtag Field,,Verify added hashtags display as chips with remove button,"Modal is open, at least one hashtag is added",,"1. Add a hashtag
+2. Observe the chip display","Hashtag displays as a chip/tag with text and ""x"" remove button; styling matches design",Design item E.2: Tag Group chips,Medium,GUI,,,,
+GUI,TC_KUDO_GUI_009,Viet Kudo,GUI,Hashtag Field,,Verify display when 5 hashtags are added,Modal is open,,"1. Add 5 hashtags
+2. Observe the hashtag section","All 5 hashtag chips are displayed; layout is not broken; ""+ Hashtag"" button behavior per spec (hidden or disabled)",Design item E: Max 5 hashtags,Medium,GUI,,,,
+GUI,TC_KUDO_GUI_010,Viet Kudo,GUI,Image Upload,,"Verify image section displays label, button, and max note","Modal is open, no images uploaded",,"1. Open the modal
+2. Observe the image section","""Image"" label displayed; ""+ Image"" button with ""Toi da 5"" note visible; no thumbnails","Design items F.1, F.5: Image label and button",Medium,GUI,,,,
+GUI,TC_KUDO_GUI_011,Viet Kudo,GUI,Image Upload,,Verify uploaded image thumbnail with remove button,"Modal is open, at least one image uploaded",,"1. Upload an image
+2. Observe the image thumbnails area","Image thumbnail displayed with ""x"" remove button; correct size and alignment per design",Design items F.2-F.4: Image thumbnails,Medium,GUI,,,,
+GUI,TC_KUDO_GUI_012,Viet Kudo,GUI,Image Upload,,Verify display when maximum 5 images are uploaded,Modal is open,,"1. Upload 5 images
+2. Observe the image section","All 5 thumbnails displayed in a row; ""+ Image"" button is hidden; layout is not broken","Design item F: Max 5 images, button hidden at 5",Medium,GUI,,,,
+GUI,TC_KUDO_GUI_013,Viet Kudo,GUI,Modal Layout,,"Verify modal layout matches Figma design (size, padding, spacing, background color)",Modal is open,,"1. Open the Viet Kudo modal
+2. Compare layout with Figma design (520:11602)","Modal size, padding, margins, background color, border radius match the design specifications",Figma frame 520:11602,High,GUI,,,,
+GUI,TC_KUDO_GUI_014,Viet Kudo,GUI,Modal Layout,,Verify overlay background appearance,Modal is open,,"1. Open the Viet Kudo modal
+2. Observe the overlay behind the modal",Semi-transparent dark overlay covers the entire viewport behind the modal,Dialog_popup: Check layout/content/action,Medium,GUI,,,,
+GUI,TC_KUDO_GUI_015,Viet Kudo,GUI,Modal Layout,,Verify modal is scrollable when content exceeds viewport height,Modal is open on a small screen or with many images/hashtags,,"1. Open the modal
+2. Add maximum images and hashtags to fill content
+3. Observe scrollability",Modal content is scrollable; header and footer action buttons remain accessible,,Medium,GUI,,,,
+GUI,TC_KUDO_GUI_016,Viet Kudo,GUI,Recipient Field,,"Verify ""Nguoi nhan"" label with ""*"" required marker is displayed",Modal is open,,"1. Open the modal
+2. Observe the recipient field label","Label ""Nguoi nhan"" is displayed with red ""*"" indicating required field","Design item B.1: Label ""Nguoi nhan""",High,GUI,,,,
+GUI,TC_KUDO_GUI_017,Viet Kudo,GUI,Recipient Field,,Verify input field appearance with placeholder and dropdown icon,Modal is open,,"1. Open the modal
+2. Observe the recipient input field","Input field shows placeholder ""Tim kiem""; dropdown arrow icon is visible on the right side; field dimensions match design (514x56px)",Design item B.2: Search field (514x56px),High,GUI,,,,
+GUI,TC_KUDO_GUI_018,Viet Kudo,GUI,Recipient Field,,Verify error styling when recipient field is empty on submit attempt,"Modal is open, recipient field is empty",,"1. Attempt to submit the form without selecting a recipient
+2. Observe the recipient field",Field border turns red; error message is displayed below the field,Design item B.2: Error state with red border,High,GUI,,,,
+GUI,TC_KUDO_GUI_019,Viet Kudo,GUI,Responsive Design,,Verify modal layout on mobile viewport,Browser viewport set to 320px width,,"1. Open the Viet Kudo modal on mobile viewport
+2. Check all elements are visible and properly sized",Modal adapts to mobile width; all fields are accessible; touch targets are at least 44x44px; no horizontal overflow,,High,GUI,,,,
+GUI,TC_KUDO_GUI_020,Viet Kudo,GUI,Responsive Design,,Verify modal layout on tablet viewport,Browser viewport set to 768px width,,"1. Open the Viet Kudo modal on tablet viewport
+2. Check layout and spacing",Modal displays correctly with appropriate width and spacing for tablet,,Medium,GUI,,,,
+GUI,TC_KUDO_GUI_021,Viet Kudo,GUI,Responsive Design,,Verify modal layout on desktop viewport,Browser viewport set to 1024px or wider,,"1. Open the Viet Kudo modal on desktop viewport
+2. Check layout matches Figma design",Modal displays centered with design-specified width; all elements properly laid out,,Medium,GUI,,,,
+GUI,TC_KUDO_GUI_022,Viet Kudo,GUI,Responsive Design,,Verify modal displays correctly when browser zoom is changed,Modal is open,,"1. Open the modal
+2. Zoom in to 150%
+3. Zoom out to 75%",Modal layout is not broken at different zoom levels; all content remains accessible,Dialog_popup: Zoom in/out viewpoint,Low,GUI,,,,
+GUI,TC_KUDO_GUI_023,Viet Kudo,GUI,Rich Text Editor,,Verify all toolbar formatting buttons are displayed correctly,Modal is open,,"1. Open the modal
+2. Observe the toolbar above the textarea","All 6 buttons displayed in order: Bold (B), Italic (I), Strikethrough (S), Numbered list, Link, Quote; each with correct icon and positioning",Design items C.1-C.6: Toolbar buttons,High,GUI,,,,
+GUI,TC_KUDO_GUI_024,Viet Kudo,GUI,Rich Text Editor,,Verify textarea shows correct placeholder text,"Modal is open, textarea is empty",,"1. Open the modal
+2. Observe the textarea","Placeholder text ""Hay gui gam loi cam on va ghi nhan den dong doi tai day nhe!"" is displayed in gray",Design item D: Textarea placeholder,Medium,GUI,,,,
+GUI,TC_KUDO_GUI_025,Viet Kudo,GUI,Rich Text Editor,,"Verify hint text about ""@"" mention feature is displayed",Modal is open,,"1. Open the modal
+2. Observe below the textarea","Hint text ""Ban co the '@ + ten' de nhac toi dong nghiep khac"" is displayed in small font below the textarea",Design item D.1: Hint text,Medium,GUI,,,,
+GUI,TC_KUDO_GUI_026,Viet Kudo,GUI,Rich Text Editor,,Verify toolbar buttons show active/toggled state when formatting is applied,"Modal is open, text is entered",,"1. Type text in the textarea
+2. Select text and click Bold button
+3. Observe the Bold button state",Bold button shows active/highlighted state when bold formatting is applied to selected text,Design item C.1: Bold toggle button,Medium,GUI,,,,
+GUI,TC_KUDO_GUI_027,Viet Kudo,GUI,Title,,Verify modal title text and styling,Modal is open,,"1. Open the Viet Kudo modal
+2. Observe the title area","Title ""Gui loi cam on va ghi nhan den dong doi"" is displayed, large font, centered, matching design","Design item A: Label ""Gui loi cam on va ghi nhan den dong doi""",High,GUI,,,,
+FUNCTION,TC_KUDO_FUN_001,Viet Kudo,FUNCTION,Anonymous Toggle,,Verify toggling anonymous mode on shows the anonymous name field,"Modal is open, anonymous toggle is off",,"1. Click the ""Gui an danh"" toggle",Toggle becomes checked/enabled; anonymous name text field appears,Design item G: Toggle on shows name field,Medium,Functional,,,,
+FUNCTION,TC_KUDO_FUN_002,Viet Kudo,FUNCTION,Anonymous Toggle,,Verify toggling anonymous mode off hides the anonymous name field,"Modal is open, anonymous toggle is on",,"1. Click the ""Gui an danh"" toggle to disable it",Toggle becomes unchecked; anonymous name text field is hidden,Design item G: Toggle off hides name field,Medium,Functional,,,,
+FUNCTION,TC_KUDO_FUN_003,Viet Kudo,FUNCTION,Anonymous Toggle,,Verify kudo is sent anonymously when toggle is enabled,"Modal is open, all required fields filled, anonymous toggle is on",,"1. Enable anonymous mode
+2. Fill in all required fields
+3. Click ""Gui""",Kudo is submitted successfully; sender identity is hidden in the kudo display,Design item G: Anonymous submission,High,Functional,,,,
+FUNCTION,TC_KUDO_FUN_004,Viet Kudo,FUNCTION,Cancel Operation,,"Verify clicking ""Huy"" closes the modal when no data is entered","Modal is open, no fields filled",,"1. Click the ""Huy"" button",Modal closes immediately; no data is saved,Design item H.1: Cancel closes modal,High,Functional,,,,
+FUNCTION,TC_KUDO_FUN_005,Viet Kudo,FUNCTION,Cancel Operation,,"Verify clicking ""Huy"" closes the modal and discards all entered data","Modal is open, some fields filled",,"1. Fill in recipient, message, and hashtags
+2. Click ""Huy""",Modal closes; all entered data is discarded; no kudo is created,Design item H.1: Cancel discards changes,High,Functional,,,,
+FUNCTION,TC_KUDO_FUN_006,Viet Kudo,FUNCTION,Cancel Operation,,Verify modal opens fresh after a previous cancel,User previously opened and cancelled the modal,,"1. Open the modal, fill some data, click ""Huy""
+2. Open the modal again",Modal opens with all fields in default/empty state; no previously entered data is retained,,Medium,Functional,,,,
+FUNCTION,TC_KUDO_FUN_007,Viet Kudo,FUNCTION,Edge Cases,,Verify behavior when user tries to send a kudo to themselves,Modal is open,,1. Search for and select own name in the recipient field,System prevents self-kudo or shows appropriate message (per business rules),,Medium,Functional,,,,
+FUNCTION,TC_KUDO_FUN_008,Viet Kudo,FUNCTION,Edge Cases,,Verify message accepts and properly handles special characters,Modal is open,"<script>alert('xss')</script>, HTML tags, emojis, Vietnamese diacritics","1. Type message with special characters: <script>, HTML tags, emojis, Vietnamese diacritics
+2. Submit the form",Special characters are properly escaped/sanitized; no XSS; content displays correctly after submission,OWASP: XSS Prevention,High,Functional,,,,
+FUNCTION,TC_KUDO_FUN_009,Viet Kudo,FUNCTION,Edge Cases,,Verify behavior with extremely long message text,Modal is open,10000+ character text,"1. Paste a very long text (e.g., 10,000+ characters) into the textarea
+2. Attempt to submit",System handles gracefully; either allows submission or shows max length error,RichTextBox_Markdown: Max length viewpoints,Low,Functional,,,,
+FUNCTION,TC_KUDO_FUN_010,Viet Kudo,FUNCTION,Edge Cases,,Verify behavior when modal is opened in multiple browser tabs,User is logged in in multiple tabs,,"1. Open Viet Kudo modal in Tab 1
+2. Open Viet Kudo modal in Tab 2
+3. Submit kudo in both tabs",Both submissions succeed independently; no conflicts or errors,,Low,Functional,,,,
+FUNCTION,TC_KUDO_FUN_011,Viet Kudo,FUNCTION,Form Submission,,Verify kudo is successfully submitted with all valid data,"Modal is open, all required fields filled with valid data",,"1. Select a recipient
+2. Type a gratitude message
+3. Add 1-5 hashtags
+4. Optionally upload images
+5. Click ""Gui""",Loading state shown; form submits successfully; modal closes; kudo appears in the list,Design item H.2: Submit action,High,Functional,,,,
+FUNCTION,TC_KUDO_FUN_012,Viet Kudo,FUNCTION,Form Submission,,Verify submission works with all fields (required + optional) filled,Modal is open,,"1. Select a recipient
+2. Type a rich-text message with formatting and ""@"" mention
+3. Add 5 hashtags
+4. Upload 5 images
+5. Enable anonymous mode
+6. Click ""Gui""",Form submits successfully with all data; modal closes; kudo displays with all content,Design items B-H: Full form submission,High,Functional,,,,
+FUNCTION,TC_KUDO_FUN_013,Viet Kudo,FUNCTION,Form Submission,,Verify loading indicator is shown during form submission,All required fields filled,,"1. Click ""Gui""
+2. Observe the button during submission","""Gui"" button shows loading state (spinner or disabled); prevents double submission",Design item H.2: Loading state,Medium,Functional,,,,
+FUNCTION,TC_KUDO_FUN_014,Viet Kudo,FUNCTION,Form Submission,,Verify double-clicking submit does not create duplicate kudos,All required fields filled,,"1. Double-click the ""Gui"" button quickly",Only one kudo is created; no duplicate submissions,Dialog_popup: Double-click action viewpoint,High,Functional,,,,
+FUNCTION,TC_KUDO_FUN_015,Viet Kudo,FUNCTION,Form Submission,,Verify error handling when network fails during submission,"All required fields filled, network connection interrupted",,"1. Fill all required fields
+2. Disconnect network
+3. Click ""Gui""",Error message displayed; form data is preserved; user can retry after reconnecting,,Medium,Functional,,,,
+FUNCTION,TC_KUDO_FUN_016,Viet Kudo,FUNCTION,Form Validation,,Verify form cannot be submitted when all required fields are empty,"Modal is open, no fields filled",,"1. Observe the ""Gui"" button without filling any fields","""Gui"" button is disabled and cannot be clicked",Design item H.2: Disabled when required fields empty,High,Functional,,,,
+FUNCTION,TC_KUDO_FUN_017,Viet Kudo,FUNCTION,Form Validation,,Verify form cannot be submitted with only the recipient field filled,Modal is open,,"1. Select a recipient
+2. Leave message and hashtag fields empty
+3. Observe the ""Gui"" button","""Gui"" button remains disabled",Design item H.2: Validation rules,High,Functional,,,,
+FUNCTION,TC_KUDO_FUN_018,Viet Kudo,FUNCTION,Form Validation,,Verify form cannot be submitted with only the message filled,Modal is open,,"1. Type a message in the textarea
+2. Leave recipient and hashtag fields empty
+3. Observe the ""Gui"" button","""Gui"" button remains disabled",Design item H.2: Validation rules,High,Functional,,,,
+FUNCTION,TC_KUDO_FUN_019,Viet Kudo,FUNCTION,Form Validation,,Verify form cannot be submitted with only hashtags added,Modal is open,,"1. Add at least one hashtag
+2. Leave recipient and message fields empty
+3. Observe the ""Gui"" button","""Gui"" button remains disabled",Design item H.2: Validation rules,High,Functional,,,,
+FUNCTION,TC_KUDO_FUN_020,Viet Kudo,FUNCTION,Form Validation,,Verify form cannot be submitted without at least one hashtag,Modal is open,,"1. Select a recipient
+2. Type a message
+3. Do not add any hashtags
+4. Observe the ""Gui"" button","""Gui"" button remains disabled","Design items E, H.2: Hashtag required",High,Functional,,,,
+FUNCTION,TC_KUDO_FUN_021,Viet Kudo,FUNCTION,Form Validation,,"Verify ""Gui"" button becomes enabled when all required fields have valid values",Modal is open,,"1. Select a recipient
+2. Type a message
+3. Add at least one hashtag","""Gui"" button becomes enabled/clickable",Design item H.2: Enable on valid data,High,Functional,,,,
+FUNCTION,TC_KUDO_FUN_022,Viet Kudo,FUNCTION,Form Validation,,Verify form validation rejects message with only whitespace,Modal is open,Spaces only in message,"1. Select a recipient
+2. Type only spaces in the textarea
+3. Add a hashtag
+4. Attempt to submit","Validation error; form is not submitted; ""Gui"" button remains disabled or error shown",RichTextBox_Markdown: Null/Space viewpoints,Medium,Functional,,,,
+FUNCTION,TC_KUDO_FUN_023,Viet Kudo,FUNCTION,Hashtag Management,,"Verify user can add a hashtag via the ""+ Hashtag"" button","Modal is open, no hashtags added",,"1. Click the ""+ Hashtag"" button
+2. Select or type a hashtag from the dropdown",Hashtag is added as a chip in the hashtag section,"Design item E, E.2: Add hashtag",High,Functional,,,,
+FUNCTION,TC_KUDO_FUN_024,Viet Kudo,FUNCTION,Hashtag Management,,"Verify user can remove a hashtag by clicking ""x"" on the chip","Modal is open, at least one hashtag is added",,"1. Click the ""x"" button on a hashtag chip",Hashtag chip is removed from the list,"Design item E.2: Remove chip via ""x""",High,Functional,,,,
+FUNCTION,TC_KUDO_FUN_025,Viet Kudo,FUNCTION,Hashtag Management,,Verify user can add up to 5 hashtags,Modal is open,,1. Add 5 hashtags one by one,"All 5 hashtags display as chips; ""+ Hashtag"" button is hidden or disabled after 5th tag",Design item E: Max 5 hashtags,High,Functional,,,,
+FUNCTION,TC_KUDO_FUN_026,Viet Kudo,FUNCTION,Hashtag Management,,Verify system prevents adding more than 5 hashtags,"Modal is open, 5 hashtags already added",,1. Try to add a 6th hashtag,"Cannot add; ""+ Hashtag"" button is hidden or disabled; no error crash",Design item E: Max 5 validation,High,Functional,,,,
+FUNCTION,TC_KUDO_FUN_027,Viet Kudo,FUNCTION,Hashtag Management,,Verify removing a hashtag allows adding new ones again,"Modal is open, 5 hashtags added",,"1. Remove one hashtag (click ""x"")
+2. Click ""+ Hashtag"" to add a new one","""+ Hashtag"" button becomes available again; new hashtag can be added; total remains <= 5",Design item E: Max 5 with removal,Medium,Functional,,,,
+FUNCTION,TC_KUDO_FUN_028,Viet Kudo,FUNCTION,Image Upload,,Verify user can upload an image via file picker,Modal is open,Valid .jpg or .png image file,"1. Click the ""+ Image"" button
+2. Select a valid image file (e.g., .jpg, .png)","Image is uploaded and displayed as a thumbnail with ""x"" remove button","Design item F, F.5: Upload image",Medium,Functional,,,,
+FUNCTION,TC_KUDO_FUN_029,Viet Kudo,FUNCTION,Image Upload,,Verify user can upload up to 5 images,Modal is open,5 valid image files,1. Upload 5 images one by one,"All 5 thumbnails displayed; ""+ Image"" button is hidden after 5th image","Design item F: Max 5, button hidden",Medium,Functional,,,,
+FUNCTION,TC_KUDO_FUN_030,Viet Kudo,FUNCTION,Image Upload,,Verify system prevents uploading more than 5 images,"Modal is open, 5 images already uploaded",,"1. Observe the ""+ Image"" button","""+ Image"" button is hidden; no way to upload additional images","Design item F: Max 5, button hidden at 5",Medium,Functional,,,,
+FUNCTION,TC_KUDO_FUN_031,Viet Kudo,FUNCTION,Image Upload,,"Verify user can remove an image by clicking ""x"" on thumbnail","Modal is open, at least one image uploaded",,"1. Click the ""x"" button on an image thumbnail","Image is removed from the list; ""+ Image"" button reappears if count was at 5","Design items F.2-F.4: Remove via ""x""",Medium,Functional,,,,
+FUNCTION,TC_KUDO_FUN_032,Viet Kudo,FUNCTION,Image Upload,,Verify error when uploading a non-image file,Modal is open,"Non-image files: .csv, .txt, .mp3","1. Click ""+ Image""
+2. Select a non-image file (e.g., .csv, .txt, .mp3)",Error message displayed; file is not uploaded,Upload_Image: Type image viewpoints,Medium,Functional,,,,
+FUNCTION,TC_KUDO_FUN_033,Viet Kudo,FUNCTION,Image Upload,,Verify error when uploading an image that exceeds maximum file size,Modal is open,Image file larger than max allowed size,"1. Click ""+ Image""
+2. Select an image file larger than the allowed maximum size",Error message displayed; file is not uploaded,Upload_Image: Capacity image viewpoints,Medium,Functional,,,,
+FUNCTION,TC_KUDO_FUN_034,Viet Kudo,FUNCTION,Image Upload,,Verify removing images allows uploading new ones,"Modal is open, 5 images uploaded",,"1. Remove one image
+2. Upload a new image","""+ Image"" button reappears after removal; new image can be uploaded; total remains <= 5",,Low,Functional,,,,
+FUNCTION,TC_KUDO_FUN_035,Viet Kudo,FUNCTION,Mention Feature,,"Verify typing ""@"" followed by text triggers mention suggestions",Modal is open,@colleague_name,"1. Click in the textarea
+2. Type ""@"" followed by a colleague's name",Mention autocomplete dropdown appears with matching colleague names,"Design item D: ""@"" mention feature",High,Functional,,,,
+FUNCTION,TC_KUDO_FUN_036,Viet Kudo,FUNCTION,Mention Feature,,Verify clicking a mention suggestion inserts the mention,"Modal is open, mention suggestions are visible",@nam,"1. Type ""@nam"" in the textarea
+2. Click on a suggested colleague name",Mention is inserted into the text (formatted/highlighted); autocomplete dropdown closes,"Design item D: ""@"" mention select",High,Functional,,,,
+FUNCTION,TC_KUDO_FUN_037,Viet Kudo,FUNCTION,Mention Feature,,"Verify behavior when ""@"" mention finds no matches",Modal is open,@zzznonexistent,"1. Type ""@zzznonexistent"" in the textarea","No suggestions shown or ""No results"" message displayed; user can continue typing normally",,Low,Functional,,,,
+FUNCTION,TC_KUDO_FUN_038,Viet Kudo,FUNCTION,Modal Behavior,,Verify behavior when clicking outside the modal overlay,Modal is open,,1. Click on the overlay area outside the modal,"Modal closes or stays open per specification; if data was entered, confirm discard behavior",Dialog_popup: Click outside viewpoint,Medium,Functional,,,,
+FUNCTION,TC_KUDO_FUN_039,Viet Kudo,FUNCTION,Modal Behavior,,Verify pressing ESC key closes the modal,Modal is open,,1. Press the ESC key,Modal closes; entered data is discarded,Dialog_popup: ESC key viewpoint,Medium,Functional,,,,
+FUNCTION,TC_KUDO_FUN_040,Viet Kudo,FUNCTION,Modal Behavior,,Verify Tab key navigates through form fields in correct order,Modal is open,,"1. Press Tab repeatedly
+2. Observe focus movement",Focus moves through fields in logical order: Recipient -> Toolbar buttons -> Textarea -> Hashtag -> Image -> Anonymous toggle -> Cancel -> Submit; focus is trapped within modal,Dialog_popup: Tab order viewpoint,Medium,Functional,,,,
+FUNCTION,TC_KUDO_FUN_041,Viet Kudo,FUNCTION,Modal Behavior,,Verify background page does not scroll while modal is open,"Modal is open, background page has scrollable content",,1. Attempt to scroll the page behind the modal,Background page does not scroll; modal stays in position,Dialog_popup: Scroll viewpoint,Low,Functional,,,,
+FUNCTION,TC_KUDO_FUN_042,Viet Kudo,FUNCTION,Modal Behavior,,Verify behavior when page is reloaded with modal open,"Modal is open, some data entered",,1. Press F5 or Ctrl+R to reload the page,Page reloads; modal is closed; all entered data is lost,Dialog_popup: Reload viewpoint,Low,Functional,,,,
+FUNCTION,TC_KUDO_FUN_043,Viet Kudo,FUNCTION,Recipient Search & Select,,Verify autocomplete suggestions appear when typing in the recipient field,Modal is open,,"1. Click on the recipient input field
+2. Type at least 1 character of a colleague's name",Dropdown shows filtered suggestions matching the input; results update as user types,Design item B.2: Autocomplete search,High,Functional,,,,
+FUNCTION,TC_KUDO_FUN_044,Viet Kudo,FUNCTION,Recipient Search & Select,,Verify selecting a recipient from the dropdown populates the field,"Modal is open, autocomplete suggestions are visible",,"1. Type a search query in the recipient field
+2. Click on a suggested name from the dropdown",Selected name is populated in the recipient field; dropdown closes,Design item B.2: Select from list,High,Functional,,,,
+FUNCTION,TC_KUDO_FUN_045,Viet Kudo,FUNCTION,Recipient Search & Select,,Verify behavior when search query returns no matches,Modal is open,zzzxxx999,"1. Type a non-existent name in the recipient field (e.g., ""zzzxxx999"")","Dropdown shows no results or ""No results found"" message",,Medium,Functional,,,,
+FUNCTION,TC_KUDO_FUN_046,Viet Kudo,FUNCTION,Recipient Search & Select,,Verify user can clear the selected recipient and search again,"Modal is open, a recipient is already selected",,"1. Clear the recipient field
+2. Type a new search query",Previous recipient is removed; new autocomplete suggestions appear,,Medium,Functional,,,,
+FUNCTION,TC_KUDO_FUN_047,Viet Kudo,FUNCTION,Recipient Search & Select,,Verify clicking the dropdown arrow opens the recipient list,Modal is open,,1. Click the dropdown arrow icon on the recipient field,Dropdown opens showing available recipients to select from,Design item B.2: Dropdown IC icon,Medium,Functional,,,,
+FUNCTION,TC_KUDO_FUN_048,Viet Kudo,FUNCTION,Rich Text Editing,,Verify bold formatting can be toggled on selected text,"Modal is open, text is typed in the textarea",,"1. Type text in the textarea
+2. Select a portion of text
+3. Click the Bold (B) button",Selected text becomes bold; clicking Bold again removes bold formatting,Design item C.1: Bold toggle,Medium,Functional,,,,
+FUNCTION,TC_KUDO_FUN_049,Viet Kudo,FUNCTION,Rich Text Editing,,Verify italic formatting can be toggled on selected text,"Modal is open, text is typed in the textarea",,"1. Type text in the textarea
+2. Select a portion of text
+3. Click the Italic (I) button",Selected text becomes italic; clicking Italic again removes italic formatting,Design item C.2: Italic toggle,Medium,Functional,,,,
+FUNCTION,TC_KUDO_FUN_050,Viet Kudo,FUNCTION,Rich Text Editing,,Verify strikethrough formatting can be toggled on selected text,"Modal is open, text is typed in the textarea",,"1. Type text in the textarea
+2. Select a portion of text
+3. Click the Strikethrough (S) button",Selected text gets strikethrough; clicking again removes it,Design item C.3: Strikethrough toggle,Medium,Functional,,,,
+FUNCTION,TC_KUDO_FUN_051,Viet Kudo,FUNCTION,Rich Text Editing,,Verify numbered list can be toggled,"Modal is open, text is typed in the textarea",,"1. Type multiple lines of text
+2. Select the lines
+3. Click the Numbered list button",Lines are formatted as a numbered list; clicking again removes numbering,Design item C.4: Number list toggle,Medium,Functional,,,,
+FUNCTION,TC_KUDO_FUN_052,Viet Kudo,FUNCTION,Rich Text Editing,,Verify link insertion via the link toolbar button,"Modal is open, text is typed in the textarea",https://example.com,"1. Select text in the textarea
+2. Click the Link button
+3. Enter a URL in the dialog
+4. Confirm",Selected text becomes a hyperlink; link URL is correctly associated,Design item C.5: Link insertion,Medium,Functional,,,,
+FUNCTION,TC_KUDO_FUN_053,Viet Kudo,FUNCTION,Rich Text Editing,,Verify quote/blockquote formatting can be toggled,"Modal is open, text is typed in the textarea",,"1. Type text in the textarea
+2. Select a paragraph
+3. Click the Quote button",Selected paragraph displays in blockquote format; clicking again removes quote formatting,Design item C.6: Quote toggle,Medium,Functional,,,,
+FUNCTION,TC_KUDO_FUN_054,Viet Kudo,FUNCTION,Rich Text Editing,,Verify multiple formatting options can be applied to the same text,"Modal is open, text is typed in the textarea",,"1. Select text
+2. Apply Bold
+3. Apply Italic",Text is both bold and italic simultaneously,RichTextBox_Markdown: Format viewpoints,Low,Functional,,,,

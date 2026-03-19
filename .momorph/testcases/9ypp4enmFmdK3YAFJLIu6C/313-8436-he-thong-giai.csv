@@ -1,0 +1,146 @@
+Section,TC_ID,Page_Name,Category,Sub_Category,Sub_Sub_Category,Test_Objective,Precondition,Test_Data,Steps,Expected_Result,Specs,Priority,Testcase_Type,Test_Result,Executed_Date,Tester,Note
+ACCESSING,ACC-001,He Thong Giai,ACCESSING,URL Access,,Verify user can access the Award System page via direct URL,User has a valid account and is logged in,,"1. Open browser
+2. Navigate to the Award System page URL (e.g., /awards)","Award System page loads successfully with all elements displayed correctly (keyvisual, title, navigation menu, award cards, Sun* Kudos block)",,High,Manual,,,,
+ACCESSING,ACC-002,He Thong Giai,ACCESSING,Authentication,,Verify behavior when accessing Award System page without logging in,User is not logged in,,"1. Open browser (no active session)
+2. Navigate to the Award System page URL directly","Page behavior follows authentication requirements - either displays the page (if public) or redirects to login page",,High,Manual,,,,
+ACCESSING,ACC-003,He Thong Giai,ACCESSING,Authentication,,Verify behavior when session expires while on the Award System page,"User is logged in, session is about to expire",,"1. Log in and navigate to the Award System page
+2. Wait for the session to expire
+3. Attempt to interact with the page (e.g., click navigation menu)","Session is refreshed via middleware, or user is redirected to login if session cannot be refreshed",,Medium,Manual,,,,
+ACCESSING,ACC-004,He Thong Giai,ACCESSING,URL Access,,Verify that accessing an invalid/modified Award System URL shows appropriate error,User is logged in,"Invalid URL variations (e.g., /awards/invalid, /award, /awards?id=xxx)",1. Navigate to an invalid variation of the Award System URL,"404 Not Found page is displayed, or user is redirected to the correct page",,Low,Manual,,,,
+ACCESSING,ACC-005,He Thong Giai,ACCESSING,Browser Navigation,,Verify Award System page loads correctly when navigating with browser back/forward buttons,User has navigated to the Award System page from another page,,"1. Navigate from another page to the Award System page
+2. Click browser Back button
+3. Click browser Forward button",Award System page reloads correctly with all elements intact; scroll position may be restored,,Medium,Manual,,,,
+ACCESSING,ACC-006,He Thong Giai,ACCESSING,Browser Navigation,,Verify Award System page reloads correctly after browser refresh,User is on the Award System page,,"1. Navigate to the Award System page
+2. Press F5 or Ctrl+R to refresh",Page reloads fully with all content displayed correctly,,Medium,Manual,,,,
+ACCESSING,ACC-007,He Thong Giai,ACCESSING,Browser Navigation,,Verify Award System page can be bookmarked and accessed from bookmark,User is logged in,,"1. Navigate to the Award System page
+2. Bookmark the page
+3. Close the browser
+4. Open browser and access the bookmarked URL",Award System page loads correctly from the bookmark (session/auth permitting),,Low,Manual,,,,
+ACCESSING,ACC-008,He Thong Giai,ACCESSING,Page Load,,Verify Award System page loads within acceptable time,Stable network connection,,"1. Navigate to the Award System page
+2. Measure total page load time (including images)",Page loads completely within 3 seconds on standard broadband connection; all images and content visible,,Medium,Manual,,,,
+GUI,GUI-001,He Thong Giai,GUI,Keyvisual Banner,Display,Verify the keyvisual hero banner displays correctly with image title and subtitle,User is on the Award System page,,"1. Navigate to the Award System page
+2. Observe the keyvisual banner at the top of the page","Background image displays at 1200x871px with cover fit and center crop
+Title ""ROOT FURTHER"" displays correctly
+Subtitle ""Sun* Annual Award 2025"" displays correctly
+Logo and icon visible in top corner
+Image has alt text ""Keyvisual Sun* Annual Award 2025""",313:8437,High,Manual,,,,
+GUI,GUI-002,He Thong Giai,GUI,Keyvisual Banner,Responsive,Verify keyvisual banner scales correctly on mobile viewport,User is on the Award System page,Viewport width: 320px,"1. Set browser viewport to 320px width
+2. Observe the keyvisual banner",Banner scales responsively with center crop; title and subtitle remain readable; no horizontal overflow,313:8437,High,Manual,,,,
+GUI,GUI-003,He Thong Giai,GUI,Keyvisual Banner,Responsive,Verify keyvisual banner scales correctly on tablet viewport,User is on the Award System page,Viewport width: 768px,"1. Set browser viewport to 768px width
+2. Observe the keyvisual banner",Banner scales responsively with center crop; all text elements display correctly,313:8437,Medium,Manual,,,,
+GUI,GUI-004,He Thong Giai,GUI,Keyvisual Banner,Responsive,Verify keyvisual banner displays correctly at desktop widths,User is on the Award System page,"Viewport widths: 1024px, 1440px","1. Set browser viewport to 1024px then 1440px
+2. Observe the keyvisual banner at each width",Banner displays at full width with proper cover/crop behavior; all elements positioned correctly,313:8437,Medium,Manual,,,,
+GUI,GUI-005,He Thong Giai,GUI,Title Section,Display,Verify the award system title section displays correctly,User is on the Award System page,,"1. Scroll to the title section below the keyvisual
+2. Observe the title text elements","Sub-text ""Sun* annual awards 2025"" displays in small faded style
+Main title ""He thong giai thuong SAA 2025"" displays in large gold/yellow color
+Text is not editable
+Position and formatting match design spec",313:8453,High,Manual,,,,
+GUI,GUI-006,He Thong Giai,GUI,Navigation Menu,Display,Verify the left navigation menu displays all 6 award categories correctly,"User is on the Award System page, scrolled to award section",,"1. Scroll to the award system section
+2. Observe the left navigation menu","6 menu items displayed in correct order: Top Talent, Top Project, Top Project Leader, Best Manager, Signature 2025 - Creator, MVP
+Active item shows yellow color + underline indicator
+Font, color, and positioning match design spec
+Icons display correctly (Top Talent has icon before text)","313:8459, 313:8460-313:8465",High,Manual,,,,
+GUI,GUI-007,He Thong Giai,GUI,Navigation Menu,Hover State,Verify navigation menu items show hover highlight effect,User is on the Award System page,,"1. Hover mouse over each navigation menu item (Top Talent through MVP)
+2. Observe the hover effect",Each menu item highlights on hover; mouse cursor changes to pointer; hover style matches design spec,313:8459,Medium,Manual,,,,
+GUI,GUI-008,He Thong Giai,GUI,Navigation Menu,Responsive,Verify navigation menu adapts to different screen sizes,User is on the Award System page,"Viewport widths: 320px, 768px, 1024px, 1440px","1. Test at each viewport width
+2. Observe the navigation menu layout and behavior",Navigation menu adapts responsively; on mobile it may collapse or reposition; on desktop it displays as left sidebar; all items remain accessible,313:8459,High,Manual,,,,
+GUI,GUI-009,He Thong Giai,GUI,Award Cards,Display,Verify Top Talent award card displays all information correctly,User is on the Award System page,,"1. Scroll to or click ""Top Talent"" in the navigation
+2. Observe the Top Talent award card","Award image displays at 336x336px not broken
+Title: ""Top Talent""
+Description text about criteria and significance
+Quantity: ""10"" with unit ""Don vi"" (Individual)
+Prize value: ""7.000.000 VND"" per award
+Layout matches design spec","313:8467, I313:8467;214:2525, I313:8467;214:2526",High,Manual,,,,
+GUI,GUI-010,He Thong Giai,GUI,Award Cards,Display,Verify Top Project award card displays all information correctly,User is on the Award System page,,"1. Scroll to or click ""Top Project"" in the navigation
+2. Observe the Top Project award card","Award image displays correctly not broken
+Title: ""Top Project""
+Quantity: ""02"" with unit ""Tap the"" (Team)
+Prize value: ""15.000.000 VND"" per award",313:8468,High,Manual,,,,
+GUI,GUI-011,He Thong Giai,GUI,Award Cards,Display,Verify Top Project Leader award card displays correctly,User is on the Award System page,,"1. Scroll to or click ""Top Project Leader"" in the navigation
+2. Observe the card","Title: ""Top Project Leader""
+Quantity: ""03"" (Ca nhan / Individual)
+Prize value: ""7.000.000 VND""
+Image and layout match design",313:8469,High,Manual,,,,
+GUI,GUI-012,He Thong Giai,GUI,Award Cards,Display,Verify Best Manager award card displays correctly,User is on the Award System page,,"1. Scroll to or click ""Best Manager"" in the navigation
+2. Observe the card","Title: ""Best Manager""
+Description text about purpose and criteria
+Quantity: ""01"" (Ca nhan / Individual)
+Prize value: ""10.000.000 VND""",313:8470,High,Manual,,,,
+GUI,GUI-013,He Thong Giai,GUI,Award Cards,Display,Verify Signature 2025 - Creator award card displays correctly,User is on the Award System page,,"1. Scroll to or click ""Signature 2025 - Creator"" in the navigation
+2. Observe the card","Title: ""Signature 2025 - Creator""
+Quantity: ""01""
+Prize value: ""5.000.000 VND"" (individual) ""8.000.000 VND"" (team)",313:8471,High,Manual,,,,
+GUI,GUI-014,He Thong Giai,GUI,Award Cards,Display,Verify MVP award card displays correctly,User is on the Award System page,,"1. Scroll to or click ""MVP"" in the navigation
+2. Observe the card","Title: ""MVP (Most Valuable Person)""
+Description text about objective and significance
+Quantity: ""01""
+Prize value: ""15.000.000 VND""",313:8510,High,Manual,,,,
+GUI,GUI-015,He Thong Giai,GUI,Award Cards,Responsive,Verify award cards layout adapts correctly on mobile viewport,User is on the Award System page,Viewport width: 320px,"1. Set viewport to 320px
+2. Scroll through all award cards",Cards stack vertically; images scale proportionally; text remains readable; no horizontal overflow; touch targets at least 44x44px,"313:8467-313:8471, 313:8510",High,Manual,,,,
+GUI,GUI-016,He Thong Giai,GUI,Award Cards,Responsive,Verify award cards layout at tablet and desktop breakpoints,User is on the Award System page,"Viewport widths: 768px, 1024px, 1440px","1. Test at each viewport width
+2. Observe card layout image sizes and text formatting",Cards display with proper layout (image + content side by side on larger screens); consistent spacing and alignment,"313:8467-313:8471, 313:8510",Medium,Manual,,,,
+GUI,GUI-017,He Thong Giai,GUI,Sun* Kudos Block,Display,Verify Sun* Kudos promotional block displays correctly,User is on the Award System page,,"1. Scroll to the Sun* Kudos section
+2. Observe the block content","Label ""Phong trao ghi nhan"" displays
+Title ""Sun* Kudos"" displays
+Description text visible
+Illustration image displays correctly
+""Chi tiet"" button visible with icon","335:12023, I335:12023;313:8419",High,Manual,,,,
+GUI,GUI-018,He Thong Giai,GUI,Button,Hover State,Verify Chi tiet button appearance and hover effect,"User is on the Award System page, scrolled to Sun* Kudos section",,"1. Observe the ""Chi tiet"" button
+2. Hover mouse over the button","Button displays as text link style matching design spec (color, font size, icon)
+On hover: subtle float/elevation effect; cursor changes to pointer",I335:12023;313:8426,Medium,Manual,,,,
+GUI,GUI-019,He Thong Giai,GUI,Page Layout,Scrollbar,Verify vertical scrollbar appears when content exceeds viewport,User is on the Award System page,,"1. View page at standard viewport size
+2. Check for vertical scrollbar
+3. Zoom in the page and check scrollbar
+4. Zoom out and check scrollbar",Vertical scrollbar appears when content exceeds viewport; no horizontal scrollbar at standard widths; scrollbar responds to zoom level,,Low,Manual,,,,
+GUI,GUI-020,He Thong Giai,GUI,Page Layout,Cross-browser,Verify page displays consistently across major browsers,"User has access to Chrome, Firefox, and Safari",,"1. Open the Award System page in Chrome
+2. Open in Firefox
+3. Open in Safari
+4. Compare layout fonts colors and element positioning","Page displays consistently across all browsers; no layout breaks, missing elements, or significant visual differences",,Medium,Manual,,,,
+GUI,GUI-021,He Thong Giai,GUI,Accessibility,Alt Text,Verify all images have appropriate alt text attributes,User is on the Award System page,,"1. Inspect the page source or use accessibility tools
+2. Check alt attributes on all images (keyvisual, award images, Sun* Kudos illustration)","Keyvisual has alt=""Keyvisual Sun* Annual Award 2025""; all award images have descriptive alt text; decorative images have empty alt=""""","313:8437, I313:8467;214:2525",Medium,Manual,,,,
+GUI,GUI-022,He Thong Giai,GUI,Accessibility,Keyboard,Verify interactive elements are accessible via keyboard Tab navigation,User is on the Award System page,,"1. Press Tab key repeatedly to navigate through the page
+2. Observe focus indicators on navigation menu items and ""Chi tiet"" button","Tab moves focus through interactive elements in logical order; focus indicator is visible on each element; navigation menu items and ""Chi tiet"" button are reachable via Tab","313:8459, I335:12023;313:8426",Medium,Manual,,,,
+GUI,GUI-023,He Thong Giai,GUI,Award Cards,Display,Verify all award card images load and display without being broken,User is on the Award System page,,"1. Scroll through all 6 award cards
+2. Observe each award image",All 6 award images load successfully; images are not broken or distorted; images display at correct dimensions (336x336px for Top Talent reference),I313:8467;214:2525,High,Manual,,,,
+GUI,GUI-024,He Thong Giai,GUI,Title Section,Display,Verify all static text on the page cannot be edited by user interaction,User is on the Award System page,,"1. Double-click on various text elements (titles, descriptions, award values)
+2. Try to type or modify the text",No text is editable; double-click only selects text for copy but does not enable editing,,Low,Manual,,,,
+FUNCTION,FUNC-001,He Thong Giai,FUNCTION,Navigation Menu,Click,Verify clicking Top Talent in navigation scrolls to the Top Talent award card,User is on the Award System page,,"1. Scroll to the award system section
+2. Click ""Top Talent"" in the left navigation menu","Page smoothly scrolls to the Top Talent award card section; ""Top Talent"" menu item becomes active (yellow + underline)","313:8460, 313:8467",High,Manual,,,,
+FUNCTION,FUNC-002,He Thong Giai,FUNCTION,Navigation Menu,Click,Verify clicking Top Project in navigation scrolls to the Top Project award card,User is on the Award System page,,1. Click ""Top Project"" in the left navigation menu,Page smoothly scrolls to the Top Project award card; ""Top Project"" menu item becomes active; previously active item loses active state,"313:8461, 313:8468",High,Manual,,,,
+FUNCTION,FUNC-003,He Thong Giai,FUNCTION,Navigation Menu,Click,Verify clicking Top Project Leader scrolls to correct section,User is on the Award System page,,1. Click ""Top Project Leader"" in the left navigation menu,Page scrolls to Top Project Leader card; menu item becomes active with yellow + underline,"313:8462, 313:8469",High,Manual,,,,
+FUNCTION,FUNC-004,He Thong Giai,FUNCTION,Navigation Menu,Click,Verify clicking Best Manager scrolls to correct section,User is on the Award System page,,1. Click ""Best Manager"" in the left navigation menu,Page scrolls to Best Manager card; menu item becomes active,"313:8463, 313:8470",High,Manual,,,,
+FUNCTION,FUNC-005,He Thong Giai,FUNCTION,Navigation Menu,Click,Verify clicking Signature 2025 - Creator scrolls to correct section,User is on the Award System page,,1. Click ""Signature 2025 - Creator"" in the left navigation menu,Page scrolls to Signature 2025 - Creator card; menu item becomes active,"313:8464, 313:8471",High,Manual,,,,
+FUNCTION,FUNC-006,He Thong Giai,FUNCTION,Navigation Menu,Click,Verify clicking MVP scrolls to correct section,User is on the Award System page,,1. Click ""MVP"" in the left navigation menu,Page scrolls to MVP card; menu item becomes active,"313:8465, 313:8510",High,Manual,,,,
+FUNCTION,FUNC-007,He Thong Giai,FUNCTION,Navigation Menu,Active State,Verify only one menu item is active at a time and active state updates on each click,User is on the Award System page,,"1. Click ""Top Talent"" - observe active state
+2. Click ""Best Manager"" - observe active state change
+3. Click ""MVP"" - observe active state change",Each click sets the clicked item as active (yellow + underline) and removes active state from the previously active item; only one item is active at any time,313:8459,High,Manual,,,,
+FUNCTION,FUNC-008,He Thong Giai,FUNCTION,Navigation Menu,Multiple Clicks,Verify navigation handles rapid successive clicks correctly,User is on the Award System page,,"1. Rapidly click different navigation menu items in succession (e.g., Top Talent -> MVP -> Top Project -> Best Manager)","Page scrolls to the last clicked item's section; active state shows the last clicked item; no duplicate scrolling, layout glitches, or errors",313:8459,Medium,Manual,,,,
+FUNCTION,FUNC-009,He Thong Giai,FUNCTION,Navigation Menu,Multiple Clicks,Verify double-clicking the same navigation item does not cause issues,User is on the Award System page,,1. Double-click on ""Top Talent"" in the navigation menu,Page scrolls to Top Talent section once; no duplicate navigation or errors; item remains active,313:8460,Medium,Manual,,,,
+FUNCTION,FUNC-010,He Thong Giai,FUNCTION,Navigation Menu,Keyboard,Verify navigation menu items can be activated via keyboard Tab and Enter,User is on the Award System page,,"1. Use Tab key to focus on a navigation menu item
+2. Press Enter to activate it",Page scrolls to the corresponding award section; menu item becomes active; same behavior as mouse click,313:8459,Medium,Manual,,,,
+FUNCTION,FUNC-011,He Thong Giai,FUNCTION,Navigation Menu,Click,Verify clicking on the icon or text of a menu item both navigate to the same section,User is on the Award System page; Top Talent has an icon before text,,"1. Click on the icon of ""Top Talent"" menu item
+2. Observe the scroll target
+3. Click on the text ""Top Talent""
+4. Observe the scroll target",Both icon click and text click navigate to the same Top Talent section,313:8460,Medium,Manual,,,,
+FUNCTION,FUNC-012,He Thong Giai,FUNCTION,Button,Click,Verify clicking Chi tiet button navigates to the Sun* Kudos detail page,"User is on the Award System page, scrolled to Sun* Kudos block",,"1. Scroll to the Sun* Kudos promotional block
+2. Click the ""Chi tiet"" button",User is navigated to the Sun* Kudos detail page; page loads correctly within acceptable time,I335:12023;313:8426,High,Manual,,,,
+FUNCTION,FUNC-013,He Thong Giai,FUNCTION,Button,Multiple Clicks,Verify double-clicking Chi tiet button does not cause duplicate navigation or errors,User is on the Award System page,,1. Double-click the ""Chi tiet"" button rapidly,Navigates to Sun* Kudos page once; no duplicate page loading or navigation errors,I335:12023;313:8426,Medium,Manual,,,,
+FUNCTION,FUNC-014,He Thong Giai,FUNCTION,Award Cards,Content,Verify Top Talent award card displays correct data values,User is on the Award System page,"Expected: Quantity=10, Unit=Don vi, Value=7.000.000 VND","1. Navigate to Top Talent section
+2. Verify quantity unit and prize value","Quantity shows ""10"" Unit shows ""Don vi"" Prize value shows ""7.000.000 VND"" per award",313:8467,High,Manual,,,,
+FUNCTION,FUNC-015,He Thong Giai,FUNCTION,Award Cards,Content,Verify Top Project award card displays correct data values,User is on the Award System page,"Expected: Quantity=02, Unit=Tap the, Value=15.000.000 VND","1. Navigate to Top Project section
+2. Verify quantity unit and prize value","Quantity shows ""02"" Unit shows ""Tap the"" Prize value shows ""15.000.000 VND""",313:8468,High,Manual,,,,
+FUNCTION,FUNC-016,He Thong Giai,FUNCTION,Award Cards,Content,Verify Top Project Leader card data,User is on the Award System page,"Expected: Quantity=03, Unit=Ca nhan, Value=7.000.000 VND","1. Navigate to Top Project Leader section
+2. Verify data","Quantity ""03"" Unit ""Ca nhan"" Value ""7.000.000 VND""",313:8469,High,Manual,,,,
+FUNCTION,FUNC-017,He Thong Giai,FUNCTION,Award Cards,Content,Verify Best Manager card data,User is on the Award System page,"Expected: Quantity=01, Unit=Ca nhan, Value=10.000.000 VND","1. Navigate to Best Manager section
+2. Verify data","Quantity ""01"" Unit ""Ca nhan"" Value ""10.000.000 VND""",313:8470,High,Manual,,,,
+FUNCTION,FUNC-018,He Thong Giai,FUNCTION,Award Cards,Content,Verify Signature 2025 - Creator card data with dual prize values,User is on the Award System page,"Expected: Quantity=01, Individual Value=5.000.000 VND, Team Value=8.000.000 VND","1. Navigate to Signature 2025 - Creator section
+2. Verify quantity and both prize values","Quantity ""01"" Individual prize ""5.000.000 VND"" Team prize ""8.000.000 VND""",313:8471,High,Manual,,,,
+FUNCTION,FUNC-019,He Thong Giai,FUNCTION,Award Cards,Content,Verify MVP card data,User is on the Award System page,"Expected: Quantity=01, Value=15.000.000 VND","1. Navigate to MVP section
+2. Verify data","Quantity ""01"" Prize value ""15.000.000 VND""",313:8510,High,Manual,,,,
+FUNCTION,FUNC-020,He Thong Giai,FUNCTION,Page,Scroll,Verify clicking navigation items triggers smooth scroll animation,User is on the Award System page,,"1. Click any navigation menu item
+2. Observe the scroll behavior",Page scrolls smoothly (animated) to the target section rather than jumping instantly,313:8459,Low,Manual,,,,
+FUNCTION,FUNC-021,He Thong Giai,FUNCTION,Page,Performance,Verify all images load within acceptable time,Standard network connection,,"1. Open browser developer tools (Network tab)
+2. Navigate to the Award System page
+3. Observe image load times","All images (keyvisual, 6 award images, kudos illustration) load within 3 seconds; no failed requests; total page weight is reasonable",,Medium,Manual,,,,
+FUNCTION,FUNC-022,He Thong Giai,FUNCTION,Button,Click,Verify there are no broken links on the Award System page,User is on the Award System page,,"1. Use browser extension ""Check My Links"" or developer tools
+2. Scan all links on the page","No broken links found; all navigation targets and the ""Chi tiet"" button link resolve correctly",,Medium,Manual,,,,

@@ -1,0 +1,121 @@
+Section,TC_ID,Page_Name,Category,Sub_Category,Sub_Sub_Category,Test_Objective,Precondition,Test_Data,Steps,Expected_Result,Specs,Priority,Testcase_Type,Test_Result,Executed_Date,Tester,Note
+ACCESSING,ACC-001,The le UPDATE,Open Modal,Click,,Verify the "The le UPDATE" modal opens when user clicks on the trigger element,User is logged in and on the main screen where the "The le" trigger is visible,N/A,"1. Navigate to the screen containing the ""The le"" trigger
+2. Click on the ""The le"" button/link","The ""The le UPDATE"" modal is displayed without error, showing title, description, reward list, 6 badges, and ""Dong""/""Viet KUDOS"" buttons","A. Noi dung the le (info_block), B. Button (footer modal)",High,Manual,,,,
+ACCESSING,ACC-002,The le UPDATE,Open Modal,Double Click,,Verify the modal opens correctly when double-clicking the trigger,User is logged in and on the main screen where the "The le" trigger is visible,N/A,"1. Navigate to the screen containing the ""The le"" trigger
+2. Double-click on the ""The le"" button/link","The ""The le UPDATE"" modal is displayed once without error (no duplicate modals)","A. Noi dung the le (info_block), B. Button (footer modal)",Medium,Manual,,,,
+ACCESSING,ACC-003,The le UPDATE,Open Modal,Keyboard,,Verify the modal opens via keyboard navigation,User is logged in and on the main screen where the "The le" trigger is visible,N/A,"1. Navigate to the screen containing the ""The le"" trigger
+2. Press Tab to focus on the ""The le"" button/link
+3. Press Enter","The ""The le UPDATE"" modal is displayed without error","A. Noi dung the le (info_block), B. Button (footer modal)",Medium,Manual,,,,
+ACCESSING,ACC-004,The le UPDATE,Permission/Authentication,Unauthenticated User,,Verify behavior when unauthenticated user tries to access the rules modal,User is NOT logged in,N/A,"1. Navigate to the application without logging in
+2. Attempt to access the ""The le"" trigger",User is redirected to login page or the trigger is not accessible,"A. Noi dung the le (info_block)",High,Manual,,,,
+ACCESSING,ACC-005,The le UPDATE,Open Modal,Re-open,,Verify modal can be reopened after being closed,User is logged in and on the main screen,N/A,"1. Open the ""The le UPDATE"" modal
+2. Close the modal by clicking ""Dong""
+3. Click the ""The le"" trigger again","The modal reopens correctly with all content displayed properly","A. Noi dung the le (info_block), B.1 Button dong",Medium,Manual,,,,
+ACCESSING,ACC-006,The le UPDATE,Open Modal,Responsive,,Verify modal opens correctly across all breakpoints,User is logged in,"Screen widths: 320px (mobile), 768px (tablet), 1024px (desktop), 1440px (wide)","1. Set browser to each target width
+2. Click on the ""The le"" trigger","Modal opens correctly and is fully visible at each breakpoint","A. Noi dung the le (info_block)",Medium,Manual,,,,
+GUI,GUI-001,The le UPDATE,Layout,Modal Position,,Verify the modal is displayed at the correct position per design specs,"User is logged in and ""The le UPDATE"" modal is open",N/A,"1. Open the ""The le UPDATE"" modal
+2. Observe the modal position on screen","Modal is centered on screen (or positioned as per design). Background has overlay/dimmed effect as per spec.","A. Noi dung the le (info_block)",High,Manual,,,,
+GUI,GUI-002,The le UPDATE,Layout,Background Overlay,,Verify background overlay is displayed when modal is open,"""The le UPDATE"" modal is open",N/A,"1. Open the ""The le UPDATE"" modal
+2. Observe the background behind the modal","Background is covered with a semi-transparent overlay as per design","A. Noi dung the le (info_block)",Medium,Manual,,,,
+GUI,GUI-003,The le UPDATE,Content Display,Title,,Verify the title text is displayed correctly with proper styling,"""The le UPDATE"" modal is open",N/A,"1. Open the ""The le UPDATE"" modal
+2. Check the title text, position, font, size, and color","Title is displayed at the correct position with correct text content, font style, font size, and color matching the design","A. Noi dung the le (info_block)",High,Manual,,,,
+GUI,GUI-004,The le UPDATE,Content Display,Description,,Verify the description text is displayed correctly,"""The le UPDATE"" modal is open",N/A,"1. Open the ""The le UPDATE"" modal
+2. Check the description text content, position, and styling","Description is displayed correctly with proper text, position, font, size, color, and line spacing matching the design","A. Noi dung the le (info_block)",High,Manual,,,,
+GUI,GUI-005,The le UPDATE,Content Display,Reward List,,Verify the reward list items are displayed correctly,"""The le UPDATE"" modal is open",N/A,"1. Open the ""The le UPDATE"" modal
+2. Check the reward list items, order, and styling","All reward items are listed in correct order with proper formatting, bullet points/numbering, and styling per design","A. Noi dung the le (info_block)",High,Manual,,,,
+GUI,GUI-006,The le UPDATE,Content Display,Badges,,Verify all 6 badges are displayed correctly,"""The le UPDATE"" modal is open",N/A,"1. Open the ""The le UPDATE"" modal
+2. Check all 6 badge images, labels, positions, and sizes","All 6 badges are displayed with correct images, labels, positions, sizes, and spacing as per design","A. Noi dung the le (info_block)",High,Manual,,,,
+GUI,GUI-007,The le UPDATE,Content Display,Badges,Image Quality,Verify badge images are not blurry or distorted,"""The le UPDATE"" modal is open",N/A,"1. Open the ""The le UPDATE"" modal
+2. Inspect each badge image for clarity and quality","All badge images are clear, not blurry, not distorted, and properly rendered","A. Noi dung the le (info_block)",Medium,Manual,,,,
+GUI,GUI-008,The le UPDATE,Button Display,Dong Button,Default State,Verify the "Dong" button displays correctly in default state,"""The le UPDATE"" modal is open",N/A,"1. Open the ""The le UPDATE"" modal
+2. Check the ""Dong"" button: icon (X), text, position, style (secondary/outlined)","""Dong"" button displays with X icon on the left, text ""Dong"", secondary/outlined style, at correct position in footer","B.1 Button dong (icon_text)",High,Manual,,,,
+GUI,GUI-009,The le UPDATE,Button Display,Dong Button,Hover State,Verify hover effect on "Dong" button,"""The le UPDATE"" modal is open",N/A,"1. Open the ""The le UPDATE"" modal
+2. Hover mouse over the ""Dong"" button","Button shows hover effect (color/elevation change) as per design","B.1 Button dong (icon_text)",Medium,Manual,,,,
+GUI,GUI-010,The le UPDATE,Button Display,Viet KUDOS Button,Default State,Verify the "Viet KUDOS" button displays correctly in default state,"""The le UPDATE"" modal is open",N/A,"1. Open the ""The le UPDATE"" modal
+2. Check the ""Viet KUDOS"" button: icon (pen), text, position, style (primary/yellow)","""Viet KUDOS"" button displays with pen icon on the left, text ""Viet KUDOS"", primary yellow style, at correct position in footer","B.2 Button viet kudos (icon_text)",High,Manual,,,,
+GUI,GUI-011,The le UPDATE,Button Display,Viet KUDOS Button,Hover State,Verify hover effect on "Viet KUDOS" button,"""The le UPDATE"" modal is open",N/A,"1. Open the ""The le UPDATE"" modal
+2. Hover mouse over the ""Viet KUDOS"" button","Button shows hover effect (color/elevation change) as per design","B.2 Button viet kudos (icon_text)",Medium,Manual,,,,
+GUI,GUI-012,The le UPDATE,Button Display,Viet KUDOS Button,Disabled State,Verify the "Viet KUDOS" button displays correctly when disabled,"""The le UPDATE"" modal is open and button is in disabled state (if applicable)",N/A,"1. Open the ""The le UPDATE"" modal under conditions where ""Viet KUDOS"" is disabled
+2. Check the button appearance","Button is dimmed/grayed out and cursor does not change to pointer","B.2 Button viet kudos (icon_text)",Low,Manual,,,,
+GUI,GUI-013,The le UPDATE,Scrollbar,Display,,Verify scrollbar appears when content exceeds visible area,"""The le UPDATE"" modal is open with content longer than modal height",Rules content that exceeds the modal viewport,"1. Open the ""The le UPDATE"" modal with long content
+2. Check if vertical scrollbar is displayed","Vertical scrollbar is displayed within the content area of the modal","A. Noi dung the le (info_block)",High,Manual,,,,
+GUI,GUI-014,The le UPDATE,Scrollbar,No Display,,Verify scrollbar does not appear when content fits within modal,"""The le UPDATE"" modal is open with short content",Rules content that fits within the modal viewport,"1. Open the ""The le UPDATE"" modal with short content
+2. Check if scrollbar is present","No scrollbar is displayed","A. Noi dung the le (info_block)",Low,Manual,,,,
+GUI,GUI-015,The le UPDATE,Responsive Design,Mobile,,Verify modal layout on mobile screen,Browser set to 320px width,Screen width: 320px,"1. Set browser width to 320px
+2. Open the ""The le UPDATE"" modal
+3. Check all elements: title, description, rewards, badges, buttons","Modal is fully visible, no horizontal overflow, all elements properly stacked, touch targets at least 44x44px, text readable","A. Noi dung the le (info_block), B. Button (footer modal)",High,Manual,,,,
+GUI,GUI-016,The le UPDATE,Responsive Design,Tablet,,Verify modal layout on tablet screen,Browser set to 768px width,Screen width: 768px,"1. Set browser width to 768px
+2. Open the ""The le UPDATE"" modal
+3. Check all elements layout","Modal displays correctly with appropriate sizing and spacing for tablet","A. Noi dung the le (info_block), B. Button (footer modal)",Medium,Manual,,,,
+GUI,GUI-017,The le UPDATE,Responsive Design,Desktop,,Verify modal layout on desktop screen,Browser set to 1024px width,Screen width: 1024px,"1. Set browser width to 1024px
+2. Open the ""The le UPDATE"" modal
+3. Check all elements layout","Modal displays correctly with appropriate sizing and spacing for desktop","A. Noi dung the le (info_block), B. Button (footer modal)",Medium,Manual,,,,
+GUI,GUI-018,The le UPDATE,Responsive Design,Wide,,Verify modal layout on wide screen,Browser set to 1440px width,Screen width: 1440px,"1. Set browser width to 1440px
+2. Open the ""The le UPDATE"" modal
+3. Check all elements layout","Modal displays correctly, centered, with appropriate max-width","A. Noi dung the le (info_block), B. Button (footer modal)",Medium,Manual,,,,
+GUI,GUI-019,The le UPDATE,Text Display,Non-editable,,Verify that all static text and labels cannot be edited by user,"""The le UPDATE"" modal is open",N/A,"1. Open the ""The le UPDATE"" modal
+2. Try to click and edit any text/label in the modal","All text and labels are read-only and cannot be edited","A. Noi dung the le (info_block)",Medium,Manual,,,,
+GUI,GUI-020,The le UPDATE,Responsive Design,Zoom,,Verify modal layout is not broken when zooming,"""The le UPDATE"" modal is open","Zoom levels: 75%, 100%, 125%, 150%","1. Open the ""The le UPDATE"" modal
+2. Zoom in to 125% and 150%
+3. Zoom out to 75%
+4. Check layout at each zoom level","Modal layout remains intact without broken elements or overlapping content at all zoom levels","A. Noi dung the le (info_block), B. Button (footer modal)",Medium,Manual,,,,
+GUI,GUI-021,The le UPDATE,Button Display,Footer Alignment,,Verify both footer buttons are properly aligned,"""The le UPDATE"" modal is open",N/A,"1. Open the ""The le UPDATE"" modal
+2. Check the alignment and spacing of ""Dong"" and ""Viet KUDOS"" buttons in the footer","Both buttons are properly aligned in the footer area with correct spacing between them as per design","B. Button (footer modal)",Medium,Manual,,,,
+FUNCTION,FUN-001,The le UPDATE,Button Actions,Dong Button,Click,Verify clicking "Dong" button closes the modal,"""The le UPDATE"" modal is open",N/A,"1. Open the ""The le UPDATE"" modal
+2. Click the ""Dong"" button","Modal is closed, user returns to the previous screen/content, no data changes occur","B.1 Button dong (icon_text)",High,Manual,,,,
+FUNCTION,FUN-002,The le UPDATE,Button Actions,Dong Button,Double Click,Verify double-clicking "Dong" button closes modal without errors,"""The le UPDATE"" modal is open",N/A,"1. Open the ""The le UPDATE"" modal
+2. Double-click the ""Dong"" button","Modal is closed once without error, no duplicate actions triggered","B.1 Button dong (icon_text)",Medium,Manual,,,,
+FUNCTION,FUN-003,The le UPDATE,Button Actions,Dong Button,Keyboard,Verify closing modal via keyboard navigation,"""The le UPDATE"" modal is open",N/A,"1. Open the ""The le UPDATE"" modal
+2. Press Tab to focus on the ""Dong"" button
+3. Press Enter","Modal is closed, user returns to previous content","B.1 Button dong (icon_text)",Medium,Manual,,,,
+FUNCTION,FUN-004,The le UPDATE,Button Actions,Dong Button,ESC Key,Verify pressing ESC key closes the modal,"""The le UPDATE"" modal is open",N/A,"1. Open the ""The le UPDATE"" modal
+2. Press ESC key","Modal is closed, user returns to previous content","B.1 Button dong (icon_text)",Medium,Manual,,,,
+FUNCTION,FUN-005,The le UPDATE,Button Actions,Viet KUDOS Button,Click,Verify clicking "Viet KUDOS" button opens the KUDOS writing form,"""The le UPDATE"" modal is open",N/A,"1. Open the ""The le UPDATE"" modal
+2. Click the ""Viet KUDOS"" button","The ""Viet Kudo"" form/modal (frame 520:11602) is opened for the user to write KUDOS","B.2 Button viet kudos (icon_text, navigation: on_click -> Viet Kudo 520:11602)",High,Manual,,,,
+FUNCTION,FUN-006,The le UPDATE,Button Actions,Viet KUDOS Button,Double Click,Verify double-clicking "Viet KUDOS" does not cause duplicate navigation,"""The le UPDATE"" modal is open",N/A,"1. Open the ""The le UPDATE"" modal
+2. Double-click the ""Viet KUDOS"" button","The ""Viet Kudo"" form opens once, no duplicate modals or navigation errors","B.2 Button viet kudos (icon_text, navigation: on_click -> Viet Kudo 520:11602)",Medium,Manual,,,,
+FUNCTION,FUN-007,The le UPDATE,Button Actions,Viet KUDOS Button,Keyboard,Verify navigating to KUDOS form via keyboard,"""The le UPDATE"" modal is open",N/A,"1. Open the ""The le UPDATE"" modal
+2. Press Tab to focus on the ""Viet KUDOS"" button
+3. Press Enter","The ""Viet Kudo"" form/modal is opened","B.2 Button viet kudos (icon_text, navigation: on_click -> Viet Kudo 520:11602)",Medium,Manual,,,,
+FUNCTION,FUN-008,The le UPDATE,Button Actions,Viet KUDOS Button,Disabled State,Verify clicking disabled "Viet KUDOS" button has no effect,"""The le UPDATE"" modal is open with ""Viet KUDOS"" button in disabled state",N/A,"1. Open the ""The le UPDATE"" modal in a state where ""Viet KUDOS"" is disabled
+2. Click the ""Viet KUDOS"" button","Nothing happens, no navigation occurs, button does not respond to click","B.2 Button viet kudos (icon_text)",Low,Manual,,,,
+FUNCTION,FUN-009,The le UPDATE,Scroll Behavior,Mouse Wheel,,Verify scrolling within modal using mouse wheel,"""The le UPDATE"" modal is open with content exceeding visible area",Long rules content,"1. Open the ""The le UPDATE"" modal with long content
+2. Place cursor inside the content area
+3. Scroll down using mouse wheel
+4. Scroll up using mouse wheel","Content scrolls smoothly up and down within the modal. Footer buttons remain fixed at the bottom.","A. Noi dung the le (info_block)",High,Manual,,,,
+FUNCTION,FUN-010,The le UPDATE,Scroll Behavior,Drag Scrollbar,,Verify scrolling by dragging the scrollbar,"""The le UPDATE"" modal is open with scrollable content",Long rules content,"1. Open the ""The le UPDATE"" modal with long content
+2. Click and drag the scrollbar down
+3. Click and drag the scrollbar up","Content scrolls corresponding to scrollbar position, no content duplication or visual glitches","A. Noi dung the le (info_block)",Medium,Manual,,,,
+FUNCTION,FUN-011,The le UPDATE,Scroll Behavior,Keyboard Scroll,,Verify scrolling with keyboard keys,"""The le UPDATE"" modal is open with scrollable content, focus is on modal",Long rules content,"1. Open the ""The le UPDATE"" modal with long content
+2. Press Down Arrow key
+3. Press Up Arrow key
+4. Press Page Down key
+5. Press Page Up key","Content scrolls appropriately: arrows scroll one line, PgUp/PgDn scroll one page","A. Noi dung the le (info_block)",Medium,Manual,,,,
+FUNCTION,FUN-012,The le UPDATE,Modal Behavior,Click Outside,,Verify behavior when clicking outside the modal,"""The le UPDATE"" modal is open",N/A,"1. Open the ""The le UPDATE"" modal
+2. Click on the background/overlay area outside the modal","Modal is closed (or remains open depending on spec). No errors occur.","A. Noi dung the le (info_block)",High,Manual,,,,
+FUNCTION,FUN-013,The le UPDATE,Modal Behavior,Background Interaction,,Verify background elements are not clickable while modal is open,"""The le UPDATE"" modal is open",N/A,"1. Open the ""The le UPDATE"" modal
+2. Try to click on any element visible behind the overlay","No interaction with background elements occurs while modal is open","A. Noi dung the le (info_block)",Medium,Manual,,,,
+FUNCTION,FUN-014,The le UPDATE,Modal Behavior,Page Reload,,Verify modal behavior on page reload,"""The le UPDATE"" modal is open",N/A,"1. Open the ""The le UPDATE"" modal
+2. Press F5 or Ctrl+R to reload the page","Page reloads, modal is closed, no errors occur, page returns to normal state","A. Noi dung the le (info_block)",Medium,Manual,,,,
+FUNCTION,FUN-015,The le UPDATE,Modal Behavior,Background Scroll,,Verify background page does not scroll while modal is open,"""The le UPDATE"" modal is open, background page has scrollable content",N/A,"1. Open the ""The le UPDATE"" modal
+2. Try to scroll the background page (mouse wheel outside content area)","Background page does not scroll; only modal content scrolls (if applicable)","A. Noi dung the le (info_block)",Medium,Manual,,,,
+FUNCTION,FUN-016,The le UPDATE,Text Interaction,Copy Text,,Verify text in modal can be selected and copied,"""The le UPDATE"" modal is open",N/A,"1. Open the ""The le UPDATE"" modal
+2. Select some text in the content area
+3. Press Ctrl+C
+4. Paste in another application to verify","Text can be selected and copied correctly, modal remains unchanged","A. Noi dung the le (info_block)",Low,Manual,,,,
+FUNCTION,FUN-017,The le UPDATE,Text Interaction,Right-click Copy,,Verify right-click copy functionality within modal,"""The le UPDATE"" modal is open",N/A,"1. Open the ""The le UPDATE"" modal
+2. Select some text in the content area
+3. Right-click and select ""Copy""","Context menu appears, text is copied correctly, modal remains unchanged","A. Noi dung the le (info_block)",Low,Manual,,,,
+FUNCTION,FUN-018,The le UPDATE,Text Interaction,Select All,,Verify Ctrl+A behavior within modal,"""The le UPDATE"" modal is open, focus is within modal",N/A,"1. Open the ""The le UPDATE"" modal
+2. Click inside the content area
+3. Press Ctrl+A","Text within the modal is selected, modal remains unchanged","A. Noi dung the le (info_block)",Low,Manual,,,,
+FUNCTION,FUN-019,The le UPDATE,Navigation,Tab Order,,Verify correct Tab key navigation order within modal,"""The le UPDATE"" modal is open",N/A,"1. Open the ""The le UPDATE"" modal
+2. Press Tab key repeatedly and observe focus order","Focus cycles through interactive elements within the modal only (e.g., ""Dong"" -> ""Viet KUDOS"" -> ""Dong""), does not escape to background elements","B. Button (footer modal)",Medium,Manual,,,,
+FUNCTION,FUN-020,The le UPDATE,Modal Behavior,Non-interactive Click,,Verify clicking on non-interactive areas within the modal,"""The le UPDATE"" modal is open",N/A,"1. Open the ""The le UPDATE"" modal
+2. Click on empty space / non-button areas within the modal","Modal remains unchanged, no errors or unexpected behavior","A. Noi dung the le (info_block)",Low,Manual,,,,
+FUNCTION,FUN-021,The le UPDATE,Modal Behavior,Zoom,,Verify modal behavior when zooming in/out,"""The le UPDATE"" modal is open","Zoom levels: 75%, 125%, 150%","1. Open the ""The le UPDATE"" modal
+2. Zoom in (Ctrl+Plus) to 125% and 150%
+3. Zoom out (Ctrl+Minus) to 75%","Modal remains functional, layout not broken, buttons still clickable at all zoom levels","A. Noi dung the le (info_block), B. Button (footer modal)",Low,Manual,,,,
+FUNCTION,FUN-022,The le UPDATE,Modal Behavior,Rotation,,Verify modal behavior when rotating device,"""The le UPDATE"" modal is open on a mobile/tablet device",Portrait and landscape orientations,"1. Open the ""The le UPDATE"" modal on mobile/tablet
+2. Rotate device from portrait to landscape
+3. Rotate back to portrait","Modal adjusts layout properly without broken UI or errors","A. Noi dung the le (info_block), B. Button (footer modal)",Low,Manual,,,,

@@ -1,0 +1,216 @@
+Section,TC_ID,Page_Name,Category,Sub_Category,Sub_Sub_Category,Test_Objective,Precondition,Test_Data,Steps,Expected_Result,Specs,Priority,Testcase_Type,Test_Result,Executed_Date,Tester,Note
+ACCESSING,TC_HOMEPAGE_ACC_001,Homepage SAA,ACCESSING,Authentication,,Verify that the Homepage SAA is accessible to unauthenticated (logged-out) users,User is not logged in,,"1. Open the browser
+2. Navigate to the Homepage SAA URL","1. The Homepage SAA loads successfully
+2. The page displays the hero banner, countdown, awards section, kudos section, and footer
+3. Header shows navigation links without user-specific controls (no notification bell, no user avatar)","A1, 3.5, C1, C2, D1, 7",High,Access control and security,,,,
+ACCESSING,TC_HOMEPAGE_ACC_002,Homepage SAA,ACCESSING,Authentication,,Verify that the Homepage SAA is accessible to authenticated (logged-in) users,User is logged in with a valid account,Valid user credentials,"1. Log in to the application with valid credentials
+2. Navigate to the Homepage SAA URL","1. The Homepage SAA loads successfully
+2. Header displays notification bell (A1.6), language switcher (A1.7), and user avatar (A1.8)
+3. All page sections render correctly","A1, A1.6, A1.7, A1.8",High,Access control and security,,,,
+ACCESSING,TC_HOMEPAGE_ACC_003,Homepage SAA,ACCESSING,Authentication,,Verify that notification panel requires authentication,User is not logged in,,"1. Navigate to the Homepage SAA while not logged in
+2. Attempt to access the notification feature (if bell icon is visible)","1. Notification bell icon is not displayed for unauthenticated users, OR
+2. Clicking the bell redirects to the login page",A1.6,Medium,Access control and security,,,,
+ACCESSING,TC_HOMEPAGE_ACC_004,Homepage SAA,ACCESSING,Authorization,,Verify that the Admin Dashboard option appears only for admin role users in the profile dropdown,User is logged in with admin role,Admin user credentials,"1. Log in with admin credentials
+2. Navigate to the Homepage SAA
+3. Click the user avatar icon (A1.8)","1. Profile dropdown opens
+2. Dropdown displays: Profile, Sign out, Admin Dashboard options",A1.8,High,Access control and security,,,,
+ACCESSING,TC_HOMEPAGE_ACC_005,Homepage SAA,ACCESSING,Authorization,,Verify that the Admin Dashboard option does NOT appear for regular (non-admin) users,User is logged in with regular (non-admin) role,Regular user credentials,"1. Log in with regular user credentials
+2. Navigate to the Homepage SAA
+3. Click the user avatar icon (A1.8)","1. Profile dropdown opens
+2. Dropdown displays: Profile, Sign out (no Admin Dashboard option)",A1.8,High,Access control and security,,,,
+ACCESSING,TC_HOMEPAGE_ACC_006,Homepage SAA,ACCESSING,Session,,Verify that the Homepage SAA reflects session expiry correctly,"User was previously logged in, session has expired",,"1. Log in to the application
+2. Wait for the session to expire (or manually clear session)
+3. Navigate to (or refresh) the Homepage SAA","1. The Homepage SAA loads successfully
+2. Header reverts to unauthenticated state (no notification bell, no user avatar)
+3. Public content remains visible",A1,Medium,Access control and security,,,,
+ACCESSING,TC_HOMEPAGE_ACC_007,Homepage SAA,ACCESSING,URL Access,,Verify that accessing the Homepage SAA via direct URL works correctly,User has a valid browser,Homepage SAA URL,"1. Open the browser
+2. Enter the Homepage SAA URL directly in the address bar
+3. Press Enter","1. The Homepage SAA loads without error
+2. All sections display correctly","3.5, C1, C2, D1, 7",Medium,Access control and security,,,,
+ACCESSING,TC_HOMEPAGE_ACC_008,Homepage SAA,ACCESSING,URL Access,,Verify that invalid/malformed URL paths under homepage are handled gracefully,User has a valid browser,"Invalid URL path (e.g., /homepage-invalid-path)","1. Open the browser
+2. Navigate to an invalid URL path related to the homepage","1. Application displays a 404 error page or redirects to the homepage
+2. No server error (500) is exposed",,Low,Access control and security,,,,
+GUI,TC_HOMEPAGE_GUI_001,Homepage SAA,GUI,Award Cards,Description Truncation,Verify award card descriptions truncate with ellipsis after 2 lines,Award card has a description longer than 2 lines,,"1. Navigate to the Homepage SAA
+2. Observe award cards with long descriptions","1. Description text displays maximum 2 lines
+2. If text exceeds 2 lines, ellipsis (...) appears at the end",C2.1.3,Medium,User interface,,,,
+GUI,TC_HOMEPAGE_GUI_002,Homepage SAA,GUI,Awards Section,Default Display,Verify the awards section header and card grid display correctly,User navigates to the Homepage SAA,,"1. Scroll to the awards section
+2. Verify section header: caption 'Sun* annual awards 2025', title 'He thong giai thuong', description text
+3. Verify 6 award cards are displayed in grid
+4. Verify each card has: thumbnail image, title, description, 'Chi tiet' link","1. Section header displays caption, title, and description correctly
+2. 6 award cards display: Top Talent, Top Project, Top Project Leader, Best Manager, Signature 2025 - Creator, MVP
+3. Each card shows: square thumbnail with yellow border/light effect, title text, description (max 2 lines), 'Chi tiet' link with icon
+4. Grid layout: 3 columns on desktop, 2 columns on tablet/mobile","C1, C2, C2.1, C2.2, C2.3, C2.4, C2.5, C2.6",High,User interface,,,,
+GUI,TC_HOMEPAGE_GUI_003,Homepage SAA,GUI,Event Info,Default Display,Verify the event information block displays static content correctly,User navigates to the Homepage SAA,,"1. Observe the event information section within the hero area","1. 'Thoi gian:' label with value '18h30' displays correctly
+2. 'Dia diem:' label with value 'Nha hat nghe thuat quan doi' displays correctly
+3. Livestream note 'Tuong thuat truc tiep tai Group Facebook Sun* Family' displays correctly
+4. Text wraps properly on smaller screens without overflow",B2,Medium,User interface,,,,
+GUI,TC_HOMEPAGE_GUI_004,Homepage SAA,GUI,Footer,Default Display,Verify the footer displays all elements correctly,User navigates to the Homepage SAA,,"1. Scroll to the bottom of the page
+2. Verify footer logo on the left
+3. Verify navigation links: 'About SAA 2025', 'Awards Information', 'Sun* Kudos'
+4. Verify copyright text on the right","1. Footer logo (69x64px) displays on the left
+2. Navigation links display in the center
+3. Copyright text 'Ban quyen thuoc ve Sun* (c) 2025' displays on the right
+4. All elements are properly aligned","7, 7.1, 7.2, 7.3, 7.4",Medium,User interface,,,,
+GUI,TC_HOMEPAGE_GUI_005,Homepage SAA,GUI,Header,Default Display,Verify the header displays all elements in correct positions and default states,User is logged in and navigates to the Homepage SAA,,"1. Observe the header at the top of the page
+2. Verify logo is on the left side
+3. Verify navigation links are displayed: 'About SAA 2025', 'Awards Information', 'Sun* Kudos'
+4. Verify right-side controls: notification bell, language 'VN', user avatar
+5. Verify 'About SAA 2025' shows selected state (yellow/underline)","1. Logo (64x60px) displays on the left
+2. Navigation links display in correct order
+3. 'About SAA 2025' shows selected state (yellow text with underline)
+4. Right-side icons display: bell, 'VN' text, user avatar (each 40x40px)
+5. All elements are properly aligned","A1, A1.1, A1.2, A1.3, A1.5, A1.6, A1.7, A1.8",High,User interface,,,,
+GUI,TC_HOMEPAGE_GUI_006,Homepage SAA,GUI,Hero Section,Countdown Display,Verify countdown timer displays with correct zero-padding format,Event has not yet started,"Event date set so that days < 10, hours < 10, minutes < 10","1. Configure event datetime so remaining time has single-digit values
+2. Navigate to the Homepage SAA
+3. Observe the countdown digits","1. Days displays with leading zero (e.g., '05' not '5')
+2. Hours displays with leading zero (e.g., '03' not '3')
+3. Minutes displays with leading zero (e.g., '09' not '9')
+4. Each digit is enclosed in a number box","B1.3, B1.3.1, B1.3.2, B1.3.3",Medium,User interface,,,,
+GUI,TC_HOMEPAGE_GUI_007,Homepage SAA,GUI,Hero Section,Countdown Zero State,Verify countdown display when event time has passed (all zeros),Event datetime is in the past,Event date set to a past datetime,"1. Configure event datetime to a past date
+2. Navigate to the Homepage SAA
+3. Observe countdown and 'Coming soon' label","1. Countdown displays '00' for DAYS, HOURS, and MINUTES
+2. 'Coming soon' subtitle is hidden","B1.2, B1.3",Medium,User interface,,,,
+GUI,TC_HOMEPAGE_GUI_008,Homepage SAA,GUI,Hero Section,Default Display,Verify the hero/keyvisual section displays all elements correctly in default state,Event has not yet started (countdown > 0),,"1. Navigate to the Homepage SAA
+2. Observe the hero section
+3. Verify 'ROOT FURTHER' title is displayed in large font
+4. Verify 'Coming soon' subtitle is visible
+5. Verify countdown displays 3 groups: DAYS, HOURS, MINUTES
+6. Verify event info: time '18h30', location
+7. Verify two CTA buttons: 'ABOUT AWARDS', 'ABOUT KUDOS'
+8. Verify decorative background pattern","1. 'ROOT FURTHER' displays in very large font
+2. 'Coming soon' subtitle is visible below the title
+3. Countdown shows 3 blocks with 2-digit numbers and labels 'DAYS', 'HOURS', 'MINUTES'
+4. Event info shows 'Thoi gian: 18h30' and 'Dia diem: Nha hat nghe thuat quan doi'
+5. Livestream note displays: 'Tuong thuat truc tiep tai Group Facebook Sun* Family'
+6. 'ABOUT AWARDS' button displays in yellow (hover state in design)
+7. 'ABOUT KUDOS' button displays with border outline (normal state)
+8. Background decorative pattern is visible","3.5, B1, B1.2, B1.3, B2, B3, B3.1, B3.2",High,User interface,,,,
+GUI,TC_HOMEPAGE_GUI_009,Homepage SAA,GUI,Hover States,Award Cards,Verify hover effect on award category cards,User navigates to the Homepage SAA,,"1. Hover over any award card (e.g., Top Talent)","1. Card elevates slightly (lift effect)
+2. Border or light highlight becomes visible
+3. Mouse cursor changes to pointer",C2.1,Low,User interface,,,,
+GUI,TC_HOMEPAGE_GUI_010,Homepage SAA,GUI,Hover States,CTA Buttons,"Verify hover states on CTA buttons ('ABOUT AWARDS' and 'ABOUT KUDOS')",User navigates to the Homepage SAA,,"1. Hover over 'ABOUT AWARDS' button
+2. Hover over 'ABOUT KUDOS' button","1. Both buttons change appearance on hover (same hover style)
+2. 'ABOUT AWARDS' in normal state displays like 'ABOUT KUDOS' normal state (outline/border)
+3. 'ABOUT KUDOS' in hover state displays like 'ABOUT AWARDS' hover state (yellow filled)","B3, B3.1, B3.2",Low,User interface,,,,
+GUI,TC_HOMEPAGE_GUI_011,Homepage SAA,GUI,Hover States,Navigation Links,Verify hover states on header navigation links,User navigates to the Homepage SAA,,"1. Hover over 'About SAA 2025' link (selected state)
+2. Hover over 'Awards Information' link
+3. Hover over 'Sun* Kudos' link","1. Hovered links display highlight background effect
+2. Mouse cursor changes to pointer on hover
+3. Selected link ('About SAA 2025') maintains yellow/underline while also showing hover effect","A1.2, A1.3, A1.5",Low,User interface,,,,
+GUI,TC_HOMEPAGE_GUI_012,Homepage SAA,GUI,Kudos Section,Default Display,Verify the Sun* Kudos promotion section displays correctly,User navigates to the Homepage SAA,,"1. Scroll to the Kudos section
+2. Verify label 'Phong trao ghi nhan' is displayed
+3. Verify title 'Sun* Kudos' is displayed
+4. Verify description paragraph is present
+5. Verify illustration image on the right side
+6. Verify 'Chi tiet' button with icon","1. Label 'Phong trao ghi nhan' displays correctly
+2. Title 'Sun* Kudos' displays in large text
+3. Description text is readable
+4. Illustration image renders on the right
+5. 'Chi tiet' button displays with icon","D1, D2, D2.1",Medium,User interface,,,,
+GUI,TC_HOMEPAGE_GUI_013,Homepage SAA,GUI,Page Layout,,Verify the overall page layout displays correctly across all responsive breakpoints,User navigates to the Homepage SAA,,"1. Open the Homepage SAA in a browser
+2. Verify at 320px (Mobile): all sections stack vertically, content is readable, no horizontal overflow
+3. Verify at 768px (Tablet): layout adapts, award grid is 2 columns
+4. Verify at 1024px (Desktop): layout adapts, award grid is 3 columns
+5. Verify at 1440px (Wide): layout is centered with max-width container","1. At 320px: All sections stack vertically, text is readable, touch targets >= 44x44px, no horizontal scrollbar
+2. At 768px: Layout uses tablet breakpoint, award card grid displays 2 columns
+3. At 1024px: Layout uses desktop breakpoint, award card grid displays 3 columns
+4. At 1440px: Content is centered, no excessive whitespace, layout is visually balanced
+5. Page contains sections in order: Header, Hero/Keyvisual, Awards Section, Kudos Section, Footer
+6. Widget button is fixed at bottom-right on all breakpoints","3.5, C2, D1, 7, 6",High,User interface,,,,
+GUI,TC_HOMEPAGE_GUI_014,Homepage SAA,GUI,Text & Labels,Root Further Description,Verify the 'Root Further' description paragraph displays correctly,User navigates to the Homepage SAA,,"1. Scroll to the description block below the hero section
+2. Verify the paragraph text is displayed","1. Description text displays in light color on dark background
+2. Font size is medium
+3. Text wraps and adjusts on smaller screens
+4. Text is not editable by user interaction",B4,Low,User interface,,,,
+GUI,TC_HOMEPAGE_GUI_015,Homepage SAA,GUI,Widget,Default Display,Verify the floating widget button displays correctly and stays fixed,User navigates to the Homepage SAA,,"1. Navigate to the Homepage SAA
+2. Observe the widget button at bottom-right
+3. Scroll down the page
+4. Verify widget button remains in fixed position","1. Widget button (105x64px) displays at bottom-right with yellow pill background, rounded corners
+2. Pencil icon on left, SAA icon on right, '/' separator between them
+3. Button remains fixed at bottom-right during scrolling",6,Medium,User interface,,,,
+FUNCTION,TC_HOMEPAGE_FUN_001,Homepage SAA,FUNCTION,Award Card Interaction,,Verify clicking an award card thumbnail navigates to Awards Information with correct hashtag,User is on the Homepage SAA,,"1. Click the thumbnail image of the 'Top Talent' award card (C2.1.1)","1. User is navigated to the Awards Information page
+2. URL contains hashtag with the slug of 'Top Talent' category
+3. Browser auto-scrolls to the Top Talent section on the Awards Information page","C2.1.1, C2.1",High,Functionality,,,,
+FUNCTION,TC_HOMEPAGE_FUN_002,Homepage SAA,FUNCTION,Award Card Interaction,,Verify clicking an award card title navigates to Awards Information with correct hashtag,User is on the Homepage SAA,,"1. Click the title text 'Top Talent' on the award card (C2.1.2)","1. User is navigated to the Awards Information page
+2. URL contains hashtag with the slug of 'Top Talent' category
+3. Browser auto-scrolls to the correct section",C2.1.2,High,Functionality,,,,
+FUNCTION,TC_HOMEPAGE_FUN_003,Homepage SAA,FUNCTION,Award Card Interaction,,Verify clicking 'Chi tiet' link on an award card navigates to Awards Information with correct hashtag,User is on the Homepage SAA,,"1. Click the 'Chi tiet' link on the 'Top Talent' award card (C2.1.4)","1. User is navigated to the Awards Information page
+2. URL contains hashtag with the slug of 'Top Talent' category
+3. Browser auto-scrolls to the correct section",C2.1.4,High,Functionality,,,,
+FUNCTION,TC_HOMEPAGE_FUN_004,Homepage SAA,FUNCTION,Award Card Interaction,,Verify all 6 award cards navigate to their respective sections on Awards Information page,User is on the Homepage SAA,,"1. Click 'Chi tiet' on 'Top Project' card (C2.2)
+2. Navigate back, click 'Chi tiet' on 'Top Project Leader' card (C2.3)
+3. Navigate back, click 'Chi tiet' on 'Best Manager' card (C2.4)
+4. Navigate back, click 'Chi tiet' on 'Signature 2025 - Creator' card (C2.5)
+5. Navigate back, click 'Chi tiet' on 'MVP' card (C2.6)","1. Each card navigates to the Awards Information page with the correct hashtag slug
+2. Browser auto-scrolls to the corresponding award category section
+3. All 6 cards function correctly","C2.2, C2.3, C2.4, C2.5, C2.6",High,Functionality,,,,
+FUNCTION,TC_HOMEPAGE_FUN_005,Homepage SAA,FUNCTION,Countdown Timer,,Verify the countdown timer counts down in real-time,Event datetime is set to a future date via environment variable,"Event datetime in ISO-8601 format (e.g., future date)","1. Navigate to the Homepage SAA
+2. Note the current countdown values (Days, Hours, Minutes)
+3. Wait for 1 minute
+4. Observe the countdown values again","1. Minutes value decreases by 1 after 1 minute
+2. Hours and Days adjust correctly when Minutes reaches 00
+3. All values remain zero-padded (2 digits)","B1.3, B1.3.1, B1.3.2, B1.3.3",High,Functionality,,,,
+FUNCTION,TC_HOMEPAGE_FUN_006,Homepage SAA,FUNCTION,Countdown Timer,,Verify 'Coming soon' label is hidden and countdown shows 00 when event time has passed,Event datetime is in the past,Event datetime set to a past ISO-8601 value,"1. Set the event datetime environment variable to a past date
+2. Navigate to the Homepage SAA","1. Countdown displays '00' for DAYS, '00' for HOURS, '00' for MINUTES
+2. 'Coming soon' subtitle is hidden/not visible","B1.2, B1.3",High,Functionality,,,,
+FUNCTION,TC_HOMEPAGE_FUN_007,Homepage SAA,FUNCTION,Countdown Timer,,Verify the countdown timer reads the event datetime from environment variable,Access to environment variable configuration,"Custom future datetime in ISO-8601 format (e.g., 2026-12-31T18:30:00+07:00)","1. Set the event datetime environment variable to a specific future date
+2. Start/restart the application
+3. Navigate to the Homepage SAA
+4. Calculate expected Days, Hours, Minutes from current time to the configured datetime","1. Countdown displays values matching the configured datetime
+2. Days, Hours, Minutes correspond to the time difference between now and the configured event date",B1,Medium,Functionality,,,,
+FUNCTION,TC_HOMEPAGE_FUN_008,Homepage SAA,FUNCTION,Cross-browser,,Verify all functional behaviors work consistently across major browsers,"User has access to Chrome, Firefox, Safari, and Edge browsers",,"1. Open the Homepage SAA in Chrome and verify: navigation, countdown, card clicks, widget
+2. Repeat in Firefox
+3. Repeat in Safari
+4. Repeat in Edge","1. All navigation links work in all browsers
+2. Countdown timer updates correctly in all browsers
+3. Award card hover and click behaviors work in all browsers
+4. Widget button functions in all browsers
+5. No broken links in any browser","A1, B1, C2, D1, 6",Medium,Functionality,,,,
+FUNCTION,TC_HOMEPAGE_FUN_009,Homepage SAA,FUNCTION,CTA Buttons,,Verify clicking 'ABOUT AWARDS' button navigates to Awards Information page,User is on the Homepage SAA,,"1. Click the 'ABOUT AWARDS' button (B3.1) in the hero section","1. User is navigated to the Awards Information page
+2. Page loads correctly",B3.1,High,Functionality,,,,
+FUNCTION,TC_HOMEPAGE_FUN_010,Homepage SAA,FUNCTION,CTA Buttons,,Verify clicking 'ABOUT KUDOS' button navigates to Sun* Kudos page,User is on the Homepage SAA,,"1. Click the 'ABOUT KUDOS' button (B3.2) in the hero section","1. User is navigated to the Sun* Kudos page
+2. Page loads correctly",B3.2,High,Functionality,,,,
+FUNCTION,TC_HOMEPAGE_FUN_011,Homepage SAA,FUNCTION,Kudos Section,,Verify clicking 'Chi tiet' button in Kudos section navigates to Sun* Kudos page,User is on the Homepage SAA,,"1. Scroll to the Sun* Kudos section
+2. Click the 'Chi tiet' button (D2.1)","1. User is navigated to the Sun* Kudos page
+2. Page loads correctly",D2.1,High,Functionality,,,,
+FUNCTION,TC_HOMEPAGE_FUN_012,Homepage SAA,FUNCTION,Language Switcher,,Verify clicking the language switcher opens the language menu and switches language,"User is on the Homepage SAA, current language is VN",,"1. Click the language button showing 'VN' (A1.7)
+2. Select 'EN' from the dropdown","1. Language menu opens with options: VN, EN
+2. After selecting EN, the interface switches to English
+3. Language button now displays 'EN'",A1.7,Medium,Functionality,,,,
+FUNCTION,TC_HOMEPAGE_FUN_013,Homepage SAA,FUNCTION,Navigation - Footer,,Verify footer logo click navigates to homepage top,"User is on the Homepage SAA, scrolled to the footer",,"1. Scroll to the footer
+2. Click the footer logo (7.1)",1. Page scrolls to the top of the Homepage SAA,7.1,Medium,Functionality,,,,
+FUNCTION,TC_HOMEPAGE_FUN_014,Homepage SAA,FUNCTION,Navigation - Footer,,Verify footer navigation links navigate to correct pages,User is on the Homepage SAA,,"1. Scroll to the footer
+2. Click 'About SAA 2025' link (7.2)
+3. Navigate back, click 'Awards Information' link (7.3)
+4. Navigate back, click 'Sun* Kudos' link (7.4)","1. 'About SAA 2025' navigates to the About SAA 2025 page
+2. 'Awards Information' navigates to the Awards Information page
+3. 'Sun* Kudos' navigates to the Sun* Kudos page","7.2, 7.3, 7.4",Medium,Functionality,,,,
+FUNCTION,TC_HOMEPAGE_FUN_015,Homepage SAA,FUNCTION,Navigation - Header,,Verify clicking the logo navigates to the homepage,User is on the Homepage SAA,,"1. Click the logo (A1.1) in the header","1. Page scrolls to the top of the Homepage SAA
+2. URL remains the homepage URL",A1.1,High,Functionality,,,,
+FUNCTION,TC_HOMEPAGE_FUN_016,Homepage SAA,FUNCTION,Navigation - Header,,Verify clicking 'About SAA 2025' link when already selected scrolls to top,"User is on the Homepage SAA, 'About SAA 2025' is in selected state",,"1. Scroll down the page
+2. Click 'About SAA 2025' link (A1.2) in the header","1. Page scrolls to the top
+2. 'About SAA 2025' remains in selected state (yellow/underline)",A1.2,Medium,Functionality,,,,
+FUNCTION,TC_HOMEPAGE_FUN_017,Homepage SAA,FUNCTION,Navigation - Header,,Verify clicking 'Awards Information' link navigates to Awards Information page,User is on the Homepage SAA,,"1. Click 'Awards Information' link (A1.3) in the header","1. User is navigated to the Awards Information page
+2. Awards Information page loads correctly",A1.3,High,Functionality,,,,
+FUNCTION,TC_HOMEPAGE_FUN_018,Homepage SAA,FUNCTION,Navigation - Header,,Verify clicking 'Sun* Kudos' link navigates to the Sun* Kudos page,User is on the Homepage SAA,,"1. Click 'Sun* Kudos' link (A1.5) in the header","1. User is navigated to the Sun* Kudos page
+2. Sun* Kudos page loads correctly",A1.5,High,Functionality,,,,
+FUNCTION,TC_HOMEPAGE_FUN_019,Homepage SAA,FUNCTION,Navigation - Header,,Verify no broken links exist on the Homepage SAA,User is on the Homepage SAA,,"1. Use a link checker tool (e.g., Chrome extension 'Check My Links') on the Homepage SAA
+2. Verify all internal and external links","1. No broken links (404 or other error responses) are found
+2. All links resolve to valid pages","A1, B3, C2, D1, 7",Medium,Functionality,,,,
+FUNCTION,TC_HOMEPAGE_FUN_020,Homepage SAA,FUNCTION,Notification,,Verify clicking the notification bell icon opens the notification panel,User is logged in and on the Homepage SAA,,"1. Click the notification bell icon (A1.6)","1. Notification panel opens
+2. Panel displays list of notifications (if any)",A1.6,Medium,Functionality,,,,
+FUNCTION,TC_HOMEPAGE_FUN_021,Homepage SAA,FUNCTION,Notification,,Verify notification badge displays when there are unread notifications,User is logged in and has unread notifications,User account with unread notifications,"1. Navigate to the Homepage SAA
+2. Observe the notification bell icon",1. Red badge displays on the notification bell icon indicating unread notifications,A1.6,Medium,Functionality,,,,
+FUNCTION,TC_HOMEPAGE_FUN_022,Homepage SAA,FUNCTION,Scrolling,,Verify the header remains fixed/sticky when scrolling the page,User is on the Homepage SAA,,"1. Scroll down the page using mouse wheel
+2. Scroll down using keyboard (Page Down, Arrow Down)
+3. Scroll back up","1. Header remains fixed at the top of the viewport during all scroll actions
+2. Header does not move or disappear
+3. All header elements remain functional while scrolling",A1,Medium,Functionality,,,,
+FUNCTION,TC_HOMEPAGE_FUN_023,Homepage SAA,FUNCTION,User Menu,,Verify clicking the user avatar opens the profile dropdown menu,User is logged in and on the Homepage SAA,,"1. Click the user avatar icon (A1.8)","1. Profile dropdown menu opens
+2. Menu contains: Profile, Sign out options",A1.8,High,Functionality,,,,
+FUNCTION,TC_HOMEPAGE_FUN_024,Homepage SAA,FUNCTION,User Menu,,Verify Sign out option logs the user out,User is logged in and on the Homepage SAA,,"1. Click the user avatar icon (A1.8)
+2. Click 'Sign out' from the dropdown","1. User is logged out
+2. Page refreshes/redirects to reflect unauthenticated state
+3. Header no longer shows user-specific controls",A1.8,High,Functionality,,,,
+FUNCTION,TC_HOMEPAGE_FUN_025,Homepage SAA,FUNCTION,Widget Button,,Verify clicking the floating widget button opens the quick action menu,User is on the Homepage SAA,,"1. Click the floating widget button (6) at the bottom-right","1. Quick action menu opens
+2. Menu displays available action options",6,Medium,Functionality,,,,

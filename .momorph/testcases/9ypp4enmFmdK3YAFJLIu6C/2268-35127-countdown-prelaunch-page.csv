@@ -1,0 +1,154 @@
+Section,TC_ID,Page_Name,Category,Sub_Category,Sub_Sub_Category,Test_Objective,Precondition,Test_Data,Steps,Expected_Result,Specs,Priority,Testcase_Type,Test_Result,Executed_Date,Tester,Note
+ACCESSING,ACC-001,Countdown - Prelaunch page,ACCESSING,Direct URL Access,,Verify the countdown page loads correctly when accessed via direct URL,Application is deployed and running,Valid countdown page URL,"1. Open a browser
+2. Enter the countdown page URL in the address bar
+3. Press Enter","The countdown page loads successfully displaying the countdown timer with Days, Hours, and Minutes sections",,High,Normal,,,,
+ACCESSING,ACC-002,Countdown - Prelaunch page,ACCESSING,Direct URL Access,,Verify appropriate error handling when the server is unavailable,Application server is stopped/unavailable,Valid countdown page URL,"1. Open a browser
+2. Enter the countdown page URL in the address bar
+3. Press Enter","An appropriate error page or message is displayed (e.g., 503 Service Unavailable)",,Medium,Abnormal,,,,
+ACCESSING,ACC-003,Countdown - Prelaunch page,ACCESSING,Browser Navigation,,Verify the countdown page loads correctly when navigated to via browser Back button,User has navigated away from the countdown page,,"1. Open the countdown page
+2. Navigate to another page
+3. Click the browser Back button",The countdown page loads correctly with updated countdown values,,Medium,Normal,,,,
+ACCESSING,ACC-004,Countdown - Prelaunch page,ACCESSING,Browser Navigation,,Verify the countdown page loads correctly when navigated to via browser Forward button,User has navigated back from the countdown page,,"1. Open the countdown page
+2. Navigate to another page
+3. Click the browser Back button to return to countdown page
+4. Click the browser Forward button to go to the other page
+5. Click the browser Back button again",The countdown page loads correctly with updated countdown values,,Low,Normal,,,,
+ACCESSING,ACC-005,Countdown - Prelaunch page,ACCESSING,Browser Navigation,,Verify the countdown page reloads correctly on refresh,Countdown page is currently displayed,,"1. Open the countdown page
+2. Press F5 to refresh the page",The page reloads and countdown values are recalculated and displayed correctly,,High,Normal,,,,
+ACCESSING,ACC-006,Countdown - Prelaunch page,ACCESSING,Browser Navigation,,Verify the countdown page loads correctly on hard refresh (bypass cache),Countdown page is currently displayed,,"1. Open the countdown page
+2. Press Ctrl+F5 to hard refresh",The page reloads completely and countdown values are recalculated correctly,,Medium,Normal,,,,
+ACCESSING,ACC-007,Countdown - Prelaunch page,ACCESSING,Authentication,,Verify the countdown page is accessible without requiring login,User is not logged in (no active session),Valid countdown page URL,"1. Open a new browser (incognito/private mode)
+2. Enter the countdown page URL
+3. Press Enter",The countdown page loads successfully without requiring login or redirecting to a login page,,High,Normal,,,,
+ACCESSING,ACC-008,Countdown - Prelaunch page,ACCESSING,URL Manipulation,,Verify appropriate error handling for invalid URL paths,Application is deployed and running,"Invalid URL path (e.g., /countdown/invalid, /countdownxyz)","1. Open a browser
+2. Enter an invalid variation of the countdown page URL
+3. Press Enter",A 404 Not Found page is displayed,,Medium,Abnormal,,,,
+ACCESSING,ACC-009,Countdown - Prelaunch page,ACCESSING,Direct URL Access,,Verify the countdown page loads correctly when URL is pasted in a new tab,Countdown page is open in one tab,,"1. Open the countdown page in a browser tab
+2. Copy the URL from the address bar
+3. Open a new tab
+4. Paste the URL and press Enter",The countdown page loads correctly in the new tab with accurate countdown values,,Medium,Normal,,,,
+ACCESSING,ACC-010,Countdown - Prelaunch page,ACCESSING,Direct URL Access,,Verify the countdown page is accessible on mobile devices,Application is deployed and running,"Valid countdown page URL, mobile device (or mobile emulation)","1. Open a mobile browser
+2. Enter the countdown page URL
+3. Press Go/Enter",The countdown page loads successfully and is usable on mobile screen,,High,Normal,,,,
+GUI,GUI-001,Countdown - Prelaunch page,GUI,Layout,,Verify the countdown page layout matches the Figma design specification,Countdown page is accessible,,"1. Open the countdown page
+2. Compare the overall layout with the Figma design (Frame 2268:35127)","Page layout matches the design: countdown units (Days, Hours, Minutes) are properly positioned and aligned",Figma Frame 2268:35127,High,Normal,,,,
+GUI,GUI-002,Countdown - Prelaunch page,GUI,Days Counter Display,,Verify the Days counter displays with 2 LED-style digit boxes as per design,Countdown page is loaded with a target date more than 1 day away,Target date set to at least 2 days in the future,"1. Open the countdown page
+2. Observe the Days counter section",The Days counter shows exactly 2 LED-style digit boxes displaying the number of remaining days,"Design Item 2268:35139 - Days: 2 LED-style digit boxes, label 'DAYS' uppercase white",High,Normal,,,,
+GUI,GUI-003,Countdown - Prelaunch page,GUI,Hours Counter Display,,Verify the Hours counter displays with 2 LED-style digit boxes as per design,Countdown page is loaded,,"1. Open the countdown page
+2. Observe the Hours counter section",The Hours counter shows exactly 2 LED-style digit boxes displaying the remaining hours (00-23),"Design Item 2268:35144 - Hours: 2 LED-style digit boxes, label 'HOURS' uppercase white",High,Normal,,,,
+GUI,GUI-004,Countdown - Prelaunch page,GUI,Minutes Counter Display,,Verify the Minutes counter displays with 2 LED-style digit boxes as per design,Countdown page is loaded,,"1. Open the countdown page
+2. Observe the Minutes counter section",The Minutes counter shows exactly 2 LED-style digit boxes displaying the remaining minutes (00-59),"Design Item 2268:35149 - Minutes: 2 LED-style digit boxes, label 'MINUTES' uppercase white",High,Normal,,,,
+GUI,GUI-005,Countdown - Prelaunch page,GUI,Labels,,"Verify the ""DAYS"" label is displayed correctly as per design",Countdown page is loaded,,"1. Open the countdown page
+2. Observe the label below the Days counter","The label ""DAYS"" is displayed in uppercase, white text, positioned correctly below the digit boxes","Design Item 2268:35139 - Label: 'DAYS' uppercase, white",High,Normal,,,,
+GUI,GUI-006,Countdown - Prelaunch page,GUI,Labels,,"Verify the ""HOURS"" label is displayed correctly as per design",Countdown page is loaded,,"1. Open the countdown page
+2. Observe the label below the Hours counter","The label ""HOURS"" is displayed in uppercase, white text, positioned correctly below the digit boxes","Design Item 2268:35144 - Label: 'HOURS' uppercase, white",High,Normal,,,,
+GUI,GUI-007,Countdown - Prelaunch page,GUI,Labels,,"Verify the ""MINUTES"" label is displayed correctly as per design",Countdown page is loaded,,"1. Open the countdown page
+2. Observe the label below the Minutes counter","The label ""MINUTES"" is displayed in uppercase, white text, positioned correctly below the digit boxes","Design Item 2268:35149 - Label: 'MINUTES' uppercase, white",High,Normal,,,,
+GUI,GUI-008,Countdown - Prelaunch page,GUI,Labels,,"Verify the countdown labels (DAYS, HOURS, MINUTES) cannot be edited by the user",Countdown page is loaded,,"1. Open the countdown page
+2. Try to click on the ""DAYS"" label and type text
+3. Try to click on the ""HOURS"" label and type text
+4. Try to click on the ""MINUTES"" label and type text",None of the labels can be edited or modified by user interaction,,Medium,Normal,,,,
+GUI,GUI-009,Countdown - Prelaunch page,GUI,Layout,,Verify the countdown digit values cannot be edited by the user,Countdown page is loaded,,"1. Open the countdown page
+2. Try to click on each digit box and type a value
+3. Try to select the digit text",Digit values cannot be edited or selected by user interaction,,Medium,Normal,,,,
+GUI,GUI-010,Countdown - Prelaunch page,GUI,Days Counter Display,,Verify that single-digit values are displayed with leading zero,Target date is set so that days remaining is between 1 and 9,Target date set to produce single-digit days (e.g. 5 days away),"1. Open the countdown page when days remaining is a single digit (e.g. 5)
+2. Observe the Days counter display","The Days counter displays ""05"" (zero-padded 2-digit format), not ""5""","Design Item 2268:35139 - 2 digit LED display, zero-padded",High,Normal,,,,
+GUI,GUI-011,Countdown - Prelaunch page,GUI,Responsive Design,,Verify the countdown page displays correctly on small mobile screens,Countdown page is accessible,Screen width: 320px,"1. Open the countdown page
+2. Set viewport width to 320px (or use mobile device)
+3. Observe the layout of all countdown elements","All countdown units (Days, Hours, Minutes) are visible and properly laid out; no overlapping or cut-off elements; text is readable",,High,Normal,,,,
+GUI,GUI-012,Countdown - Prelaunch page,GUI,Responsive Design,,Verify the countdown page displays correctly on tablet screens,Countdown page is accessible,Screen width: 768px,"1. Open the countdown page
+2. Set viewport width to 768px
+3. Observe the layout of all countdown elements",All countdown units are displayed correctly with appropriate sizing for tablet view,,High,Normal,,,,
+GUI,GUI-013,Countdown - Prelaunch page,GUI,Responsive Design,,Verify the countdown page displays correctly on desktop screens,Countdown page is accessible,Screen width: 1024px,"1. Open the countdown page
+2. Set viewport width to 1024px
+3. Observe the layout of all countdown elements",All countdown units are displayed correctly matching the Figma desktop design,,High,Normal,,,,
+GUI,GUI-014,Countdown - Prelaunch page,GUI,Responsive Design,,Verify the countdown page displays correctly on wide screens,Countdown page is accessible,Screen width: 1440px,"1. Open the countdown page
+2. Set viewport width to 1440px
+3. Observe the layout of all countdown elements",All countdown units are displayed correctly; content is properly centered/contained,,Medium,Normal,,,,
+GUI,GUI-015,Countdown - Prelaunch page,GUI,Cross-Browser,,Verify the countdown page renders correctly on Chrome,Latest Chrome browser installed,,"1. Open the countdown page in Chrome
+2. Verify all visual elements match the design","Page layout, LED-style digits, labels, and countdown animation display correctly in Chrome",,High,Normal,,,,
+GUI,GUI-016,Countdown - Prelaunch page,GUI,Cross-Browser,,Verify the countdown page renders correctly on Firefox,Latest Firefox browser installed,,"1. Open the countdown page in Firefox
+2. Verify all visual elements match the design","Page layout, LED-style digits, labels, and countdown animation display correctly in Firefox",,High,Normal,,,,
+GUI,GUI-017,Countdown - Prelaunch page,GUI,Cross-Browser,,Verify the countdown page renders correctly on Safari,Latest Safari browser installed,,"1. Open the countdown page in Safari
+2. Verify all visual elements match the design","Page layout, LED-style digits, labels, and countdown animation display correctly in Safari",,High,Normal,,,,
+GUI,GUI-018,Countdown - Prelaunch page,GUI,Cross-Browser,,Verify the countdown page renders correctly on Edge,Latest Edge browser installed,,"1. Open the countdown page in Edge
+2. Verify all visual elements match the design","Page layout, LED-style digits, labels, and countdown animation display correctly in Edge",,Medium,Normal,,,,
+GUI,GUI-019,Countdown - Prelaunch page,GUI,Responsive Design,,Verify the countdown page displays correctly when browser zoom is increased,Countdown page is loaded,Browser zoom level: 150%,"1. Open the countdown page
+2. Zoom in to 150% using Ctrl+Plus (or Cmd+Plus)
+3. Observe the layout",All countdown elements remain visible and properly aligned; no elements overlap or get cut off,,Medium,Normal,,,,
+GUI,GUI-020,Countdown - Prelaunch page,GUI,Responsive Design,,Verify the countdown page displays correctly when browser zoom is decreased,Countdown page is loaded,Browser zoom level: 75%,"1. Open the countdown page
+2. Zoom out to 75% using Ctrl+Minus (or Cmd+Minus)
+3. Observe the layout",All countdown elements remain visible and properly aligned,,Low,Normal,,,,
+GUI,GUI-021,Countdown - Prelaunch page,GUI,Layout,,Verify the countdown page does not display unnecessary scrollbars,Countdown page is loaded at standard desktop resolution,Screen width: 1024px or larger,"1. Open the countdown page at standard desktop resolution
+2. Check for horizontal and vertical scrollbars",No unnecessary horizontal scrollbar is displayed; vertical scrollbar only appears if content exceeds viewport height,,Medium,Normal,,,,
+FUNCTION,FUN-001,Countdown - Prelaunch page,FUNCTION,Countdown Calculation,,Verify the Days counter displays the correct number of remaining days,Target date is known and set to a future date,Target date set to 10 days from now,"1. Note the current date and time
+2. Open the countdown page
+3. Calculate the expected remaining days manually
+4. Compare with the displayed Days value",The Days counter shows the correct number of remaining days matching the manual calculation,"Design Item 2268:35139 - Auto-update: display remaining days, show '00' if < 1 day",High,Normal,,,,
+FUNCTION,FUN-002,Countdown - Prelaunch page,FUNCTION,Countdown Calculation,,Verify the Hours counter displays the correct number of remaining hours,Target date is known and set to a future date,Target date set to a specific future date/time,"1. Note the current date and time
+2. Open the countdown page
+3. Calculate the expected remaining hours (within the current day) manually
+4. Compare with the displayed Hours value",The Hours counter shows the correct remaining hours (00-23) matching the manual calculation,"Design Item 2268:35144 - Auto-update: display remaining hours, range 00-23",High,Normal,,,,
+FUNCTION,FUN-003,Countdown - Prelaunch page,FUNCTION,Countdown Calculation,,Verify the Minutes counter displays the correct number of remaining minutes,Target date is known and set to a future date,Target date set to a specific future date/time,"1. Note the current date and time
+2. Open the countdown page
+3. Calculate the expected remaining minutes (within the current hour) manually
+4. Compare with the displayed Minutes value",The Minutes counter shows the correct remaining minutes (00-59) matching the manual calculation,"Design Item 2268:35149 - Auto-update: display remaining minutes, range 00-59",High,Normal,,,,
+FUNCTION,FUN-004,Countdown - Prelaunch page,FUNCTION,Auto-Update,,Verify the Minutes counter decrements automatically in real-time,Countdown page is loaded with a target date in the future,,"1. Open the countdown page
+2. Note the current Minutes value
+3. Wait for approximately 1 minute
+4. Observe the Minutes value",The Minutes counter decrements by 1 after one minute passes,,High,Normal,,,,
+FUNCTION,FUN-005,Countdown - Prelaunch page,FUNCTION,Auto-Update,,Verify the countdown timer updates automatically without requiring manual page refresh,Countdown page is loaded,,"1. Open the countdown page
+2. Note all countdown values (Days, Hours, Minutes)
+3. Wait for several minutes without interacting with the page
+4. Observe the countdown values",Countdown values update automatically without any user action or page refresh,,High,Normal,,,,
+FUNCTION,FUN-006,Countdown - Prelaunch page,FUNCTION,Boundary Values,,"Verify that when Minutes reaches 00, it rolls over to 59 and Hours decrements by 1",Countdown page is loaded when Minutes is at 00,Observe at a time when minutes = 00,"1. Open the countdown page when minutes display is ""00""
+2. Observe the transition as the next minute passes (or wait at 01 until it becomes 00)
+3. Check both Minutes and Hours values",Minutes rolls over from 00 to 59 and the Hours counter decrements by 1,,High,Normal,,,,
+FUNCTION,FUN-007,Countdown - Prelaunch page,FUNCTION,Boundary Values,,"Verify that when Hours reaches 00 and minutes go past 00, Hours rolls to 23 and Days decrements",Countdown is running with Hours at 00 and Days > 0,"Observe when Hours = 00, Minutes = 00","1. Open the countdown page when Hours = 00 and Minutes = 00
+2. Wait for the transition
+3. Check Hours and Days values","Hours rolls to 23, Days decrements by 1",,High,Normal,,,,
+FUNCTION,FUN-008,Countdown - Prelaunch page,FUNCTION,Boundary Values,,"Verify the Days counter shows ""00"" when remaining time is less than 24 hours",Target date is less than 24 hours away,Target date set to less than 24 hours from now (e.g. 12 hours away),"1. Set the target date to less than 24 hours in the future
+2. Open the countdown page
+3. Observe the Days counter","Days counter displays ""00""","Design Item 2268:35139 - Show '00' if < 1 day",High,Normal,,,,
+FUNCTION,FUN-009,Countdown - Prelaunch page,FUNCTION,Target Date Reached,,Verify the countdown displays 00:00:00 when the target date/time is reached,Target date is imminent (within 1 minute),Target date set to the current time,"1. Open the countdown page just before the target date/time
+2. Wait until the target time passes
+3. Observe all countdown values","All counters display ""00"" (Days: 00, Hours: 00, Minutes: 00); no negative values are shown",,High,Normal,,,,
+FUNCTION,FUN-010,Countdown - Prelaunch page,FUNCTION,Target Date Reached,,Verify the countdown does not show negative values after the launch time has passed,Target date has already passed,Target date set to a past date/time,"1. Set the target date to a time in the past
+2. Open the countdown page
+3. Observe all countdown values","All counters display ""00"" or the page shows an appropriate post-launch state; no negative values are displayed",,High,Abnormal,,,,
+FUNCTION,FUN-011,Countdown - Prelaunch page,FUNCTION,Page Lifecycle,,Verify the countdown recalculates correctly after a page refresh,Countdown page is loaded,,"1. Open the countdown page and note the displayed values
+2. Wait for 2 minutes
+3. Press F5 to refresh the page
+4. Observe the countdown values",The countdown values are recalculated from the current time and display accurately (approximately 2 minutes less than the initial values),,High,Normal,,,,
+FUNCTION,FUN-012,Countdown - Prelaunch page,FUNCTION,Page Lifecycle,,Verify the countdown remains accurate after switching to another tab and returning,Countdown page is loaded,,"1. Open the countdown page and note the displayed values
+2. Switch to another browser tab
+3. Wait for 2-3 minutes
+4. Switch back to the countdown page tab
+5. Observe the countdown values","The countdown displays the correct remaining time (accounting for the elapsed time), not the stale values from before the tab switch",,High,Normal,,,,
+FUNCTION,FUN-013,Countdown - Prelaunch page,FUNCTION,Page Lifecycle,,Verify the countdown remains accurate after minimizing and restoring the browser,Countdown page is loaded,,"1. Open the countdown page and note the displayed values
+2. Minimize the browser window
+3. Wait for 2-3 minutes
+4. Restore the browser window
+5. Observe the countdown values","The countdown displays the correct remaining time, updated to reflect the elapsed time",,Medium,Normal,,,,
+FUNCTION,FUN-014,Countdown - Prelaunch page,FUNCTION,Boundary Values,,Verify the Days counter handles large values correctly,Target date is far in the future,Target date set to 99+ days from now,"1. Set target date to 99 days or more in the future
+2. Open the countdown page
+3. Observe the Days counter","The Days counter displays the correct value; if only 2 digits are available, verify how values > 99 are handled (e.g. overflow behavior)",,Medium,Abnormal,,,,
+FUNCTION,FUN-015,Countdown - Prelaunch page,FUNCTION,Boundary Values,,Verify the Hours counter never displays a value outside the 00-23 range,Countdown is running,,"1. Open the countdown page at various times throughout the day
+2. Observe the Hours counter value",The Hours counter always displays a value between 00 and 23 inclusive,"Design Item 2268:35144 - Range 00-23",High,Normal,,,,
+FUNCTION,FUN-016,Countdown - Prelaunch page,FUNCTION,Boundary Values,,Verify the Minutes counter never displays a value outside the 00-59 range,Countdown is running,,"1. Open the countdown page at various times
+2. Observe the Minutes counter value at multiple intervals",The Minutes counter always displays a value between 00 and 59 inclusive,"Design Item 2268:35149 - Range 00-59",High,Normal,,,,
+FUNCTION,FUN-017,Countdown - Prelaunch page,FUNCTION,Time Zone,,"Verify the countdown shows consistent target time regardless of user's time zone",Countdown page is accessible; target date is set,Access from different time zones (or simulate using browser timezone override),"1. Open the countdown page from a device in Time Zone A (e.g. UTC+0)
+2. Note the countdown values
+3. Open the countdown page from a device in Time Zone B (e.g. UTC+9)
+4. Note the countdown values
+5. Compare the two sets of values","Both devices show the same countdown values (or values within 1 minute of each other due to load time differences), since the target date is absolute",,High,Normal,,,,
+FUNCTION,FUN-018,Countdown - Prelaunch page,FUNCTION,Time Zone,,Verify the countdown remains accurate during a DST transition,Target date spans across a DST boundary,Simulated DST transition time,"1. Set target date to a time after a DST transition
+2. Open the countdown page before the DST transition
+3. Observe the countdown during and after the DST transition",The countdown remains accurate and does not gain or lose an hour during the DST transition,,Medium,Abnormal,,,,
+FUNCTION,FUN-019,Countdown - Prelaunch page,FUNCTION,Page Lifecycle,,Verify the countdown loads and functions correctly on a slow network,Network throttling enabled (e.g. Slow 3G),,"1. Open browser DevTools and enable Slow 3G network throttling
+2. Navigate to the countdown page
+3. Wait for the page to fully load
+4. Observe the countdown behavior","The page loads (may take longer) and once loaded, the countdown displays correct values and updates properly",,Medium,Normal,,,,
+FUNCTION,FUN-020,Countdown - Prelaunch page,FUNCTION,Page Lifecycle,,Verify that opening the countdown page in multiple tabs shows consistent values,Countdown page is accessible,,"1. Open the countdown page in Tab 1
+2. Open the countdown page in Tab 2
+3. Compare the countdown values in both tabs",Both tabs display the same (or within 1 second difference) countdown values,,Medium,Normal,,,,

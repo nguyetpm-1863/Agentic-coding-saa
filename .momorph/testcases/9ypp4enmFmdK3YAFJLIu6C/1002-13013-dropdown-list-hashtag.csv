@@ -1,0 +1,90 @@
+Section,TC_ID,Page_Name,Category,Sub_Category,Sub_Sub_Category,Test_Objective,Precondition,Test_Data,Steps,Expected_Result,Specs,Priority,Testcase_Type,Test_Result,Executed_Date,Tester,Note
+ACCESSING,TC_HASH_ACC_001,Dropdown List Hashtag,ACCESSING,Component Visibility,Default State,Verify the hashtag dropdown is not visible before user interaction,User is logged in and on the Kudos writing page,,"1. Navigate to the Kudos writing page
+2. Observe the Hashtag section","The dropdown list is hidden. Only the trigger element (""+ Hashtag / Toi da 5"") is visible.",specs.md - Screen Overview,High,Access control and security,,,,
+ACCESSING,TC_HASH_ACC_002,Dropdown List Hashtag,ACCESSING,Component Visibility,Trigger Display,Verify clicking the Hashtag trigger button opens the dropdown,User is logged in and on the Kudos writing page. Dropdown is closed.,,"1. Navigate to the Kudos writing page
+2. Click on the ""+ Hashtag"" trigger button",The dropdown list appears showing all 13 hashtags with dark background theme.,specs.md - Functional Rules,High,Access control and security,,,,
+ACCESSING,TC_HASH_ACC_003,Dropdown List Hashtag,ACCESSING,Component Visibility,Close Behavior,Verify the dropdown closes when user clicks outside the component,User is logged in. Dropdown is open.,,"1. Open the hashtag dropdown
+2. Click on any area outside the dropdown",The dropdown closes. Any selections made are preserved.,specs.md - Functional Rules,High,Access control and security,,,,
+ACCESSING,TC_HASH_ACC_004,Dropdown List Hashtag,ACCESSING,Authentication,Login Required,Verify the hashtag dropdown is only accessible to authenticated users,User is not logged in,,1. Attempt to access the Kudos writing page without logging in,User is redirected to the login page. The Hashtag dropdown component is not accessible.,specs.md - Screen Overview,High,Access control and security,,,,
+ACCESSING,TC_HASH_ACC_005,Dropdown List Hashtag,ACCESSING,Component Visibility,Re-open,Verify the dropdown can be reopened after being closed,User is logged in. Dropdown was previously opened and closed.,,"1. Open the hashtag dropdown
+2. Close it by clicking outside
+3. Click the trigger button again",The dropdown re-opens showing all hashtags. Previously selected hashtags remain selected with checkmark icons.,specs.md - Functional Rules,Medium,Access control and security,,,,
+GUI,TC_HASH_GUI_001,Dropdown List Hashtag,GUI,Dropdown Header,Label Display,"Verify the dropdown header shows ""Hashtag"" label and ""Toi da 5"" subtitle correctly",User is logged in. Dropdown is open.,,"1. Open the hashtag dropdown
+2. Observe the header area","Header displays ""Hashtag"" label text and ""Toi da 5"" (Max 5) subtitle. ""+"" icon is visible to the left.",specs.md - Visual Specifications,High,User interface,,,,
+GUI,TC_HASH_GUI_002,Dropdown List Hashtag,GUI,Hashtag List,Item Display,Verify all 13 hashtags are displayed in the dropdown with '#' prefix,User is logged in. Dropdown is open.,,"1. Open the hashtag dropdown
+2. Scroll through the entire list
+3. Count and verify each hashtag","All 13 hashtags are displayed, each with '#' prefix: #Toan dien, #Gioi chuyen mon, #Hieu suat cao, #Truyen cam hung, #Cong hien, #Aim High, #Be Agile, #Wasshoi, #Huong muc tieu, #Huong khach hang, #Chuan quy trinh, #Giai phap sang tao, #Quan ly xuat sac.",specs.md - Hashtag List,High,User interface,,,,
+GUI,TC_HASH_GUI_003,Dropdown List Hashtag,GUI,Hashtag List,Item Order,Verify hashtags are displayed in the correct predefined order,User is logged in. Dropdown is open.,,"1. Open the hashtag dropdown
+2. Scroll through the list and note the order","Hashtags appear in the defined order: Toan dien, Gioi chuyen mon, Hieu suat cao, Truyen cam hung, Cong hien, Aim High, Be Agile, Wasshoi, Huong muc tieu, Huong khach hang, Chuan quy trinh, Giai phap sang tao, Quan ly xuat sac.",specs.md - Hashtag List,Medium,User interface,,,,
+GUI,TC_HASH_GUI_004,Dropdown List Hashtag,GUI,Hashtag List,Selected State,Verify selected hashtag items display a golden checkmark icon on the right,User is logged in. Dropdown is open. At least one hashtag is selected.,,"1. Open the hashtag dropdown
+2. Click on a hashtag to select it
+3. Observe the selected item",The selected hashtag displays a golden/yellow checkmark icon (24x24px) on the right side of the item row.,"specs.md - Design Items (A.2), Visual Specifications",High,User interface,,,,
+GUI,TC_HASH_GUI_005,Dropdown List Hashtag,GUI,Hashtag List,Unselected State,Verify unselected hashtag items do not show a checkmark icon,User is logged in. Dropdown is open.,,"1. Open the hashtag dropdown
+2. Observe unselected hashtag items",Unselected items display only the hashtag text with '#' prefix. No checkmark icon is shown. Space for the icon is preserved.,"specs.md - Design Items (D), Visual Specifications",High,User interface,,,,
+GUI,TC_HASH_GUI_006,Dropdown List Hashtag,GUI,Hashtag List,Hover State,Verify background color changes on hover over a hashtag item,User is logged in. Dropdown is open.,,"1. Open the hashtag dropdown
+2. Hover the mouse over a hashtag item (without clicking)","The hovered item's background color changes slightly to highlight it, distinguishing it from other items.",specs.md - Functional Rules (Hover effect),Medium,User interface,,,,
+GUI,TC_HASH_GUI_007,Dropdown List Hashtag,GUI,Dropdown Container,Background,Verify the dropdown has a dark/black background theme,User is logged in. Dropdown is open.,,"1. Open the hashtag dropdown
+2. Observe the dropdown background",Dropdown container has a dark/black background. Hashtag text is white for contrast.,specs.md - Visual Specifications,Medium,User interface,,,,
+GUI,TC_HASH_GUI_008,Dropdown List Hashtag,GUI,Dropdown Container,Scroll,Verify a scrollbar appears when the hashtag list exceeds the dropdown visible area,User is logged in. Dropdown is open. All 13 items cannot fit in visible area.,,"1. Open the hashtag dropdown
+2. Observe if a scrollbar is present
+3. Scroll down to see remaining items",A vertical scrollbar appears when the list exceeds the visible area. User can scroll up and down smoothly to see all 13 items.,viewpoints.md - Select_box > Event in Select box (Scroll),Medium,User interface,,,,
+GUI,TC_HASH_GUI_009,Dropdown List Hashtag,GUI,Hashtag List,Text Format,Verify each hashtag item displays with '#' character prefix,User is logged in. Dropdown is open.,,"1. Open the hashtag dropdown
+2. Observe the text format of each item","Every hashtag item text starts with '#' character (e.g., ""#High-perorming"", ""#BE PROFESSIONAL"", ""#BE OPTIMISTIC"").",specs.md - Design Items (A.1),Medium,User interface,,,,
+GUI,TC_HASH_GUI_010,Dropdown List Hashtag,GUI,Hashtag List,Icon Size,Verify the checkmark icon for selected items is 24x24 pixels,User is logged in. Dropdown is open. At least one item selected.,,"1. Open the hashtag dropdown
+2. Select a hashtag
+3. Inspect the checkmark icon dimensions",The checkmark icon is rendered at 24x24 pixels in a circular shape.,specs.md - Design Items (A.2),Low,User interface,,,,
+GUI,TC_HASH_GUI_011,Dropdown List Hashtag,GUI,Responsive,Mobile,Verify the dropdown displays correctly on mobile screen width,User is logged in. Browser viewport set to 320px width.,Viewport: 320px width,"1. Set browser viewport to 320px width
+2. Open the hashtag dropdown
+3. Observe layout and readability",Dropdown displays correctly within the viewport. All hashtag text is readable. Checkmark icons are visible. No horizontal overflow.,specs.md - Visual Specifications,Medium,User interface,,,,
+GUI,TC_HASH_GUI_012,Dropdown List Hashtag,GUI,Responsive,Tablet,Verify the dropdown displays correctly on tablet screen width,User is logged in. Browser viewport set to 768px width.,Viewport: 768px width,"1. Set browser viewport to 768px width
+2. Open the hashtag dropdown
+3. Observe layout and readability",Dropdown displays correctly. All elements properly sized and positioned.,specs.md - Visual Specifications,Medium,User interface,,,,
+GUI,TC_HASH_GUI_013,Dropdown List Hashtag,GUI,Hashtag List,Multiple Selected,Verify that multiple selected hashtags all display checkmark icons simultaneously,User is logged in. Dropdown is open.,,"1. Open the hashtag dropdown
+2. Select 3 different hashtags
+3. Observe all selected items","All 3 selected hashtags display golden checkmark icons on the right. Unselected items remain without checkmarks.","specs.md - Design Items (A, B, C)",High,User interface,,,,
+FUNCTION,TC_HASH_FUNC_001,Dropdown List Hashtag,FUNCTION,Selection,Single Select,Verify clicking an unselected hashtag toggles it to selected state,User is logged in. Dropdown is open. No hashtags are selected.,,"1. Open the hashtag dropdown
+2. Click on ""#High-perorming""","""#High-perorming"" becomes selected. Checkmark icon appears on the right. The item visually indicates selected state.",specs.md - Functional Rules (Selection),High,Functionality,,,,
+FUNCTION,TC_HASH_FUNC_002,Dropdown List Hashtag,FUNCTION,Selection,First Item,Verify the first hashtag in the list can be selected,User is logged in. Dropdown is open. No hashtags selected.,,"1. Open the hashtag dropdown
+2. Click on the first hashtag item in the list",The first item is selected with checkmark icon displayed.,viewpoints.md - Select value from list (First value),High,Functionality,,,,
+FUNCTION,TC_HASH_FUNC_003,Dropdown List Hashtag,FUNCTION,Selection,Last Item,Verify the last hashtag in the list can be selected,User is logged in. Dropdown is open. No hashtags selected.,,"1. Open the hashtag dropdown
+2. Scroll to the bottom of the list
+3. Click on the last hashtag item",The last item is selected with checkmark icon displayed.,viewpoints.md - Select value from list (Last value),High,Functionality,,,,
+FUNCTION,TC_HASH_FUNC_004,Dropdown List Hashtag,FUNCTION,Selection,Multi Select,Verify multiple hashtags can be selected simultaneously,User is logged in. Dropdown is open. No hashtags selected.,,"1. Open the hashtag dropdown
+2. Click on ""#High-perorming""
+3. Click on ""#BE PROFESSIONAL""
+4. Click on ""#BE OPTIMISTIC""","All 3 hashtags are selected. Each shows a checkmark icon. Other items remain unselected.",specs.md - Functional Rules (Selection),High,Functionality,,,,
+FUNCTION,TC_HASH_FUNC_005,Dropdown List Hashtag,FUNCTION,Boundary,Select All 5,Verify exactly 5 hashtags can be selected (the maximum allowed),User is logged in. Dropdown is open. No hashtags selected.,,"1. Open the hashtag dropdown
+2. Select 5 different hashtags one by one",All 5 hashtags are selected with checkmark icons. Selection functions normally up to the 5th selection.,specs.md - Functional Rules (Maximum selection),High,Functionality,,,,
+FUNCTION,TC_HASH_FUNC_006,Dropdown List Hashtag,FUNCTION,Boundary,Attempt 6th Selection,Verify that selecting a 6th hashtag is blocked when 5 are already selected,User is logged in. Dropdown is open. 5 hashtags are already selected.,5 hashtags pre-selected,"1. Ensure 5 hashtags are selected
+2. Attempt to click on an unselected (6th) hashtag","The 6th hashtag is NOT selected. The click is disabled/blocked. The 5 previously selected hashtags remain selected.","specs.md - Functional Rules (Maximum selection), Design Items (A.1)",High,Functionality,,,,
+FUNCTION,TC_HASH_FUNC_007,Dropdown List Hashtag,FUNCTION,Selection,Deselect,Verify clicking a selected hashtag deselects it,User is logged in. Dropdown is open. At least one hashtag is selected.,,"1. Open the hashtag dropdown with a selected hashtag
+2. Click on the selected hashtag",The hashtag is deselected. The checkmark icon disappears. The item returns to unselected state.,specs.md - Functional Rules (Selection toggle),High,Functionality,,,,
+FUNCTION,TC_HASH_FUNC_008,Dropdown List Hashtag,FUNCTION,Selection,Re-select After Deselect,Verify a deselected hashtag can be re-selected,User is logged in. Dropdown is open.,,"1. Select a hashtag
+2. Deselect the same hashtag
+3. Select it again",The hashtag is successfully re-selected. Checkmark icon reappears.,viewpoints.md - Select value from list (Re-select),Medium,Functionality,,,,
+FUNCTION,TC_HASH_FUNC_009,Dropdown List Hashtag,FUNCTION,Selection,Select at Max Then Deselect,"Verify that after deselecting one hashtag when at max (5), a new hashtag can be selected",User is logged in. Dropdown is open. 5 hashtags are selected.,5 hashtags pre-selected,"1. With 5 hashtags selected, deselect one hashtag
+2. Click on a different unselected hashtag","The deselected hashtag loses its checkmark. The newly clicked hashtag becomes selected with checkmark. Total selected count remains at 5.",specs.md - Functional Rules (Maximum selection),High,Functionality,,,,
+FUNCTION,TC_HASH_FUNC_010,Dropdown List Hashtag,FUNCTION,Toggle State,Check Icon Toggle,Verify the checkmark icon appears on select and disappears on deselect,User is logged in. Dropdown is open.,,"1. Click on an unselected hashtag
+2. Observe the checkmark icon
+3. Click on the same hashtag again
+4. Observe the checkmark icon",Step 2: Checkmark icon appears immediately on the right side. Step 4: Checkmark icon disappears immediately.,specs.md - Design Items (A.2),High,Functionality,,,,
+FUNCTION,TC_HASH_FUNC_011,Dropdown List Hashtag,FUNCTION,Boundary,Zero Selected,Verify the component works correctly with no hashtags selected,User is logged in. Dropdown is open. No hashtags selected.,,"1. Open the hashtag dropdown
+2. Verify no items have checkmarks
+3. Close the dropdown without selecting any","All items are in unselected state (no checkmarks). The component functions normally. No error occurs.",specs.md - Functional Rules,Medium,Functionality,,,,
+FUNCTION,TC_HASH_FUNC_012,Dropdown List Hashtag,FUNCTION,Keyboard,Arrow Navigation,Verify Up/Down arrow keys navigate through the hashtag list,User is logged in. Dropdown is open and focused.,,"1. Open the hashtag dropdown
+2. Press the Down arrow key multiple times
+3. Press the Up arrow key multiple times","Each Down arrow press highlights the next item. Each Up arrow press highlights the previous item. The highlight wraps or stops at boundaries.",viewpoints.md - Select_box > Event in Select box (Up/Down key),Medium,Functionality,,,,
+FUNCTION,TC_HASH_FUNC_013,Dropdown List Hashtag,FUNCTION,Keyboard,Enter Key,Verify pressing Enter key selects/deselects the currently highlighted hashtag,User is logged in. Dropdown is open. An item is highlighted via keyboard.,,"1. Open the hashtag dropdown
+2. Use arrow keys to highlight an item
+3. Press Enter",The highlighted hashtag is toggled (selected if unselected or deselected if selected). Checkmark appears/disappears accordingly.,viewpoints.md - Select_box > Event in Select box (Enter key),Medium,Functionality,,,,
+FUNCTION,TC_HASH_FUNC_014,Dropdown List Hashtag,FUNCTION,Data Persistence,Save Selection,Verify selected hashtags remain selected after closing and reopening the dropdown,User is logged in. Dropdown is open.,,"1. Open the hashtag dropdown
+2. Select 3 hashtags
+3. Close the dropdown
+4. Reopen the dropdown",The same 3 hashtags are still selected with checkmark icons when the dropdown is reopened.,specs.md - Functional Rules,High,Functionality,,,,
+FUNCTION,TC_HASH_FUNC_015,Dropdown List Hashtag,FUNCTION,Selection,Deselect All,Verify all selected hashtags can be deselected one by one,User is logged in. Dropdown is open. 5 hashtags are selected.,5 hashtags pre-selected,"1. With 5 hashtags selected, click each selected hashtag to deselect
+2. Verify after each deselect","Each click deselects one hashtag. After all 5 are deselected, no items have checkmarks. Component state returns to zero selections.",viewpoints.md - Select value from list (Delete all),Medium,Functionality,,,,
+FUNCTION,TC_HASH_FUNC_016,Dropdown List Hashtag,FUNCTION,Toggle State,Icon Click,Verify clicking directly on the checkmark icon area toggles the selection,User is logged in. Dropdown is open. A hashtag is selected.,,"1. Click directly on the checkmark icon of a selected hashtag",The hashtag is deselected. The checkmark icon disappears.,specs.md - Design Items (A.2),Medium,Functionality,,,,
+FUNCTION,TC_HASH_FUNC_017,Dropdown List Hashtag,FUNCTION,Toggle State,Text Click,Verify clicking on the hashtag text toggles the selection,User is logged in. Dropdown is open.,,"1. Click directly on the text label of an unselected hashtag",The hashtag is selected. The checkmark icon appears.,specs.md - Design Items (A.1),Medium,Functionality,,,,
+FUNCTION,TC_HASH_FUNC_018,Dropdown List Hashtag,FUNCTION,Toggle State,Rapid Toggle,Verify the component handles rapid consecutive clicks correctly,User is logged in. Dropdown is open.,,"1. Rapidly click the same hashtag item multiple times in quick succession","The item toggles correctly between selected and unselected states. No UI glitch or inconsistent state occurs. Final state reflects the last toggle.",specs.md - Functional Rules,Low,Functionality,,,,
+FUNCTION,TC_HASH_FUNC_019,Dropdown List Hashtag,FUNCTION,Data Persistence,Load Existing,Verify previously saved hashtag selections are loaded when editing a kudos,User is logged in. A kudos with saved hashtags exists.,Existing kudos with hashtags,"1. Navigate to edit an existing kudos that has hashtags
+2. Open the hashtag dropdown",Previously saved hashtags appear as selected (with checkmark icons). User can modify the selection.,viewpoints.md - Checkbox > Default display (Edit form),High,Functionality,,,,

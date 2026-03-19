@@ -1,0 +1,90 @@
+Section,TC_ID,Page_Name,Category,Sub_Category,Sub_Sub_Category,Test_Objective,Precondition,Test_Data,Steps,Expected_Result,Specs,Priority,Testcase_Type,Test_Result,Executed_Date,Tester,Note
+ACCESSING,AC-001,Dropdown-profile Admin,ACCESSING,Open Dropdown,Click Trigger,Verify dropdown opens when admin user clicks the profile area/avatar,Admin user is logged in and on any page with the profile trigger visible,,"1. Click on the profile area/avatar in the header","Dropdown menu is displayed with 3 items: Profile (active), Dashboard, Logout. Dropdown appears below/near the profile trigger.","A, A.1, A.2, A.3",High,Normal,,,,
+ACCESSING,AC-002,Dropdown-profile Admin,ACCESSING,Open Dropdown,Double Click Trigger,Verify dropdown handles double-click without creating duplicate dropdowns,Admin user is logged in and on any page with the profile trigger visible,,1. Double-click on the profile area/avatar in the header,Only one dropdown instance is displayed. No duplicate or flickering behavior.,A,Medium,Normal,,,,
+ACCESSING,AC-003,Dropdown-profile Admin,ACCESSING,Open Dropdown,Keyboard Open,Verify dropdown can be opened using keyboard navigation,Admin user is logged in and on any page with the profile trigger visible,,"1. Press Tab to navigate focus to the profile trigger
+2. Press Enter",Dropdown menu is displayed correctly with all 3 items.,A,Medium,Normal,,,,
+ACCESSING,AC-004,Dropdown-profile Admin,ACCESSING,Close Dropdown,Click Outside,Verify dropdown closes when user clicks outside the dropdown area,Dropdown menu is open,,1. Click on any area outside the dropdown menu,Dropdown is closed. No navigation occurs.,A,High,Normal,,,,
+ACCESSING,AC-005,Dropdown-profile Admin,ACCESSING,Close Dropdown,ESC Key,Verify dropdown closes when ESC key is pressed,Dropdown menu is open,,1. Press the ESC key,Dropdown is closed. No navigation occurs.,A,Medium,Normal,,,,
+ACCESSING,AC-006,Dropdown-profile Admin,ACCESSING,Close Dropdown,Item Selection,Verify dropdown closes after a menu item is clicked,Dropdown menu is open,,1. Click on any menu item (Profile Dashboard or Logout),"Dropdown closes and the corresponding action is performed (navigation or logout).","A, A.1, A.2, A.3",High,Normal,,,,
+ACCESSING,AC-007,Dropdown-profile Admin,ACCESSING,Role-based Visibility,Admin Role,Verify dropdown profile trigger is visible only for admin users,User is logged in with admin role,,"1. Log in as admin user
+2. Verify profile trigger is visible in the header",Profile trigger is visible and dropdown can be opened.,A,High,Normal,,,,
+ACCESSING,AC-008,Dropdown-profile Admin,ACCESSING,Role-based Visibility,Not Logged In,Verify dropdown profile trigger is not visible for unauthenticated users,User is not logged in,,1. Navigate to the application without logging in,Profile trigger and dropdown are not visible.,A,High,Normal,,,,
+ACCESSING,AC-009,Dropdown-profile Admin,ACCESSING,Open Dropdown,Toggle,Verify clicking the profile trigger toggles the dropdown open and closed,Admin user is logged in,,"1. Click on the profile trigger to open dropdown
+2. Click on the profile trigger again",Dropdown opens on first click and closes on second click.,A,Medium,Normal,,,,
+GUI,GUI-001,Dropdown-profile Admin,GUI,Layout,Dropdown Container,Verify dropdown container displays with correct dark background and rounded corners and position,Admin user is logged in; dropdown is open,,"1. Click on the profile trigger to open dropdown
+2. Observe the dropdown container appearance","Dropdown displays with dark background, rounded corners, positioned below/near the profile trigger as per design.",A,High,Normal,,,,
+GUI,GUI-002,Dropdown-profile Admin,GUI,Layout,Menu Item Order,"Verify menu items are displayed in correct order: Profile, Dashboard, Logout",Admin user is logged in; dropdown is open,,"1. Open the dropdown menu
+2. Verify the order of menu items from top to bottom","Items appear in order: 1) Profile, 2) Dashboard, 3) Logout.","A, A.1, A.2, A.3",High,Normal,,,,
+GUI,GUI-003,Dropdown-profile Admin,GUI,Display State,Active State - Profile,Verify Profile menu item is displayed with active/highlighted state,Admin user is logged in; dropdown is open,,"1. Open the dropdown menu
+2. Observe the Profile item appearance",Profile item has highlighted/light background distinguishing it from other items. Text is light/yellow colored.,A.1,High,Normal,,,,
+GUI,GUI-004,Dropdown-profile Admin,GUI,Icons,Profile Icon,Verify user icon is displayed correctly next to Profile label,Admin user is logged in; dropdown is open,,"1. Open the dropdown menu
+2. Observe the Profile item icon","User icon is displayed on the right side of ""Profile"" text label, matching the design.",A.1,Medium,Normal,,,,
+GUI,GUI-005,Dropdown-profile Admin,GUI,Display State,Default State - Dashboard,Verify Dashboard menu item displays in default (non-active) state,Admin user is logged in; dropdown is open,,"1. Open the dropdown menu
+2. Observe the Dashboard item appearance","Dashboard item has standard dark background with white text, not highlighted.",A.2,High,Normal,,,,
+GUI,GUI-006,Dropdown-profile Admin,GUI,Icons,Dashboard Icon,Verify grid/dashboard icon is displayed correctly next to Dashboard label,Admin user is logged in; dropdown is open,,"1. Open the dropdown menu
+2. Observe the Dashboard item icon","Grid icon is displayed on the right side of ""Dashboard"" text label, matching the design.",A.2,Medium,Normal,,,,
+GUI,GUI-007,Dropdown-profile Admin,GUI,Display State,Default State - Logout,Verify Logout menu item displays in default (non-active) state,Admin user is logged in; dropdown is open,,"1. Open the dropdown menu
+2. Observe the Logout item appearance","Logout item has standard dark background with white text, not highlighted.",A.3,High,Normal,,,,
+GUI,GUI-008,Dropdown-profile Admin,GUI,Icons,Logout Icon,Verify chevron/arrow icon is displayed correctly next to Logout label,Admin user is logged in; dropdown is open,,"1. Open the dropdown menu
+2. Observe the Logout item icon","Chevron/right arrow icon is displayed on the right side of ""Logout"" text label, matching the design.",A.3,Medium,Normal,,,,
+GUI,GUI-009,Dropdown-profile Admin,GUI,Display State,Hover State - Profile,Verify hover state changes appearance on Profile item,Admin user is logged in; dropdown is open,,"1. Open the dropdown menu
+2. Hover mouse over the Profile item",Background changes to highlight color. Cursor changes to pointer.,"A, A.1",Medium,Normal,,,,
+GUI,GUI-010,Dropdown-profile Admin,GUI,Display State,Hover State - Dashboard,Verify hover state changes appearance on Dashboard item,Admin user is logged in; dropdown is open,,"1. Open the dropdown menu
+2. Hover mouse over the Dashboard item",Background changes to highlight color. Cursor changes to pointer.,"A, A.2",Medium,Normal,,,,
+GUI,GUI-011,Dropdown-profile Admin,GUI,Display State,Hover State - Logout,Verify hover state changes appearance on Logout item,Admin user is logged in; dropdown is open,,"1. Open the dropdown menu
+2. Hover mouse over the Logout item",Background changes to highlight color. Cursor changes to pointer.,"A, A.3",Medium,Normal,,,,
+GUI,GUI-012,Dropdown-profile Admin,GUI,Layout,Text and Icon Alignment,Verify text labels are left-aligned and icons are right-aligned within each menu item,Admin user is logged in; dropdown is open,,"1. Open the dropdown menu
+2. Observe alignment of text and icons for all items",All text labels are left-aligned. All icons are right-aligned. Consistent spacing across items.,"A.1, A.2, A.3",Medium,Normal,,,,
+GUI,GUI-013,Dropdown-profile Admin,GUI,Layout,Font Consistency,Verify font style and size are consistent across all menu items,Admin user is logged in; dropdown is open,,"1. Open the dropdown menu
+2. Compare font style and size of all 3 menu items","Font family, size, and weight are consistent across all menu items as per design.","A.1, A.2, A.3",Medium,Normal,,,,
+GUI,GUI-014,Dropdown-profile Admin,GUI,Responsive,Mobile 320px,Verify dropdown displays correctly on mobile screen,Admin user is logged in; viewport set to 320px width,,"1. Open the dropdown menu on mobile viewport
+2. Verify all items are visible and not clipped","Dropdown is fully visible, items are readable, icons display correctly. No horizontal overflow.",A,Medium,Normal,,,,
+GUI,GUI-015,Dropdown-profile Admin,GUI,Responsive,Tablet 768px,Verify dropdown displays correctly on tablet screen,Admin user is logged in; viewport set to 768px width,,"1. Open the dropdown menu on tablet viewport
+2. Verify layout and positioning",Dropdown displays correctly with proper positioning relative to trigger.,A,Low,Normal,,,,
+GUI,GUI-016,Dropdown-profile Admin,GUI,Responsive,Desktop 1440px,Verify dropdown displays correctly on desktop screen,Admin user is logged in; viewport set to 1440px width,,"1. Open the dropdown menu on desktop viewport
+2. Verify layout and positioning",Dropdown displays correctly as per design at desktop width.,A,Low,Normal,,,,
+GUI,GUI-017,Dropdown-profile Admin,GUI,Layout,Click Icon vs Text,Verify clicking on the icon area and text area of a menu item produces the same result,Admin user is logged in; dropdown is open,,"1. Open dropdown and click on the text ""Dashboard""
+2. Re-open dropdown and click on the Dashboard grid icon",Both clicks navigate to the same Dashboard page.,A.2,Medium,Normal,,,,
+FUNCTION,FN-001,Dropdown-profile Admin,FUNCTION,Profile Navigation,Click,Verify clicking Profile item navigates to user profile page,Admin user is logged in; dropdown is open,,"1. Open the dropdown menu
+2. Click on ""Profile"" menu item",Dropdown closes. User is navigated to the profile page. Profile page loads correctly.,A.1,High,Normal,,,,
+FUNCTION,FN-002,Dropdown-profile Admin,FUNCTION,Dashboard Navigation,Click,Verify clicking Dashboard item navigates to admin dashboard page,Admin user is logged in; dropdown is open,,"1. Open the dropdown menu
+2. Click on ""Dashboard"" menu item",Dropdown closes. User is navigated to the Admin Dashboard page. Dashboard page loads correctly.,A.2,High,Normal,,,,
+FUNCTION,FN-003,Dropdown-profile Admin,FUNCTION,Logout Action,Click,Verify clicking Logout item logs out the user and redirects to login screen,Admin user is logged in; dropdown is open,,"1. Open the dropdown menu
+2. Click on ""Logout"" menu item",Dropdown closes. User session is terminated. User is redirected to the login screen. Accessing protected pages after logout requires re-authentication.,A.3,High,Normal,,,,
+FUNCTION,FN-004,Dropdown-profile Admin,FUNCTION,Dropdown Behavior,Auto-close Profile,Verify dropdown automatically closes after clicking Profile,Admin user is logged in; dropdown is open,,"1. Open the dropdown menu
+2. Click on ""Profile""
+3. Observe dropdown state",Dropdown is no longer visible after navigation.,"A, A.1",High,Normal,,,,
+FUNCTION,FN-005,Dropdown-profile Admin,FUNCTION,Dropdown Behavior,Auto-close Dashboard,Verify dropdown automatically closes after clicking Dashboard,Admin user is logged in; dropdown is open,,"1. Open the dropdown menu
+2. Click on ""Dashboard""
+3. Observe dropdown state",Dropdown is no longer visible after navigation.,"A, A.2",High,Normal,,,,
+FUNCTION,FN-006,Dropdown-profile Admin,FUNCTION,Dropdown Behavior,Auto-close Logout,Verify dropdown automatically closes after clicking Logout,Admin user is logged in; dropdown is open,,"1. Open the dropdown menu
+2. Click on ""Logout""
+3. Observe dropdown state",Dropdown is no longer visible. User is on login page.,"A, A.3",High,Normal,,,,
+FUNCTION,FN-007,Dropdown-profile Admin,FUNCTION,Interaction,Double Click Profile,Verify double-clicking Profile does not cause duplicate navigation or errors,Admin user is logged in; dropdown is open,,"1. Open the dropdown menu
+2. Double-click on ""Profile"" menu item",User is navigated to profile page only once. No duplicate pages or errors.,A.1,Medium,Normal,,,,
+FUNCTION,FN-008,Dropdown-profile Admin,FUNCTION,Interaction,Double Click Dashboard,Verify double-clicking Dashboard does not cause duplicate navigation or errors,Admin user is logged in; dropdown is open,,"1. Open the dropdown menu
+2. Double-click on ""Dashboard"" menu item",User is navigated to dashboard page only once. No duplicate pages or errors.,A.2,Medium,Normal,,,,
+FUNCTION,FN-009,Dropdown-profile Admin,FUNCTION,Interaction,Double Click Logout,Verify double-clicking Logout does not cause duplicate API calls or errors,Admin user is logged in; dropdown is open,,"1. Open the dropdown menu
+2. Double-click on ""Logout"" menu item",Logout is performed once. No duplicate API calls. User is redirected to login screen without errors.,A.3,Medium,Normal,,,,
+FUNCTION,FN-010,Dropdown-profile Admin,FUNCTION,Interaction,Rapid Clicks,Verify rapid sequential clicks on different items are handled correctly,Admin user is logged in; dropdown is open,,"1. Open the dropdown menu
+2. Quickly click ""Profile"" then immediately click ""Dashboard""",Only the first clicked action is performed. No conflicting navigation or errors.,"A.1, A.2",Medium,Normal,,,,
+FUNCTION,FN-011,Dropdown-profile Admin,FUNCTION,Keyboard,Tab Navigation,Verify Tab key moves focus between dropdown menu items,Admin user is logged in; dropdown is open,,"1. Open the dropdown menu
+2. Press Tab to move focus to the first item
+3. Press Tab to move to the second item
+4. Press Tab to move to the third item","Focus moves sequentially through Profile, Dashboard, Logout. Each focused item has a visible focus indicator.","A.1, A.2, A.3",Medium,Normal,,,,
+FUNCTION,FN-012,Dropdown-profile Admin,FUNCTION,Keyboard,Enter Key,Verify Enter key activates the focused menu item,Admin user is logged in; dropdown is open; focus is on a menu item,,"1. Open the dropdown menu
+2. Use Tab to focus on ""Dashboard""
+3. Press Enter",Dashboard page opens. Same behavior as mouse click.,A.2,Medium,Normal,,,,
+FUNCTION,FN-013,Dropdown-profile Admin,FUNCTION,Keyboard,ESC Key,Verify ESC key closes the dropdown without performing any action,Admin user is logged in; dropdown is open,,1. Open the dropdown menu 2. Press ESC key,Dropdown closes. No navigation occurs. User remains on the current page.,A,Medium,Normal,,,,
+FUNCTION,FN-014,Dropdown-profile Admin,FUNCTION,Security,Session Invalidation,Verify that after logout the session is properly invalidated,Admin user is logged in,,"1. Open the dropdown menu
+2. Click ""Logout""
+3. After redirect to login press browser Back button",User is not able to access protected content. User is redirected back to login page or shown unauthorized message.,A.3,High,Normal,,,,
+FUNCTION,FN-015,Dropdown-profile Admin,FUNCTION,Security,Token Cleanup,Verify that logout clears all authentication tokens/cookies,Admin user is logged in,,"1. Open the dropdown menu
+2. Click ""Logout""
+3. Check browser cookies/local storage for auth tokens",All authentication tokens and session cookies are cleared.,A.3,High,Normal,,,,
+FUNCTION,FN-016,Dropdown-profile Admin,FUNCTION,Display State,Active State on Profile Page,Verify Profile item remains in active state when user is on the profile page,Admin user is logged in and on the profile page,,"1. Navigate to the profile page
+2. Open the dropdown menu","Profile item is displayed in active/highlighted state, other items in default state.",A.1,Medium,Normal,,,,
+FUNCTION,FN-017,Dropdown-profile Admin,FUNCTION,Display State,Active State on Dashboard Page,Verify Dashboard item shows active state when user is on the dashboard page,Admin user is logged in and on the dashboard page,,"1. Navigate to the dashboard page
+2. Open the dropdown menu",Dashboard item is displayed in active/highlighted state (if applicable per design).,A.2,Low,Normal,,,,
+FUNCTION,FN-018,Dropdown-profile Admin,FUNCTION,Dropdown Behavior,During Page Load,Verify dropdown behavior when clicked during page load,Admin user is logged in; page is in the process of loading,,"1. Navigate to a page
+2. While page is loading click the profile trigger",Dropdown either opens correctly after load completes or is gracefully delayed. No JavaScript errors.,A,Low,Normal,,,,

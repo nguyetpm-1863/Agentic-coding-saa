@@ -1,0 +1,104 @@
+No,itemId,itemName,nameJP,nameTrans,itemType,itemSubtype,buttonType,dataType,required,format,minLength,maxLength,defaultValue,validationNote,description,userAction,transitionNote,databaseTable,databaseColumn,databaseNote,qa
+"C","662:14388","Keyvisual","キービジュアル背景","Key Visual Background","others","background_image","","","false","","","","","","Purpose and Context
+Full-screen decorative background image for the login page. Purely visual; provides the artistic identity for the SAA 2025 event.
+
+Display Elements:
+  - Image: Full-bleed artwork covering the entire page behind all other content
+  - Gradient overlays: Left-to-right and bottom gradients layered on top to ensure text readability
+
+Function & Logic:
+  - No interaction. Decorative only.
+  - Image MUST have empty alt="""" attribute for accessibility.
+  - State: Always visible; static.","","","","","",""
+"A","662:14391","Header","ヘッダー","Header","others","navigation","","","false","","","","","","Purpose and Context
+Fixed semi-transparent navigation bar at the top of the login page containing the SAA logo and language selector.
+
+Display Elements:
+  - Logo (A.1): SAA 2025 logo image; top-left
+  - Language Selector (A.2): ""VN"" text with flag icon and chevron; top-right
+  - Children: A.1 (Logo); A.2 (Language)
+
+Function & Logic:
+  - Container only. No direct interaction on the header bar itself.
+  - State: Fixed position; always visible on scroll.","","","","","",""
+"B","662:14393","Bìa","ヒーローセクション","Hero Section","others","hero","","","false","","","","","","Purpose and Context
+Main hero section of the login page. Contains the ""ROOT FURTHER"" branding; descriptive text; and the Google login button.
+
+Display Elements:
+  - Key Visual (B.1): ""ROOT FURTHER"" brand title image
+  - Content (B.2): Two lines of descriptive text
+  - Login Button (B.3): ""LOGIN With Google"" button with Google icon
+  - Children: B.1 (Key Visual); B.2 (Content); B.3 (Login Button)
+
+Function & Logic:
+  - Container only. Arranges child elements vertically on the left side of the page.
+  - State: Static layout container.","","","","","",""
+"B.1","662:14395","Key Visual","ルートファーザーロゴ","ROOT FURTHER Logo","others","hero_banner","","","false","","","","","","Purpose and Context
+Hero brand image displaying ""ROOT FURTHER"" text as the event tagline.
+
+Display Elements:
+  - Image: ""ROOT FURTHER"" logo/title (451x200px)
+
+Function & Logic:
+  - No interaction. Static display.
+  - Image should be loaded with priority (above-the-fold).
+  - State: Always visible.","","","","","",""
+"B.2","662:14753","content","ヒーロー説明文","Hero Description Text","others","info_block","","","false","","","","","","Purpose and Context
+Short descriptive text in the hero section inviting the user to log in and explore SAA 2025.
+
+Display Elements:
+  - Line 1: Label - ""Bắt đầu hành trình của bạn cùng SAA 2025.""
+  - Line 2: Label - ""Đăng nhập để khám phá!""
+
+Function & Logic:
+  - No interaction. Static text display.
+  - Text MUST be translatable (i18n keys: login.description_line1; login.description_line2).","","","","","",""
+"B.3","662:14425","Login","Googleログインボタン","Login With Google Button","button","","icon_text","","false","","","","","","Purpose and Context
+Primary call-to-action button for authentication. Triggers Google OAuth flow through Supabase Auth.
+
+Display Elements:
+  - Text: ""LOGIN With Google""
+  - Icon: Google ""G"" logo (right side of text)
+
+Function & Logic:
+  - Click: Initiates Google OAuth flow via Supabase Auth; redirects to Google consent screen.
+  - Loading state: Button becomes disabled and shows a spinner icon while OAuth is in progress. Prevents duplicate requests.
+  - Error state: If OAuth fails (user denies consent; network error; unauthorized account); system redirects to /login?error=<error_code> and displays error message below button. Button re-enables for retry. Error auto-dismisses after 5 seconds.
+  - Success state: After successful OAuth; system creates/updates session and redirects to authenticated home page (or return URL if provided via ?next= parameter).
+  - State: Disabled with spinner when processing. Re-enabled on error or page reload.","on_click","Initiates Google OAuth flow via Supabase Auth. On success redirects to homepage or return URL. On failure redirects to /login?error=<error_code>.","","","","- What is the exact loading spinner design (icon; animation)?
+- What are the specific error messages for each OAuth failure type (denied consent; network error; unauthorized account)?"
+"D","662:14447","Footer","フッター","Footer","label","","","","false","","","","","","Purpose and Context
+Copyright footer fixed at the bottom of the login page.
+
+Display Elements:
+  - Text: ""Bản quyền thuộc về Sun* © 2025""
+  - Border: Top border separating footer from content
+
+Function & Logic:
+  - No interaction. Static display.
+  - Text MUST be translatable (i18n key: footer.copyright).
+  - State: Always visible; fixed at bottom.","","","","","",""
+"A.1","I662:14391;186:2166","Logo","SAAロゴ","SAA 2025 Logo","others","logo","","","false","","","","","","Purpose and Context
+Sun Annual Awards 2025 logo displayed in the top-left corner of the header.
+
+Display Elements:
+  - Image: SAA 2025 logo icon and text
+
+Function & Logic:
+  - No interaction. Static display.
+  - State: Always visible.","","","","","",""
+"A.2","I662:14391;186:1601","Language","言語セレクター","Language Selector","button","","toggle","","false","","","","VN","","Purpose and Context
+Language selector button in the top-right corner of the header. Allows users to switch application language.
+
+Display Elements:
+  - Flag Icon: Vietnam flag (small; left side)
+  - Text: ""VN"" (current language code)
+  - Chevron: Down arrow icon (right side)
+
+Function & Logic:
+  - Click: Opens dropdown with available language options (linked to frame 721:4942).
+  - Hover: Highlight effect and cursor change.
+  - Keyboard: Enter/Space opens dropdown. Escape closes.
+  - Dropdown uses role=""listbox"" with aria-expanded attribute.
+  - Selected language persists across sessions via cookie (locale).
+  - State: Default shows current language. Active/expanded when dropdown is open.","on_click","Click opens language dropdown (linked frame: 721:4942 Dropdown-ngôn ngữ). Selecting a language updates all translatable text on the page and persists preference in cookie.","","","","- What languages are available in the dropdown besides Vietnamese?"
