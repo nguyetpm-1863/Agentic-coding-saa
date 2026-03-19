@@ -45,7 +45,11 @@ jobs:
           SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
           SUPABASE_PROJECT_ID: ${{ vars.SUPABASE_PROJECT_ID }}
         run: |
-          yarn supabase link --project-ref $SUPABASE_PROJECT_ID
+          if [ -z "$SUPABASE_PROJECT_ID" ]; then
+            echo "::error::SUPABASE_PROJECT_ID is not set. Add it as a repository variable in GitHub Settings > Environments."
+            exit 1
+          fi
+          yarn supabase link --project-ref "$SUPABASE_PROJECT_ID"
           yarn supabase db push --include-all
 
       - name: Deploy new worker version
